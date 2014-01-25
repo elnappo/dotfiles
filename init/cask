@@ -1,0 +1,26 @@
+# Install native apps
+brew tap phinze/homebrew-cask
+brew install brew-cask
+
+function installcask() {
+	brew cask install "${@}" 2> /dev/null
+}
+
+installcask dropbox
+installcask google-chrome
+installcask google-chrome-canary
+installcask iterm2
+installcask sublime-text
+installcask tor-browser
+installcask transmission
+installcask vlc
+installcask firefox
+installcask plex-home-theater
+installcask libreoffice
+installcask sabnzbd
+installcask unrarx
+installcask steam
+installcask sourcetree
+installcask mysql-workbench
+installcask totalterminal
+
