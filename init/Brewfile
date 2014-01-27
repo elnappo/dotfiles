@@ -36,6 +36,8 @@ install sl
 install nmap
 install htop-osx
 install unp
+install wget
+install axel
 
 # Remove outdated versions from the cellar
 cleanup
