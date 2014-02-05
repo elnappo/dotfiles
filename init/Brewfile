@@ -38,6 +38,11 @@ install htop-osx
 install unp
 install wget
 install axel
+install bash-completion
+install python
+isntall python3
+install watch
+isntall ffind
 
 # Remove outdated versions from the cellar
 cleanup
