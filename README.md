@@ -1,4 +1,10 @@
 # elnappo’s dotfiles
+these are my dotfiles, have fun!
+
+## Projects used
+* homebrew
+* homebrew cask
+* oh-my-zsh
 
 ## inspired by
 * https://github.com/mathiasbynens/dotfiles
