@@ -22,7 +22,6 @@ installcask unrarx
 installcask steam
 installcask sourcetree
 installcask mysql-workbench
-installcask totalterminal
 installcask qlstephen
 isntallcask qlcolorcode
 isntallcask qlmarkdown
