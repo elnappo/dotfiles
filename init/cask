@@ -10,7 +10,7 @@ installcask dropbox
 installcask google-chrome
 installcask google-chrome-canary
 installcask iterm2
-installcask sublime-text
+installcask textmate
 installcask tor-browser
 installcask transmission
 installcask vlc
