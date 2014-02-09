@@ -10,7 +10,7 @@ installcask dropbox
 installcask google-chrome
 #installcask google-chrome-canary
 installcask iterm2
-installcask sublime-text
+installcask textmate
 installcask tor-browser
 installcask transmission
 installcask vlc
@@ -22,10 +22,11 @@ installcask unrarx
 installcask steam
 installcask sourcetree
 installcask mysql-workbench
-installcask totalterminal
 installcask skype
 installcask pycharm-pro
 isntallcask ios7-screensaver
 #installcask geektool
 installcask wireshark
-installcask textmate
+installcask qlstephen
+isntallcask qlcolorcode
+isntallcask qlmarkdown
