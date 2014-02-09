@@ -14,6 +14,8 @@ install coreutils
 install findutils
 # Install Bash 4
 install bash
+# Install zsh
+install zsh
 
 # Install wget with IRI support
 install wget --enable-iri
@@ -36,6 +38,7 @@ install sl
 install nmap
 install htop-osx
 install unp
+install speedtest_cli
 
 # Remove outdated versions from the cellar
 cleanup
