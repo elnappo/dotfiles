@@ -1,5 +1,6 @@
 # elnappo’s dotfiles
 these are my dotfiles, have fun!
+add ~/.extra for your stuff
 
 ## Projects used
 * homebrew
