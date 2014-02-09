@@ -1,3 +1,6 @@
+# Install brew casks in /Applications
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # Install native apps
 brew tap phinze/homebrew-cask
 brew install brew-cask
