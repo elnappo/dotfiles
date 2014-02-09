@@ -12,12 +12,13 @@ function installcask() {
 installcask dropbox
 installcask google-chrome
 #installcask google-chrome-canary
+installcask firefox
+installcask opera
+installcask tor-browser
 installcask iterm2
 installcask textmate
-installcask tor-browser
 installcask transmission
 installcask vlc
-installcask firefox
 installcask plex-home-theater
 installcask libreoffice
 installcask sabnzbd
@@ -33,3 +34,5 @@ installcask wireshark
 installcask qlstephen
 isntallcask qlcolorcode
 isntallcask qlmarkdown
+installcask teamspeak-client
+installcask xquartz
