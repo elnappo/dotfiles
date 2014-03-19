@@ -42,9 +42,9 @@ install speedtest_cli
 install axel
 install bash-completion
 install python
-isntall python3
+install python3
 install watch
-isntall ffind
+install ffind
 
 # Remove outdated versions from the cellar
 cleanup
