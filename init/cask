@@ -36,3 +36,4 @@ installcask qlcolorcode
 installcask qlmarkdown
 installcask teamspeak-client
 installcask xquartz
+installcask pycharm
