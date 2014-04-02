@@ -23,7 +23,7 @@ install wget --enable-iri
 # Install more recent versions of some OS X tools
 install vim --override-system-vi
 install openssl
-brew link openssl --force
+link openssl --force
 tap homebrew/dupes
 install homebrew/dupes/grep
 install homebrew/dupes/openssh 
