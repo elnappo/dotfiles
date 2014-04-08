@@ -15,7 +15,8 @@ source $HOME/.aliases
 source $HOME/.extra
 export EDITOR='vim'
 setopt No_HIST_VERIFY
-export PATH=/usr/local/bin:$PATH
+# for homebrew
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Install brew casks in /Applications
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
