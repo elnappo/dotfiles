@@ -48,6 +48,11 @@ install python
 install python3
 install watch
 install ffind
+install git-cola
+install iftop
+install pyqt
+install qt
+install tor
 
 # Remove outdated versions from the cellar
 cleanup

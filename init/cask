@@ -37,3 +37,5 @@ installcask qlmarkdown
 installcask teamspeak-client
 installcask xquartz
 installcask pycharm
+installcask bittorrent-sync
+installcask launchrocket
