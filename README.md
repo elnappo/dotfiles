@@ -6,7 +6,7 @@ add ~/.extra for your stuff
 ```bash
 git clone git@github.com:elnappo/dotfiles.git ~/dotfiles
 cd ~/dotfiles/init
-./init.sh
+./setup.sh
 ```
 
 ## Projects used
