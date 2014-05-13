@@ -8,7 +8,8 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 source $HOME/.aliases
 source $HOME/.extra
 export EDITOR='vim'
-export PATH=/usr/local/bin:$PATH
+# for homebrew
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Install brew casks in /Applications
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"

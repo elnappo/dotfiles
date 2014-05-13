@@ -22,8 +22,11 @@ install wget --enable-iri
 
 # Install more recent versions of some OS X tools
 install vim --override-system-vi
+install openssl
+link openssl --force
 tap homebrew/dupes
 install homebrew/dupes/grep
+install homebrew/dupes/openssh 
 
 # Install other useful binaries
 install ack
@@ -42,9 +45,9 @@ install speedtest_cli
 install axel
 install bash-completion
 install python
-isntall python3
+install python3
 install watch
-isntall ffind
+install ffind
 
 # Remove outdated versions from the cellar
 cleanup
