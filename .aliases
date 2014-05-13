@@ -53,3 +53,5 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to 
 
 # Some more stuff
 alias starwars="telnet towel.blinkenlights.nl"
+alias p8="ping 8.8.8.8"
+
