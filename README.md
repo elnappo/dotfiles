@@ -2,6 +2,13 @@
 these are my dotfiles, have fun!
 add ~/.extra for your stuff
 
+## Install
+```bash
+git clone git@github.com:elnappo/dotfiles.git ~/dotfiles
+cd ~/dotfiles/init
+./init.sh
+```
+
 ## Projects used
 * [homebrew](https://github.com/Homebrew/homebrew)
 * [homebrew cask](https://github.com/phinze/homebrew-cask)
