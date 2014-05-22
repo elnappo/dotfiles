@@ -27,11 +27,11 @@ source ~/.zshrc
 
 # linking files
 echo "[i] Linking dotfiles"
-ln -s ../bashrc .bashrc
-ln -s ../zshrc .zshrc
-ln -s ../wgetrc .wgetrc
-ln -s ../vimrc .vimrc
-ln -s ../curlrc .curlrc
+ln -s ../bashrc ~/.bashrc
+ln -s ../zshrc ~/.zshrc
+ln -s ../wgetrc ~/.wgetrc
+ln -s ../vimrc ~/.vimrc
+ln -s ../curlrc ~/.curlrc
 
 # Some stuff
 echo "[i] Doing some stuff"
