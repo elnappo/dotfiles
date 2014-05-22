@@ -4,8 +4,8 @@ add ~/.extra for your stuff
 
 ## Install
 ```bash
-git clone git@github.com:elnappo/dotfiles.git ~/dotfiles
-cd ~/dotfiles/init
+git clone git@github.com:elnappo/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles/init
 ./setup.sh
 ```
 
