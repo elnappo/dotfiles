@@ -50,8 +50,8 @@ install watch
 install ffind
 install git-cola
 install iftop
-install pyqt
-install qt
+install qt5
+install pyqt5
 install tor
 
 # Remove outdated versions from the cellar
