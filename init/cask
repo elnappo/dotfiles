@@ -34,6 +34,10 @@ installcask wireshark
 installcask qlstephen
 installcask qlcolorcode
 installcask qlmarkdown
+installcask ipaql
+installcask qlprettypatch
+installcask qlrest
+#installcask invisorql
 installcask teamspeak-client
 installcask xquartz
 installcask pycharm
