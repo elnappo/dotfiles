@@ -43,3 +43,4 @@ installcask xquartz
 installcask pycharm
 installcask bittorrent-sync
 installcask launchrocket
+isntallcask qt-creator
