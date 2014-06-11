@@ -23,7 +23,6 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 # setup zsh as default shell
 echo "[i] Set zsh as default shell"
 chsh -s /usr/local/bin/zsh
-source ~/.zshrc
 
 # linking files
 echo "[i] Linking dotfiles"
