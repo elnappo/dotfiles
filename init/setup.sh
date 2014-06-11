@@ -33,6 +33,10 @@ ln -s ../wgetrc ~/.wgetrc
 ln -s ../vimrc ~/.vimrc
 ln -s ../curlrc ~/.curlrc
 
+# install Command Line Tools
+echo "[i] Install Command Line Tools"
+xcode-select --install
+
 # Some stuff
 echo "[i] Doing some stuff"
 mkdir ~/.virtualenvs 
