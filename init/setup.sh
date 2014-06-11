@@ -26,11 +26,11 @@ chsh -s /usr/local/bin/zsh
 
 # linking files
 echo "[i] Linking dotfiles"
-ln -s ../bashrc ~/.bashrc
-ln -s ../zshrc ~/.zshrc
-ln -s ../wgetrc ~/.wgetrc
-ln -s ../vimrc ~/.vimrc
-ln -s ../curlrc ~/.curlrc
+ln -s ~/.dotfiles/bashrc ~/.bashrc
+ln -s ~/.dotfiles/zshrc ~/.zshrc
+ln -s ~/.dotfiles/wgetrc ~/.wgetrc
+ln -s ~/.dotfiles/vimrc ~/.vimrc
+ln -s ~/.dotfiles/curlrc ~/.curlrc
 
 # install Command Line Tools
 echo "[i] Install Command Line Tools"
