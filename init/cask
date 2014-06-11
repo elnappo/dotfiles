@@ -45,3 +45,4 @@ installcask bittorrent-sync
 installcask launchrocket
 installcask qt-creator
 installcask totalterminal
+installcask google-drive
