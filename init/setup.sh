@@ -36,6 +36,10 @@ ln -s ~/.dotfiles/curlrc ~/.curlrc
 echo "[i] Install Command Line Tools"
 xcode-select --install
 
+# install python packages
+echo "[i] Install Python Packages"
+/usr/local/bin/pip3install httpie
+
 # Some stuff
 echo "[i] Doing some stuff"
 mkdir ~/.virtualenvs 
