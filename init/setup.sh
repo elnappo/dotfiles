@@ -4,6 +4,10 @@
 echo "[i] Set OS X defaults"
 ./osx
 
+# install Command Line Tools
+echo "[i] Install Command Line Tools"
+xcode-select --install
+
 # install homwbrew
 echo "[i] Install Homebrew"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -31,10 +35,6 @@ ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/wgetrc ~/.wgetrc
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 ln -s ~/.dotfiles/curlrc ~/.curlrc
-
-# install Command Line Tools
-echo "[i] Install Command Line Tools"
-xcode-select --install
 
 # install python packages
 echo "[i] Install Python Packages"
