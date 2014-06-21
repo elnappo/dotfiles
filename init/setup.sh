@@ -15,6 +15,8 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 # install brew formula
 echo "[i] Install Brew formula"
 brew bundle Brewfile
+sudo echo "/usr/local/bin/bash" >> /etc/shells
+sudo echo "/usr/local/bin/zsh" >> /etc/shells
 
 # install brew cask apps
 echo "[i] Install brew cask apps"
