@@ -26,7 +26,6 @@ installcask unrarx
 installcask steam
 installcask sourcetree
 installcask mysql-workbench
-installcask skype
 installcask ios7-screensaver
 #installcask geektool
 installcask wireshark
