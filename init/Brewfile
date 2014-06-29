@@ -59,6 +59,7 @@ install iftop
 install qt5
 install pyqt5
 install tor
+install youtube-dl
 
 # Remove outdated versions from the cellar
 cleanup
