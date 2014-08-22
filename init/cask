@@ -14,7 +14,7 @@ installcask google-chrome
 #installcask google-chrome-canary
 installcask firefox
 installcask opera
-installcask tor-browser
+installcask torbrowser
 installcask iterm2
 installcask textmate
 installcask transmission
