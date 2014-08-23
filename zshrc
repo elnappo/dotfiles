@@ -18,7 +18,7 @@ setopt No_HIST_VERIFY
 
 # for homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=(brew --prefix coreutils)/libexec/gnubin:$PATH
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 
 # Install brew casks in /Applications
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
