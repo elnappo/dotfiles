@@ -20,4 +20,4 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export WORKON_HOME=$HOME/.virtualenvs
 #source /Library/Frameworks/Python.framework/Versions/3.3/bin/virtualenvwrapper.sh
 
-echo "happy hacking :)"
+/usr/local/bin/archey -c
