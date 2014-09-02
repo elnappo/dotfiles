@@ -62,6 +62,7 @@ install tor
 install youtube-dl
 install git-extras
 install pwgen
+install archey
 
 # Remove outdated versions from the cellar
 cleanup
