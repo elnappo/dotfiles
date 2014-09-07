@@ -10,6 +10,10 @@ update
 # Upgrade any already-installed formulae
 upgrade
 
+# Install taps
+tap homebrew/dupes
+tap peco/peco
+
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 install coreutils
@@ -31,7 +35,6 @@ install wget --enable-iri
 install vim --override-system-vi
 install openssl
 link openssl --force
-tap homebrew/dupes
 install homebrew/dupes/grep
 install homebrew/dupes/openssh 
 
@@ -63,6 +66,7 @@ install youtube-dl
 install git-extras
 install pwgen
 install archey
+install peco
 
 # Remove outdated versions from the cellar
 cleanup
