@@ -67,6 +67,7 @@ install git-extras
 install pwgen
 install archey
 install peco
+install ansible
 
 # Remove outdated versions from the cellar
 cleanup
