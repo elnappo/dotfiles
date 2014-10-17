@@ -46,3 +46,5 @@ installcask macdown
 installcask namebench
 installcask virtualbox
 installcask the-unarchiver
+installcask java6
+installcask java7
