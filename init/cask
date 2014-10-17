@@ -45,3 +45,4 @@ installcask google-drive
 installcask macdown
 installcask namebench
 installcask virtualbox
+installcask the-unarchiver
