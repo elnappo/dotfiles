@@ -36,7 +36,7 @@ install vim --override-system-vi
 install openssl
 link openssl --force
 install homebrew/dupes/grep
-install homebrew/dupes/openssh 
+install homebrew/dupes/openssh --with-keychain-support --with-ldns
 
 # Install other useful binaries
 install ack
@@ -68,6 +68,9 @@ install pwgen
 install archey
 install peco
 install ansible
+install docker
+install boot2docker
+install fig
 
 # Remove outdated versions from the cellar
 cleanup
