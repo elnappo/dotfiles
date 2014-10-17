@@ -44,3 +44,4 @@ installcask totalterminal
 installcask google-drive
 installcask macdown
 installcask namebench
+installcask virtualbox
