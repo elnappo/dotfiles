@@ -2,8 +2,8 @@
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Install native apps
-brew tap phinze/homebrew-cask
-brew install brew-cask
+brew install caskroom/cask/brew-cask
+brew tap caskroom/versions
 
 function installcask() {
 	brew cask install "${@}" 2> /dev/null
@@ -11,7 +11,6 @@ function installcask() {
 
 installcask dropbox
 installcask google-chrome
-#installcask google-chrome-canary
 installcask firefox
 installcask opera
 installcask torbrowser
@@ -35,7 +34,6 @@ installcask qlmarkdown
 installcask ipaql
 installcask qlprettypatch
 installcask qlrest
-#installcask invisorql
 installcask teamspeak-client
 installcask xquartz
 installcask pycharm
