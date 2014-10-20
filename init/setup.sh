@@ -46,8 +46,8 @@ ln -s ~/.dotfiles/vimrc ~/.vimrc
 ln -s ~/.dotfiles/curlrc ~/.curlrc
 
 # install python packages
-echo "[i] Install Python Packages"
-/usr/local/bin/pip3install httpie
+#echo "[i] Install Python Packages"
+#/usr/local/bin/pip3install httpie
 
 # Some stuff
 echo "[i] Doing some stuff"
