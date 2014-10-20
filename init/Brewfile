@@ -71,6 +71,7 @@ install ansible
 install docker
 install boot2docker
 install fig
+install httpie
 
 # Remove outdated versions from the cellar
 cleanup
