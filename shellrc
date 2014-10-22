@@ -1,0 +1,22 @@
+# User configuration
+source $HOME/.dotfiles/aliases
+source $HOME/.dotfiles/extra
+export EDITOR='vim'
+
+# homebrew
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+
+# Install brew casks in /Applications
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+#source /Library/Frameworks/Python.framework/Versions/3.3/bin/virtualenvwrapper.sh
+
+# boot2docker
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
+
+/usr/local/bin/archey -c
