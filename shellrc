@@ -1,6 +1,9 @@
 # User configuration
+if [ -f $HOME/.dotfiles/extra ];
+then
+	source $HOME/.dotfiles/extra
+fi
 source $HOME/.dotfiles/aliases
-source $HOME/.dotfiles/extra
 export EDITOR='vim'
 
 # homebrew
