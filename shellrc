@@ -1,7 +1,7 @@
 # User configuration
-if [ -f $HOME/.dotfiles/extra ];
+if [ -f $HOME/.extra ];
 then
-	source $HOME/.dotfiles/extra
+	source $HOME/.extra
 fi
 source $HOME/.dotfiles/aliases
 export EDITOR='vim'
