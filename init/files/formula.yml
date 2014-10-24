@@ -15,7 +15,6 @@ formula:
   bash-completion:
   grep:
   ack:
-  qt5:
   rename:
   tree:
   webkit2png:
@@ -35,7 +34,6 @@ formula:
   ffind:
   git-cola:
   iftop:
-  pyqt5:
   tor:
   youtube-dl:
   git-extras:
