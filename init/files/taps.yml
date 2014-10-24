@@ -1,0 +1,5 @@
+---
+taps:
+  homebrew/dupes:
+  caskroom/versions:
+  peco/peco:

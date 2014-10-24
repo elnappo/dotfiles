@@ -1,0 +1,49 @@
+---
+formula:
+  wget:
+    options: enable-iri
+  openssh:
+    options: with-keychain-support,with-ldns
+  vim:
+    options: override-system-vi
+  openssl:
+  zsh:
+  coreutils:
+  moreutils:
+  findutils:
+  bash:
+  bash-completion:
+  grep:
+  ack:
+  qt5:
+  rename:
+  tree:
+  webkit2png:
+  zopfli:
+  p7zip:
+  ssh-copy-id:
+  cowsay:
+  sl:
+  nmap:
+  htop-osx:
+  unp:
+  speedtest_cli:
+  axel:
+  python:
+  python3:
+  watch:
+  ffind:
+  git-cola:
+  iftop:
+  pyqt5:
+  tor:
+  youtube-dl:
+  git-extras:
+  pwgen:
+  archey:
+  peco:
+  ansible:
+  docker:
+  boot2docker:
+  fig:
+  httpie:

@@ -1,0 +1,29 @@
+---
+- include_vars: files/taps.yml
+- include_vars: files/formula.yml
+- include_vars: files/casks.yml
+
+- name: Update/Upgrade Homebrew
+  homebrew: update_homebrew=yes upgrade_all=yes
+  tags: packages
+
+- name: Manage taps
+  homebrew_tap: name={{ item.key }} state={{ item.value.state | default("present") }}
+  with_dict: taps
+  tags: packages
+
+- name: Manage formula
+  homebrew: name={{ item.key }} install_options={{ item.value.options | default(omit) }} state={{ item.value.state | default("present") }}
+  with_dict: formula
+  tags: packages
+
+- name: Force linking of openssl
+  homebrew: name=openssl state=linked install_options=force
+  tags: packages
+
+- name: Manage casks
+  homebrew_cask: name={{ item.key }} state={{ item.value.state | default("present") }}
+  with_dict: casks
+  environment:
+    HOMEBREW_CASK_OPTS: --appdir=/Applications
+  tags: packages

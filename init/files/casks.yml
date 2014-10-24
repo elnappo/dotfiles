@@ -1,0 +1,40 @@
+---
+casks:
+  geektool:
+    state: absent
+  dropbox:
+  google-chrome:
+  firefox:
+  opera:
+  torbrowser:
+  iterm2:
+  textmate:
+  transmission:
+  vlc:
+  plex-home-theater:
+  libreoffice:
+  sabnzbd:
+  unrarx:
+  steam:
+  sourcetree:
+  mysqlworkbench:
+  ios7-screensaver:
+  wireshark:
+  qlstephen:
+  qlcolorcode:
+  qlmarkdown:
+  ipaql:
+  qlprettypatch:
+  qlrest:
+  teamspeak-client:
+  xquartz:
+  pycharm:
+  bittorrent-sync:
+  launchrocket:
+  totalterminal:
+  google-drive:
+  qt-creator:
+  macdown:
+  namebench:
+  virtualbox:
+  the-unarchiver:
