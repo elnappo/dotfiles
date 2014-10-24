@@ -3,8 +3,8 @@
 DEFAULTSHELL=/usr/local/bin/zsh
 
 # set osx defaults
-#echo "[i] Set OS X defaults"
-#./osx
+echo "[i] Set OS X defaults"
+./osx
 
 # install Command Line Tools
 if [[ ! -x /usr/bin/gcc ]]; then
