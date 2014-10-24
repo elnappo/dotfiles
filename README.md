@@ -1,12 +1,16 @@
 # elnappo’s dotfiles
 these are my dotfiles, have fun!
+
 add ~/.extra for your stuff
+
+## Features
+* sync your homebrew taps, formulas and casks 
 
 ## Install
 ```bash
-git clone git@github.com:elnappo/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles/init
-./setup.sh
+$ git clone https://github.com/elnappo/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles/init
+$ ./setup.sh
 ```
 
 ## Projects used
