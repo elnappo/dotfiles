@@ -26,7 +26,7 @@ fi
 
 # run playbook
 echo "[i] Run Playbook"
-ansible-playbook $HOME/.dotfiles/init/dotfiles.yml
+ansible-playbook -i inventory $HOME/.dotfiles/init/dotfiles.yml
 
 # setup zsh as default shell
 if [[ ! $(dscl . read $HOME UserShell | cut -d " " -f 2) = $DEFAULTSHELL ]]; then
