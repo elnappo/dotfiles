@@ -2,5 +2,5 @@
 taps:
   homebrew/dupes:
   caskroom/versions:
-  caskroom/homebrew-cask:
+  caskroom/cask:
   peco/peco:
