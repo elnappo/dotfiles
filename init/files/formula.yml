@@ -1,5 +1,6 @@
 ---
 formula:
+  brew-cask:
   wget:
     options: enable-iri
   openssh:
