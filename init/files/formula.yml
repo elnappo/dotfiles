@@ -14,7 +14,6 @@ formula:
   findutils:
   bash:
   bash-completion:
-  qt5:
   grep:
   ack:
   rename:
