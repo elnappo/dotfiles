@@ -2,7 +2,6 @@
 - hosts: localhost
   connection: local
   tasks:
-    - include: tasks/homebrew.yml
     - name: add localdocker to /etc/hosts
       lineinfile: dest=/etc/hosts line="192.168.59.103 localdocker" state=present
       sudo: 
@@ -38,3 +37,5 @@
 
     - name: create ~/.virtualenvs
       file: dest=~/.virtualenvs state=directory
+
+    - include: tasks/homebrew.yml
