@@ -14,8 +14,17 @@
       lineinfile: dest=/etc/shells line="/usr/local/bin/zsh" state=present
       sudo: yes
 
+    - name: create oh-my-zsh customization directory
+      file: dest=~/.dotfiles/zsh_custom/plugins state=directory
+
     - name: install oh-my-zsh
-      git: repo=git://github.com/robbyrussell/oh-my-zsh.git dest=~/.oh-my-zsh
+      git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.oh-my-zsh update=yes
+
+    - name: install alias-tips
+      git: repo=https://github.com/djui/alias-tips.git dest=~/.dotfiles/zsh_custom/plugins/alias-tips update=yes
+
+    - name: install k
+      git: repo=https://github.com/supercrabtree/k.git dest=~/.dotfiles/zsh_custom/plugins/k update=yes
 
     - name: make sure dotfiles are present
       git: repo=git@github.com:elnappo/dotfiles.git dest=~/.dotfiles
