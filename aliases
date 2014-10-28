@@ -1,4 +1,5 @@
 # List direcory conqtents
+alias ls='ls --color'
 alias lsa='ls -lah'
 alias l='ls -lah'
 alias ll='ls -lh'
