@@ -4,7 +4,7 @@
   tasks:
     - name: add localdocker to /etc/hosts
       lineinfile: dest=/etc/hosts line="192.168.59.103 localdocker" state=present
-      sudo: 
+      sudo: yes
 
     - name: add homwbrew bash to /etc/shells
       lineinfile: dest=/etc/shells line="/usr/local/bin/bash" state=present
