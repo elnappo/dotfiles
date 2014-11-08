@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-DEFAULTSHELL=/usr/local/bin/zsh
-
 # set osx defaults
 echo "[i] Set OS X defaults"
 ./osx
@@ -27,11 +25,5 @@ fi
 # run playbook
 echo "[i] Run Playbook"
 ansible-playbook -i inventory $HOME/.dotfiles/init/dotfiles.yml
-
-# setup zsh as default shell
-if [[ ! $(dscl . read $HOME UserShell | cut -d " " -f 2) = $DEFAULTSHELL ]]; then
-	echo "[i] Set zsh as default shell"
-	chsh -s $DEFAULTSHELL
-fi
 
 echo "[+] Done :)"

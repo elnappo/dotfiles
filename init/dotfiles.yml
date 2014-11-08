@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
+  vars:
+    osx_login_shell_shell: /usr/local/bin/zsh
   connection: local
   tasks:
     - name: add localdocker to /etc/hosts
@@ -46,5 +48,16 @@
 
     - name: create ~/.virtualenvs
       file: dest=~/.virtualenvs state=directory
+
+    - name: check default user shell
+      shell: dscl . read ~ UserShell | awk '{print $2}'
+      sudo: no
+      register: current_login_shell
+      changed_when: false
+
+    - name: set default shell
+      shell: chsh -s {{ osx_login_shell_shell }}
+      sudo: no
+      when: current_login_shell.stdout != "{{ osx_login_shell_shell }}"
 
     - include: tasks/homebrew.yml
