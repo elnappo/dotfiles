@@ -33,8 +33,6 @@ casks:
   launchrocket:
   totalterminal:
   google-drive:
-  qt-creator:
-    state: absent
   macdown:
   namebench:
   virtualbox:
