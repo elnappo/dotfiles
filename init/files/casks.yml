@@ -38,3 +38,6 @@ casks:
   virtualbox:
   the-unarchiver:
   vmware-fusion:
+  vagrant:
+  vagrant-manager:
+  shiftit:
