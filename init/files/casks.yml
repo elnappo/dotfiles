@@ -41,3 +41,5 @@ casks:
   vagrant:
   vagrant-manager:
   shiftit:
+  gpgtools:
+  
