@@ -1,7 +1,7 @@
 ---
-- include_vars: files/taps.yml
-- include_vars: files/formula.yml
-- include_vars: files/casks.yml
+- include_vars: ~/.dotfiles/init/files/taps.yml
+- include_vars: ~/.dotfiles/init/files/formula.yml
+- include_vars: ~/.dotfiles/init/files/casks.yml
 
 - name: Update/Upgrade Homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
