@@ -19,6 +19,8 @@ $ ./setup.sh
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * [OSXDefaults](https://github.com/kevinSuttle/OSXDefaults)
 * [ansible](https://github.com/ansible/ansible)
+* [alias-tips](https://github.com/djui/alias-tips)
+* [k](https://github.com/supercrabtree/k)
 
 ## inspired by
 * https://github.com/mathiasbynens/dotfiles
