@@ -29,7 +29,7 @@
       git: repo=https://github.com/supercrabtree/k.git dest=~/.dotfiles/zsh_custom/plugins/k update=yes
 
     - name: make sure dotfiles are present
-      git: repo=git@github.com:elnappo/dotfiles.git dest=~/.dotfiles
+      git: repo=https://github.com/elnappo/dotfiles.git dest=~/.dotfiles
 
     - name: link bashrc
       file: src=~/.dotfiles/bashrc dest=~/.bashrc state=link
