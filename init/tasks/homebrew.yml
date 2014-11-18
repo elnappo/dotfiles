@@ -1,7 +1,10 @@
 ---
-- include_vars: ~/.dotfiles/init/files/taps.yml tags=packages
-- include_vars: ~/.dotfiles/init/files/formula.yml tags=packages
-- include_vars: ~/.dotfiles/init/files/casks.yml tags=packages
+- include_vars: files/taps.yml
+  tags: packages
+- include_vars: files/formula.yml
+  tags: packages
+- include_vars: files/casks.yml
+  tags: packages
 
 - name: Update/Upgrade Homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
