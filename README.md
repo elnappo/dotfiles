@@ -1,5 +1,5 @@
 # elnappo’s dotfiles
-these are my dotfiles, have fun!
+These are my dotfiles, have fun!
 
 add ~/.extra for your stuff
 
@@ -22,7 +22,7 @@ $ ./setup.sh
 * [alias-tips](https://github.com/djui/alias-tips)
 * [k](https://github.com/supercrabtree/k)
 
-## inspired by
+## Inspired by
 * https://github.com/mathiasbynens/dotfiles
 * https://github.com/alrra/dotfiles
 * https://github.com/necolas/dotfiles
