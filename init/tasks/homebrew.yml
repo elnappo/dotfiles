@@ -17,10 +17,6 @@
   with_dict: formula
   tags: packages
 
-- name: Force linking of openssl
-  homebrew: name=openssl state=linked install_options=force
-  tags: packages
-
 - name: Manage casks
   homebrew_cask: name={{ item.key }} state={{ item.value.state | default("present") }}
   with_dict: casks
