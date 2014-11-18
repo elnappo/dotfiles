@@ -1,9 +1,14 @@
 ---
-- include_vars: files/taps.yml
+- name: Include taps list
+  include_vars: files/taps.yml
   tags: packages
-- include_vars: files/formula.yml
+
+- name: Include formula list
+  include_vars: files/formula.yml
   tags: packages
-- include_vars: files/casks.yml
+
+- name: Include casks list
+  include_vars: files/casks.yml
   tags: packages
 
 - name: Update/Upgrade Homebrew
