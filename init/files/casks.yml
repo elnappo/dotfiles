@@ -1,7 +1,5 @@
 ---
 casks:
-  geektool:
-    state: absent
   dropbox:
   google-chrome:
   firefox:
@@ -42,4 +40,5 @@ casks:
   vagrant-manager:
   shiftit:
   gpgtools:
+  java6:
   
