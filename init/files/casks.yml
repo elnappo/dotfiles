@@ -21,6 +21,10 @@ casks:
   qlstephen:
   qlcolorcode:
   qlmarkdown:
+  quicklook-json:
+  quicklook-csv:
+  betterzipql:
+  webp-quicklook:
   ipaql:
   qlprettypatch:
   qlrest:
