@@ -19,7 +19,7 @@ fi
 # install ansible
 if [[ ! -x /usr/local/bin/ansible ]]; then
 	echo "[i] Install Ansible"
-	brew install ansible --HEAD
+	brew install ansible
 fi
 
 # run playbook
