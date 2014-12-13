@@ -1,6 +1,6 @@
 ---
-os:
-  - osx
+language:
+  - objective-c
 before_install:
   - cd elnappo/dotfiles/init
 script:
