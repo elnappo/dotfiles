@@ -1,5 +1,16 @@
-" Make Vim more useful
-set nocompatible
+set nocompatible " Make Vim more useful
+filetype off " required by Vundle.vim
+set rtp+=~/.dotfiles/vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
+
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+	Plugin 'Shougo/neocomplete.vim'  " neo-completion with cache
+	Plugin 'Raimondi/delimitMate'  " automatic closing of quotes, parenthesis, brackets, etc.
+	Plugin 'Valloric/YouCompleteMe'  " code-completion engine
+	Plugin 'tomasr/molokai'  " molokai colorscheme
+call vundle#end()
+
+filetype plugin indent on
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in insert mode
