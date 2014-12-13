@@ -5,10 +5,10 @@ install:
   - brew install ansible
   - ansible --version
 script:
-  - ansible-playbook -i inventory --syntax-check --list-tasks init/dotfiles.yml
-  - ansible-playbook -i inventory init/dotfiles.yml
+  - ansible-playbook -i init/inventory --syntax-check --list-tasks init/dotfiles.yml
+  - ansible-playbook -i init/inventory init/dotfiles.yml
   - >
-    ansible-playbook -i inventory init/dotfiles.yml
+    ansible-playbook -i init/inventory init/dotfiles.yml
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
