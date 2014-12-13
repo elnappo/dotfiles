@@ -6,7 +6,7 @@ formula:
   openssh:
     options: with-keychain-support,with-ldns
   vim:
-    options: override-system-vi
+    options: override-system-vi,with-lua,with-luajit
   openssl:
   zsh:
   coreutils:
