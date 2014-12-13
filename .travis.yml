@@ -4,6 +4,7 @@ language:
 install:
   - brew install ansible
   - ansible --version
+  - ls -la /Users/travis/.dotfiles
 script:
   - ansible-playbook -i init/inventory --syntax-check --list-tasks init/dotfiles.yml
   - ansible-playbook -i init/inventory init/dotfiles.yml
