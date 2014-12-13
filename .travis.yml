@@ -1,6 +1,8 @@
 ---
+os:
+  - osx
 before_install:
-  - cd ~/.dotfiles/init
+  - cd elnappo/dotfiles/init
 script:
   - ./setup.sh
 
