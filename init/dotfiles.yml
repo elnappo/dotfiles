@@ -28,8 +28,8 @@
     - name: install k
       git: repo=https://github.com/supercrabtree/k.git dest=~/.dotfiles/zsh_custom/plugins/k update=yes
 
-    - name: install Vundle
-      git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.dotfiles/vim/bundle/Vundle.vim update=yes
+    - name: install neobundle
+      git: repo=https://github.com/Shougo/neobundle.vim dest=~/.dotfiles/vim/bundle/neobundle.vim update=yes
 
     - name: make sure dotfiles are present
       git: repo=https://github.com/elnappo/dotfiles.git dest=~/.dotfiles

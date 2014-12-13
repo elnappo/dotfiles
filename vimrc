@@ -1,29 +1,25 @@
 set nocompatible " Make Vim more useful
 filetype off " required by Vundle.vim
-set rtp+=~/.dotfiles/vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
+set runtimepath+=~/.dotfiles/vim/bundle/Vundle.vim
 
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-	Plugin 'Shougo/neocomplete.vim'  " neo-completion with cache
-	Plugin 'Raimondi/delimitMate'  " automatic closing of quotes, parenthesis, brackets, etc.
-	Plugin 'Valloric/YouCompleteMe'  " code-completion engine
-	Plugin 'tomasr/molokai'  " molokai colorscheme
-call vundle#end()
-
-filetype plugin indent on
-" Enhance command-line completion
-set wildmenu
-" Allow cursor keys in insert mode
-set esckeys
-" Allow backspace in insert mode
-set backspace=indent,eol,start
-" Optimize for fast terminal connections
-set ttyfast
-" Add the g flag to search/replace by default
-set gdefault
-" Use UTF-8 without BOM
-set encoding=utf-8 nobomb
-" Change mapleader
+call neobundle#begin(expand('~/.dotfiles/vim/bundle/'))
+	NeoBundleFetch 'Shougo/neobundle.vim'
+	NeoBundle 'tpope/vim-fugitive
+	NeoBundle 'scrooloose/nerdtree'
+	NeoBundle 'tpope/vim-surround'
+	NeoBundle 'scrooloose/syntastic'
+	if has('lua')
+			NeoBundle 'Shougo/neocomplcache.vim'		
+	endif
+call neobundle#end()
+NeoBundleCheck
+filetype plugin indent on " Enhance command-line completion
+set wildmenu " Allow cursor keys in insert mode
+set esckeys " Allow backspace in insert mode
+set backspace=indent,eol,start " Optimize for fast terminal connections
+set ttyfast " Add the g flag to search/replace by default
+set gdefault " Use UTF-8 without BOM
+set encoding=utf-8 nobomb " Change mapleader
 let mapleader=","
 " Respect modeline in files
 set modeline
@@ -33,8 +29,8 @@ set exrc
 set secure
 " Enable line numbers
 set number
-" Enable syntax highlighting
-syntax on
+syntax on " Enable syntax highlighting
+colorscheme solarized
 " Make tabs as wide as two spaces
 set tabstop=4
 " Show “invisible” characters
