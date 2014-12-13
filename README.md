@@ -21,9 +21,12 @@ $ ./setup.sh
 * [ansible](https://github.com/ansible/ansible)
 * [alias-tips](https://github.com/djui/alias-tips)
 * [k](https://github.com/supercrabtree/k)
+* [NeoBundle](https://github.com/Shougo/neobundle.vim)
+* [VimAwesome](http://vimawesome.com/)
 
 ## Inspired by
 * https://github.com/mathiasbynens/dotfiles
 * https://github.com/alrra/dotfiles
 * https://github.com/necolas/dotfiles
+* https://github.com/monstermunchkin/dotfiles
 * https://bitbucket.org/keimlink/dotfiles
