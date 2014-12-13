@@ -4,6 +4,9 @@
     osx_login_shell_shell: /usr/local/bin/zsh
   connection: local
   tasks:
+    - name: make sure dotfiles are present
+      git: repo=https://github.com/elnappo/dotfiles.git dest=~/.dotfiles
+
     - name: add localdocker to /etc/hosts
       lineinfile: dest=/etc/hosts line="192.168.59.103 localdocker" state=present
       sudo: yes
@@ -30,9 +33,6 @@
 
     - name: install neobundle
       git: repo=https://github.com/Shougo/neobundle.vim dest=~/.dotfiles/vim/bundle/neobundle.vim update=yes
-
-    - name: make sure dotfiles are present
-      git: repo=https://github.com/elnappo/dotfiles.git dest=~/.dotfiles
 
     - name: link bashrc
       file: src=~/.dotfiles/bashrc dest=~/.bashrc state=link
