@@ -1,0 +1,6 @@
+---
+before_install:
+  - cd ~/.dotfiles/init
+script:
+  - ./setup.sh
+
