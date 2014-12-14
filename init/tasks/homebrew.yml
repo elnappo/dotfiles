@@ -1,26 +1,42 @@
 ---
 - name: Include taps list
   include_vars: files/taps.yml
+  tags:
+    - brew_taps
 
 - name: Include formula list
   include_vars: files/formula.yml
+  tags:
+    - brew_formula
 
 - name: Include casks list
   include_vars: files/casks.yml
+  tags:
+    - brew_cask
 
 - name: Update/Upgrade Homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
+  tags:
+    - brew_taps
+    - brew_formula
+    - brew_cask
 
 - name: Manage taps
   homebrew_tap: name={{ item.key }} state={{ item.value.state | default("present") }}
   with_dict: taps
+  tags:
+    - brew_taps
 
 - name: Manage formula
   homebrew: name={{ item.key }} install_options={{ item.value.options | default(omit) }} state={{ item.value.state | default("present") }}
   with_dict: formula
+  tags:
+    - brew_formula
 
 - name: Manage casks
   homebrew_cask: name={{ item.key }} state={{ item.value.state | default("present") }}
   with_dict: casks
   environment:
     HOMEBREW_CASK_OPTS: --appdir=/Applications
+  tags:
+    - brew_cask
