@@ -27,5 +27,6 @@
   register: osx_login_shell_installed
 
 - name: set default shell
-  shell: chsh -s {{ osx_login_shell }}
+  shell: chsh -s {{ osx_login_shell }} {{ ansible_user_id }}
   when: osx_login_shell_installed.stat.exists and current_login_shell.stdout != "{{ osx_login_shell }}" 
+  sudo: yes
