@@ -8,7 +8,7 @@ install:
 before_script:
   - rm ~/.bashrc
   - rm ~/.zshrc
-  - brew doctor
+  - brew doctor || true
 script:
   - ansible-playbook -i init/inventory --syntax-check --list-tasks init/dotfiles.yml
   - ansible-playbook -i init/inventory init/dotfiles.yml
@@ -18,7 +18,7 @@ script:
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
 after_script:
-  - brew doctor
+  - brew doctor || true
   - brew cleanup
   - brew cask cleanup
 
