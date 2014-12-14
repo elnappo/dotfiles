@@ -1,5 +1,5 @@
 ---
-- name: Playbook for installing elnappos dotfiles (https://github.com/elnappo/dotfiles)
+- name: Playbook to manage elnappos dotfiles (https://github.com/elnappo/dotfiles)
   hosts: localhost
   vars:
     osx_login_shell: /usr/local/bin/zsh
