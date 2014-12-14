@@ -1,5 +1,4 @@
 ---
-	
 - name: check if homebrew bash is installed
   stat: path=/usr/local/bin/bash
   register: brew_bash
