@@ -5,6 +5,9 @@ install:
   - brew update
   - brew install ansible
   - ansible --version
+before_script:
+  - rm ~/.bashrc
+  - rm ~/.zshrc
 script:
   - ansible-playbook -i init/inventory --syntax-check --list-tasks init/dotfiles.yml
   - ansible-playbook -i init/inventory init/dotfiles.yml
