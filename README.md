@@ -4,7 +4,7 @@ These are my dotfiles, have fun!
 add ~/.extra for your stuff
 
 ## Features
-* sync your homebrew taps, formulas and casks 
+* sync your homebrew taps, formulas and casks with `$ brewsync`
 
 ## Install
 ```bash
