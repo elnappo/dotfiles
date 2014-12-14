@@ -77,3 +77,4 @@
       when: osx_login_shell_installed.stat.exists and current_login_shell.stdout != "{{ osx_login_shell }}" 
 
     - include: tasks/homebrew.yml
+    - include: tasks/homebrew.yml tags=packages
