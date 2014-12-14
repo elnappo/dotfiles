@@ -1,19 +1,21 @@
 ---
-- hosts: localhost
+- name: Playbook for installing elnappos dotfiles (https://github.com/elnappo/dotfiles)
+  hosts: localhost
   vars:
-    osx_login_shell_shell: /usr/local/bin/zsh
+    osx_login_shell: /usr/local/bin/zsh
+    sudo_without_password: true
   connection: local
   tasks:
-    - name: add localdocker to /etc/hosts
+    - name: make sure dotfiles are present
+      git: repo=https://github.com/elnappo/dotfiles.git dest=~/.dotfiles
+
+    - name: allow sudo without password
+      lineinfile: 'dest=/etc/sudoers state=present line="{{ ansible_user_id }}	ALL= NOPASSWD: ALL" insertafter="^%admin\tALL=\(ALL\) ALL" validate="visudo -cf %s"'
+      sudo: yes
+      when: sudo_without_password
+
+    - name: add localdocker to /etc/hosts (for boot2docker)
       lineinfile: dest=/etc/hosts line="192.168.59.103 localdocker" state=present
-      sudo: yes
-
-    - name: add homwbrew bash to /etc/shells
-      lineinfile: dest=/etc/shells line="/usr/local/bin/bash" state=present
-      sudo: yes
-
-    - name: add homwbrew zsh to /etc/shells
-      lineinfile: dest=/etc/shells line="/usr/local/bin/zsh" state=present
       sudo: yes
 
     - name: create oh-my-zsh customization directory
@@ -31,36 +33,9 @@
     - name: install neobundle
       git: repo=https://github.com/Shougo/neobundle.vim dest=~/.dotfiles/vim/bundle/neobundle.vim update=yes
 
-    - name: make sure dotfiles are present
-      git: repo=https://github.com/elnappo/dotfiles.git dest=~/.dotfiles
-
-    - name: link bashrc
-      file: src=~/.dotfiles/bashrc dest=~/.bashrc state=link
-
-    - name: link zshrc
-      file: src=~/.dotfiles/zshrc dest=~/.zshrc state=link
-
-    - name: link wgetrc
-      file: src=~/.dotfiles/wgetrc dest=~/.wgetrc state=link
-
-    - name: link vimrc
-      file: src=~/.dotfiles/vimrc dest=~/.vimrc state=link
-
-    - name: link curlrc
-      file: src=~/.dotfiles/curlrc dest=~/.curlrc state=link
-
     - name: create ~/.virtualenvs
       file: dest=~/.virtualenvs state=directory
 
-    - name: check default user shell
-      shell: dscl . read ~ UserShell | awk '{print $2}'
-      sudo: no
-      register: current_login_shell
-      changed_when: false
-
-    - name: set default shell
-      shell: chsh -s {{ osx_login_shell_shell }}
-      sudo: no
-      when: current_login_shell.stdout != "{{ osx_login_shell_shell }}"
-
-    - include: tasks/homebrew.yml
+    - include: tasks/link_files.yml tags=links
+    - include: tasks/homebrew.yml tags=packages
+    - include: tasks/shells.yml tags=shells
