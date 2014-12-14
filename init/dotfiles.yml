@@ -1,12 +1,18 @@
 ---
-- name: Playbook for installing elnappo's dotfiles (https://github.com/elnappo/dotfiles)
+- name: Playbook for installing elnappos dotfiles (https://github.com/elnappo/dotfiles)
   hosts: localhost
   vars:
     osx_login_shell: /usr/local/bin/zsh
+    sudo_without_password: true
   connection: local
   tasks:
     - name: make sure dotfiles are present
       git: repo=https://github.com/elnappo/dotfiles.git dest=~/.dotfiles
+
+    - name: allow sudo without password
+      lineinfile: "dest=/etc/sudoers state=present line='user ALL= NOPASSWD: ALL' insertafter='^%admin ALL=(ALL) ALL$' validate='visudo -cf %s'"
+      sudo: yes
+      when: sudo_without_password
 
     - name: add localdocker to /etc/hosts (for boot2docker)
       lineinfile: dest=/etc/hosts line="192.168.59.103 localdocker" state=present
