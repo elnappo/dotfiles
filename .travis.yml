@@ -11,13 +11,12 @@ before_script:
   - brew doctor || true
 script:
   - ansible-playbook -i init/inventory --syntax-check --list-tasks init/dotfiles.yml
-  - ansible-playbook -i init/inventory init/dotfiles.yml --skip-tags "packages"
+  - ansible-playbook -i init/inventory init/dotfiles.yml --skip-tags "brew_cask"
   - >
-    ansible-playbook -i init/inventory init/dotfiles.yml --skip-tags "packages"
+    ansible-playbook -i init/inventory init/dotfiles.yml --skip-tags "brew_cask"
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
-  - source ~/.bashrc && { update; brewsync }
 after_script:
   - brew doctor || true
   - brew cleanup
