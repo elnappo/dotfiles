@@ -5,6 +5,7 @@ add ~/.extra for your stuff
 
 ## Features
 * sync your homebrew taps, formulas and casks with `$ brewsync`
+* update osx, brew and the dotfiles repository with `$ update`
 
 ## Install
 ```bash
