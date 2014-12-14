@@ -24,6 +24,6 @@ fi
 
 # run playbook
 echo "[i] Run Playbook"
-ansible-playbook -i inventory $HOME/.dotfiles/init/dotfiles.yml
+ansible-playbook -i inventory dotfiles.yml
 
 echo "[+] Done :)"
