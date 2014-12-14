@@ -12,24 +12,6 @@
       lineinfile: dest=/etc/hosts line="192.168.59.103 localdocker" state=present
       sudo: yes
 
-    - name: check if homebrew bash is installed
-      stat: path=/usr/local/bin/bash
-      register: brew_bash
-
-    - name: add homwbrew bash to /etc/shells
-      lineinfile: dest=/etc/shells line="/usr/local/bin/bash" state=present
-      when: brew_bash.stat.exists
-      sudo: yes
-
-    - name: check if homebrew zsh is installed
-      stat: path=/usr/local/bin/zsh
-      register: brew_zsh
-
-    - name: add homwbrew zsh to /etc/shells
-      lineinfile: dest=/etc/shells line="/usr/local/bin/zsh" state=present
-      when: brew_zsh.stat.exists
-      sudo: yes
-
     - name: create oh-my-zsh customization directory
       file: dest=~/.dotfiles/zsh_custom/plugins state=directory
 
@@ -45,36 +27,9 @@
     - name: install neobundle
       git: repo=https://github.com/Shougo/neobundle.vim dest=~/.dotfiles/vim/bundle/neobundle.vim update=yes
 
-    - name: link bashrc
-      file: src=~/.dotfiles/bashrc dest=~/.bashrc state=link
-
-    - name: link zshrc
-      file: src=~/.dotfiles/zshrc dest=~/.zshrc state=link
-
-    - name: link wgetrc
-      file: src=~/.dotfiles/wgetrc dest=~/.wgetrc state=link
-
-    - name: link vimrc
-      file: src=~/.dotfiles/vimrc dest=~/.vimrc state=link
-
-    - name: link curlrc
-      file: src=~/.dotfiles/curlrc dest=~/.curlrc state=link
-
     - name: create ~/.virtualenvs
       file: dest=~/.virtualenvs state=directory
 
-    - name: check default user shell
-      shell: dscl . read ~ UserShell | awk '{print $2}'
-      register: current_login_shell
-      changed_when: false
-
-    - name: check if preferred osx_login_shell is installed
-      stat: path={{ osx_login_shell }}
-      register: osx_login_shell_installed
-
-    - name: set default shell
-      shell: chsh -s {{ osx_login_shell }}
-      when: osx_login_shell_installed.stat.exists and current_login_shell.stdout != "{{ osx_login_shell }}" 
-
-    - include: tasks/homebrew.yml
+    - include: tasks/link_files.yml tags=links
     - include: tasks/homebrew.yml tags=packages
+    - include: tasks/shells.yml tags=shells
