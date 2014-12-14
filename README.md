@@ -6,6 +6,8 @@ add ~/.extra for your stuff
 ## Features
 * sync your homebrew taps, formulas and casks with `$ brewsync`
 * update osx, brew and the dotfiles repository with `$ update`
+* set some osx defaults
+* configuration is mainly handled by ansible (Playbook: ~/.dotfiles/init/dotfiles.yml)
 
 ## Install
 ```bash
