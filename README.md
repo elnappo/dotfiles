@@ -1,4 +1,5 @@
-# elnappo’s dotfiles
+# elnappo’s dotfiles [![Build Status](https://travis-ci.org/elnappo/dotfiles.svg?branch=master)](https://travis-ci.org/elnappo/dotfiles)
+
 These are my dotfiles, have fun!
 
 add ~/.extra for your stuff
