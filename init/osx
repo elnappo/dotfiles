@@ -28,17 +28,17 @@ sudo nvram SystemAudioVolume=" "
 #defaults write com.apple.universalaccess reduceTransparency -bool true
 
 # Menu bar: hide the Time Machine, Volume, and User icons
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-	defaults write "${domain}" dontAutoLoad -array \
+#for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+#	defaults write "${domain}" dontAutoLoad -array \
 #		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-		"/System/Library/CoreServices/Menu Extras/Volume.menu" \
-		"/System/Library/CoreServices/Menu Extras/User.menu"
-done
-defaults write com.apple.systemuiserver menuExtras -array \
-	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
-	"/System/Library/CoreServices/Menu Extras/Clock.menu"
+#		"/System/Library/CoreServices/Menu Extras/Volume.menu" \
+#		"/System/Library/CoreServices/Menu Extras/User.menu"
+#done
+#defaults write com.apple.systemuiserver menuExtras -array \
+#	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+#	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+#	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
+#	"/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 # Set highlight color to green
 #defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
@@ -384,7 +384,7 @@ defaults write com.apple.dock expose-group-by-app -bool false
 defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
+#defaults write com.apple.dock mru-spaces -bool false
 
 # Remove the auto-hiding Dock delay
 #defaults write com.apple.dock autohide-delay -float 0
@@ -659,8 +659,8 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 ###############################################################################
 
 # Allow installing user scripts via GitHub Gist or Userscripts.org
-defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
-defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
+#defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
+#defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
 
 # Disable the all too sensitive backswipe
 #defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
