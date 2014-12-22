@@ -13,3 +13,6 @@
 
 - name: link curlrc
   file: src=~/.dotfiles/curlrc dest=~/.curlrc state=link
+
+- name: link curlrc
+  file: src=~/.dotfiles/gitignore_global dest=~/.gitignore_global state=link
