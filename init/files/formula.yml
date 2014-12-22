@@ -46,3 +46,4 @@ formula:
   boot2docker:
   fig:
   httpie:
+  ruby:

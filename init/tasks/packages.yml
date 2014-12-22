@@ -1,18 +1,23 @@
 ---
-- name: Include taps list
+- name: Include brew taps list
   include_vars: files/taps.yml
   tags:
     - brew_taps
 
-- name: Include formula list
+- name: Include brew formula list
   include_vars: files/formula.yml
   tags:
     - brew_formula
 
-- name: Include casks list
+- name: Include brew casks list
   include_vars: files/casks.yml
   tags:
     - brew_cask
+
+- name: Include gems list
+  include_vars: files/gems.yml
+  tags:
+    - gem
 
 - name: Update/Upgrade Homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
@@ -40,3 +45,9 @@
     HOMEBREW_CASK_OPTS: --appdir=/Applications
   tags:
     - brew_cask
+
+- name: Manage gems
+  gem: name={{ item.key }} state={{ item.value.state | default("latest") }}
+  with_dict: gems
+  tags:
+    - gem

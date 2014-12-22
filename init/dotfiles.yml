@@ -10,7 +10,7 @@
       git: repo=https://github.com/elnappo/dotfiles.git dest=~/.dotfiles
 
     - name: allow sudo without password
-      lineinfile: 'dest=/etc/sudoers state=present line="{{ ansible_user_id }}	ALL= NOPASSWD: ALL" insertafter="^%admin\tALL=\(ALL\) ALL" validate="visudo -cf %s"'
+      lineinfile: 'dest=/etc/sudoers state=present line="{{ ansible_user_id }}	ALL=NOPASSWD: ALL" insertafter="^%admin\tALL=\(ALL\) ALL" validate="visudo -cf %s"'
       sudo: yes
       when: sudo_without_password
 
@@ -37,5 +37,5 @@
       file: dest=~/.virtualenvs state=directory
 
     - include: tasks/link_files.yml tags=links
-    - include: tasks/homebrew.yml tags=packages
+    - include: tasks/packages.yml tags=packages
     - include: tasks/shells.yml tags=shells
