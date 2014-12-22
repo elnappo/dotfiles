@@ -7,12 +7,33 @@ add ~/.extra for your stuff
 ## Features
 * sync your homebrew taps, formulas and casks with `$ brewsync`
 * update osx, brew and the dotfiles repository with `$ update`
+* update your settings (dotfiles) with `$ dotfiles`
 * set some osx defaults
 * configuration is mainly handled by ansible (Playbook: ~/.dotfiles/init/dotfiles.yml)
 
-## Install
+## Install (for me)
 ```bash
 $ git clone https://github.com/elnappo/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles/init
+$ ./setup.sh
+```
+
+## Install (for you)
+* Fork this repository
+* Edit at least the following files (better take a look at all files):
+
+```
+├── init
+│   ├── files
+│   │   ├── casks.yml
+│   │   ├── formula.yml
+│   │   ├── gems.yml
+│   │   └── taps.yml
+│   ├── osx
+```
+
+```bash
+$ git clone https://github.com/<YOURNAME>/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles/init
 $ ./setup.sh
 ```
