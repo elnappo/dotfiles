@@ -24,6 +24,7 @@ fi
 
 # run playbook
 echo "[i] Run Playbook"
-ansible-playbook -i inventory dotfiles.yml
+ansible-playbook -i inventory dotfiles.yml -ask-sudo-pass
 
+echo "[i] From now on you can use $ dotfiles to manage your dotfiles"
 echo "[+] Done :)"

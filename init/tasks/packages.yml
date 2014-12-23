@@ -19,6 +19,11 @@
   tags:
     - gem
 
+- name: Include python package list
+  include_vars: files/pip.yml
+  tags:
+    - pip
+
 - name: Update/Upgrade Homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
   tags:
@@ -51,3 +56,9 @@
   with_dict: gems
   tags:
     - gem
+
+- name: Manage python packages
+  pip: name={{ item.key }} state={{ item.value.state | default("latest") }} executable={{ item.value.executable | default("pip3") }}
+  with_dict: pip
+  tags:
+    - pip

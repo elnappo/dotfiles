@@ -1,0 +1,9 @@
+---
+pip:
+  Fabric:
+    executable: pip2
+  Django:
+  virtualenvwrapper:
+  Jinja2:
+  flake8:
+  requests:
