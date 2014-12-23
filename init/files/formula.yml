@@ -7,6 +7,8 @@ formula:
     options: with-keychain-support,with-ldns
   vim:
     options: override-system-vi,with-lua,with-luajit
+  john:
+    options: with-libssh,with-libidn
   openssl:
   zsh:
   coreutils:
@@ -48,3 +50,4 @@ formula:
   httpie:
   ruby:
   nikto:
+  hydra:
