@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 
 # Set name of the theme to load.
 ZSH_THEME="bira"
@@ -8,13 +8,19 @@ ZSH_THEME="bira"
 plugins=(git git-extra python django copydir brew osx pip web-search colored-man docker brew-cask k alias-tips)
 
 # Set oh-my-zsh customization directory
-if [[ ! -f $HOME/.dotfiles/zsh_custom ]]; then
-	ZSH_CUSTOM=$HOME/.dotfiles/zsh_custom
+if [[ ! -f $HOME/.dotfiles/zsh/zsh_custom ]]; then
+	ZSH_CUSTOM=$HOME/.dotfiles/zsh/zsh_custom
 fi
 
 source $ZSH/oh-my-zsh.sh
 
-setopt No_HIST_VERIFY
+HISTFILE=~/.dotfiles/zsh/zsh_history
+
+setopt NO_HIST_VERIFY
+setopt APPEND_HISTORY # adds history
+setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
+setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
+setopt HIST_REDUCE_BLANKS
 
 source $HOME/.dotfiles/shellrc
 

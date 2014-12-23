@@ -4,7 +4,8 @@ then
 	source $HOME/.extra
 fi
 source $HOME/.dotfiles/aliases
-export EDITOR='vim'
+export EDITOR=vim
+export VISUAL=vim
 
 # homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
