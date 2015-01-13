@@ -18,6 +18,9 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export WORKON_HOME=$HOME/.virtualenvs
 #source /Library/Frameworks/Python.framework/Versions/3.3/bin/virtualenvwrapper.sh
 
+# colorize these commands if possible with grc
+source "`brew --prefix`/etc/grc.bashrc"
+
 # boot2docker
 export DOCKER_TLS_VERIFY=1
 export DOCKER_HOST=tcp://192.168.59.103:2376
