@@ -1,3 +1,5 @@
 ---
 gems:
   git-up:
+  jekyll
+  github-pages:
