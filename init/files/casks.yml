@@ -25,6 +25,7 @@ casks:
   quicklook-csv:
   betterzipql:
   webpquicklook:
+  suspicious-package:
   ipaql:
   qlprettypatch:
   qlrest:
