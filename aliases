@@ -64,3 +64,5 @@ alias dotfiles="ansible-playbook -i $HOME/.dotfiles/init/inventory $HOME/.dotfil
 alias axel="axel -an 10"
 alias play="ansible-playbook"
 alias tree="tree -C"
+alias ssh_ignore="ssh -F /dev/null"
+
