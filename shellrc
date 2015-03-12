@@ -21,9 +21,9 @@ export WORKON_HOME=$HOME/.virtualenvs
 # colorize these commands if possible with grc
 source "`brew --prefix`/etc/grc.bashrc"
 
-# boot2docker
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
+# docker-machine
+export DOCKER_TLS_VERIFY=yes
+export DOCKER_CERT_PATH=$HOME/.docker/machine/machines/dev
+export DOCKER_HOST=tcp://192.168.99.100:2376
 
 /usr/local/bin/archey -c
