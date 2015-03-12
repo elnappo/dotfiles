@@ -45,7 +45,6 @@ formula:
   peco:
   ansible:
   docker:
-  boot2docker:
   fig:
   httpie:
   ruby:
