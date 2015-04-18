@@ -50,3 +50,6 @@ formula:
   nikto:
   hydra:
   grc:
+  masscan:
+  smartmontools:
+  
