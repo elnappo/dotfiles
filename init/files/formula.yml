@@ -45,6 +45,7 @@ formula:
   peco:
   ansible:
   docker:
+  docker-machine:
   httpie:
   ruby:
   nikto:
