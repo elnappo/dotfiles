@@ -1,26 +1,26 @@
 ---
 - name: Include brew taps list
-  include_vars: files/taps.yml
+  include_vars: vars/taps.yml
   tags:
     - brew_taps
 
 - name: Include brew formula list
-  include_vars: files/formula.yml
+  include_vars: vars/formula.yml
   tags:
     - brew_formula
 
 - name: Include brew casks list
-  include_vars: files/casks.yml
+  include_vars: vars/casks.yml
   tags:
     - brew_cask
 
 - name: Include gems list
-  include_vars: files/gems.yml
+  include_vars: vars/gems.yml
   tags:
     - gem
 
 - name: Include python package list
-  include_vars: files/pip.yml
+  include_vars: vars/pip.yml
   tags:
     - pip
 
