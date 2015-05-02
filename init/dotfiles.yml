@@ -15,24 +15,6 @@
       sudo: yes
       when: sudo_without_password
 
-    - name: remove localdocker from /etc/hosts (boot2docker replaced by docker-machine)
-      lineinfile: dest=/etc/hosts line="192.168.59.103 localdocker" state=absent
-      sudo: yes
-
-    - name: add localdocker to /etc/hosts (for docker-machine)
-      lineinfile: dest=/etc/hosts line="192.168.99.100 localdocker" state=present
-      sudo: yes
-
-    - name: check if docker-machine vm is allready created
-      command: docker-machine inspect dev
-      ignore_errors: True
-      changed_when: False
-      register: docker_machine_inspect
-
-    - name: create docker-machine vm
-      command: "docker-machine create --driver virtualbox --virtualbox-memory {{docker_machine_memory}} dev"
-      when: docker_machine_inspect|failed
-
     - name: install oh-my-zsh
       git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.dotfiles/zsh/oh-my-zsh update=yes
 
@@ -51,3 +33,10 @@
     - include: tasks/link_files.yml tags=links
     - include: tasks/packages.yml tags=packages
     - include: tasks/shells.yml tags=shells
+
+    - name: check if docker-machine is installed
+      stat: path=/usr/local/bin/docker-machine
+      register: docker_machine_stat
+
+    - include: tasks/docker.yml
+      when: docker_machine_stat.stat.exists
