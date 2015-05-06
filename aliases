@@ -65,4 +65,5 @@ alias axel="axel -an 10"
 alias play="ansible-playbook"
 alias tree="tree -C"
 alias ssh_ignore="ssh -F /dev/null"
+alias ccat="pygmentize -g"
 
