@@ -11,7 +11,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+# Color output
 alias grep='grep --color=auto'
+alias tree="tree -C"
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update && brew upgrade --all; brew cleanup; brew cask cleanup; git -C ~/.dotfiles pull'
@@ -52,20 +54,30 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Copy my public key to the pasteboard
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'"
 
-# Some more stuff
-alias starwars="telnet towel.blinkenlights.nl"
+# Ping some hosts
 alias p8="ping 8.8.8.8"
 alias pg="ping google.de"
+
+# Generate some save passwords
 alias pwgen="pwgen --capitalize --numerals --symbols --secure --ambiguous 14"
-alias b2d="boot2docker"
+
+# Wifi stuff
+alias wifipass="security find-generic-password -g -D \"AirPort network password\" -w -a"
+alias wifipow="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s"
+
+# Multiple connections download
+alias axel="axel -an 10"
+
+# Syntax highlighting cat
+alias ccat="pygmentize -g"
+
+# Ignore ssh config
+alias ssh_ignore="ssh -F /dev/null"
+
+# Some more stuff
+alias starwars="telnet towel.blinkenlights.nl"
 alias ubuntu="docker run -t -i ubuntu /bin/bash"
 alias brewsync="ansible-playbook -i $HOME/.dotfiles/init/inventory $HOME/.dotfiles/init/dotfiles.yml --tags packages"
 alias dotfiles="ansible-playbook -i $HOME/.dotfiles/init/inventory $HOME/.dotfiles/init/dotfiles.yml"
-alias axel="axel -an 10"
 alias play="ansible-playbook"
-alias tree="tree -C"
-alias ssh_ignore="ssh -F /dev/null"
-alias ccat="pygmentize -g"
 alias s="subl"
-alias wifipass="security find-generic-password -g -D \"AirPort network password\" -w -a"
-alias wifipow="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s"
