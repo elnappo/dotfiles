@@ -1,6 +1,4 @@
 ---
 gems:
-  git-up:
-    state: absent
   jekyll:
   github-pages:
