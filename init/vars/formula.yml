@@ -54,3 +54,5 @@ formula:
   masscan:
   smartmontools:
   sshfs:
+  mtr:
+  ncdu:
