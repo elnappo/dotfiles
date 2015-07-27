@@ -24,12 +24,16 @@ $ ./setup.sh
 
 ```
 ├── init
-│   ├── files
-│   │   ├── casks.yml
-│   │   ├── formula.yml
-│   │   ├── gems.yml
-│   │   └── taps.yml
+│   ├── dotfiles.yml
 │   ├── osx
+│   ├── tasks
+│   │   ├── osx_defaults.yml
+│   └── vars
+│       ├── casks.yml
+│       ├── formula.yml
+│       ├── gems.yml
+│       ├── pip.yml
+│       └── taps.yml
 ```
 
 ```bash
@@ -55,3 +59,4 @@ $ ./setup.sh
 * https://github.com/necolas/dotfiles
 * https://github.com/monstermunchkin/dotfiles
 * https://bitbucket.org/keimlink/dotfiles
+* https://gist.github.com/brandonb927/3195465
