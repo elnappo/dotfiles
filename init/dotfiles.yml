@@ -52,3 +52,26 @@
       when: docker_machine_stat.stat.exists
       tags:
         - docker
+
+    - include: tasks/osx_defaults.yml
+      tags:
+        - osx_defaults
+
+  handlers:
+    - name: kill Dock
+      command: killall Dock
+
+    - name: kill Finder
+      command: killall Finder
+
+    - name: kill Transmission
+      command: killall Transmission 
+      ignore_errors: yes
+
+    - name: kill Safari
+      command: killall Safari 
+      ignore_errors: yes
+
+    - name: kill Terminal
+      command: killall Terminal 
+      ignore_errors: yes

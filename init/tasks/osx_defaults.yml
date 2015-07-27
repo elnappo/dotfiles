@@ -1,0 +1,197 @@
+---
+- name: Set Transmission settings
+  osx_defaults: domain=org.m0k.transmission key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  with_items:
+    # Don’t prompt for confirmation before downloading
+    - { key: "DownloadAsk", type: "bool", value: "false" }
+    # Trash original torrent files
+    - { key: "DeleteOriginalTorrent", type: "bool", value: "true" }
+    # Hide the donate message
+    - { key: "WarningDonate", type: "bool", value: "false" }
+    # Hide the legal disclaimer
+    - { key: "WarningLegal", type: "bool", value: "false" }
+    - { key: "EncryptionRequire", type: "bool", value: "true" }
+    # Setting up the best block list
+    - { key: "BlocklistAutoUpdate", type: "bool", value: "true" }
+    - { key: "BlocklistNew", type: "bool", value: "true" }
+    - { key: "BlocklistURL", type: "string", value: "http://john.bitsurge.net/public/biglist.p2p.gz" }
+    # Auto-resizing the window to fit transfers
+    - { key: "AutoSize", type: "bool", value: "true" }
+  notify:
+    - kill Transmission
+
+- name: Set Finder settings
+  osx_defaults: domain=com.apple.finder key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  with_items:
+    - { key: "NewWindowTarget", type: "string", value: "PfLo" }
+    - { key: "NewWindowTargetPath", type: "string", value: "file://{{ ansible_env.HOME }}/" }
+    # Show icons for hard drives, servers, and removable media on the desktop
+    - { key: "ShowExternalHardDrivesOnDesktop", type: "bool", value: "true" }
+    - { key: "ShowHardDrivesOnDesktop", type: "bool", value: "true" }
+    - { key: "ShowMountedServersOnDesktop", type: "bool", value: "true" }
+    - { key: "ShowRemovableMediaOnDesktop", type: "bool", value: "true" }
+    # Show status bar
+    - { key: "ShowStatusBar", type: "bool", value: "true" }
+    # Show path bar
+    - { key: "ShowPathbar", type: "bool", value: "true" }
+    # Allow text selection in Quick Look
+    - { key: "QLEnableTextSelection", type: "bool", value: "true" }
+    # Display full POSIX path as Finder window title
+    - { key: "_FXShowPosixPathInTitle", type: "bool", value: "true" }
+    # When performing a search, search the current folder by default
+    - { key: "FXDefaultSearchScope", type: "string", value: "SCcf" }
+    # Disable the warning when changing a file extension
+    - { key: "FXEnableExtensionChangeWarning", type: "bool", value: "false" }
+    # Automatically open a new Finder window when a volume is mounted
+    - { key: "OpenWindowForNewRemovableDisk", type: "bool", value: "true" }
+    # Use list view in all Finder windows by default
+    # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+    - { key: "FXPreferredViewStyle", type: "string", value: "Nlsv" }
+    # Disable the warning before emptying the Trash
+    - { key: "WarnOnEmptyTrash", type: "bool", value: "false" }
+    # Empty Trash securely by default
+    - { key: "EmptyTrashSecurely", type: "bool", value: "true" }
+  notify:
+    - kill Finder
+
+- name: Set Dock settings
+  osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  with_items:
+    # Enable highlight hover effect for the grid view of a stack (Dock)
+    - { key: "mouse-over-hilite-stack", type: "bool", value: "true" }
+    # Set the icon size of Dock items to 36 pixels
+    - { key: "tilesize", type: "float", value: "40" }
+    # Show indicator lights for open applications in the Dock
+    - { key: "show-process-indicators", type: "bool", value: "true" }
+    # Speed up Mission Control animations
+    - { key: "expose-animation-duration", type: "float", value: "0.1" }
+    # Don’t show Dashboard as a Space
+    - { key: "dashboard-in-overlay", type: "bool", value: "false" }
+  notify:
+    - kill Dock
+
+- name: Set Safari settings
+  osx_defaults: domain=com.apple.Safari key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  with_items:
+    # Show the full URL in the address bar (note: this still hides the scheme)
+    - { key: "ShowFullURLInSmartSearchField", type: "bool", value: "true" }
+    # Prevent Safari from opening ‘safe’ files automatically after downloading
+    - { key: "AutoOpenSafeDownloads", type: "bool", value: "false" }
+    # Allow hitting the Backspace key to go to the previous page in history
+    - { key: "com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled", type: "bool", value: "true" }
+    # Enable Safari’s debug menu
+    - { key: "IncludeInternalDebugMenu", type: "bool", value: "true" }
+    # Enable the Develop menu and the Web Inspector in Safari
+    - { key: "IncludeDevelopMenu", type: "bool", value: "true" }
+    - { key: "WebKitDeveloperExtrasEnabledPreferenceKey", type: "bool", value: "true" }
+    - { key: "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled", type: "bool", value: "true" }
+  notify:
+    - kill Safari
+
+- name: Set Terminal settings
+  osx_defaults: domain=com.apple.Terminal key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  with_items:
+    - { key: "SecureKeyboardEntry", type: "bool", value: "true" }
+    - { key: "StringEncodings", type: "array", value: ["4"] }
+  notify:
+    - kill Terminal
+
+- name: Set global settings
+  osx_defaults: domain=NSGlobalDomain key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  with_items:
+    # Set sidebar icon size to small
+    - { key: "NSTableViewDefaultSizeMode", type: "int", value: "1" }
+    # Expand save panel by default
+    - { key: "NSNavPanelExpandedStateForSaveMode", type: "bool", value: "true" }
+    - { key: "NSNavPanelExpandedStateForSaveMode2", type: "bool", value: "true" }
+    # Expand print panel by default
+    - { key: "PMPrintingExpandedStateForPrint", type: "bool", value: "true" }
+    - { key: "PMPrintingExpandedStateForPrint2", type: "bool", value: "false" }
+    # Save to disk (not to iCloud) by default
+    - { key: "NSDocumentSaveNewDocumentsToCloud", type: "bool", value: "true" }
+    # Display ASCII control characters using caret notation in standard text views
+    # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
+    - { key: "NSTextShowsControlCharacters", type: "bool", value: "true" }
+    # Disable smart quotes as they’re annoying when typing code
+    - { key: "NSAutomaticQuoteSubstitutionEnabled", type: "bool", value: "false" }
+    # Disable smart dashes as they’re annoying when typing code
+    - { key: "NSAutomaticDashSubstitutionEnabled", type: "bool", value: "false" }
+    # Disable “natural” (Lion-style) scrolling
+    - { key: "AppleKeyboardUIMode", type: "int", value: "3" }
+    # Disable press-and-hold for keys in favor of key repeat
+    - { key: "ApplePressAndHoldEnabled", type: "bool", value: "false" }
+    # Set a blazingly fast keyboard repeat rate
+    - { key: "KeyRepeat", type: "int", value: "2" }
+    - { key: "InitialKeyRepeat", type: "int", value: "20" }
+    # Enable subpixel font rendering on non-Apple LCDs
+    - { key: "AppleFontSmoothing", type: "int", value: "2" }
+    # Finder: show all filename extensions
+    - { key: "AppleShowAllExtensions", type: "bool", value: "true" }
+    # Enable spring loading for directories
+    - { key: "com.apple.springing.enabled", type: "bool", value: "true" }
+    # Remove the spring loading delay for directories
+    - { key: "com.apple.springing.delay", type: "float", value: "0" }
+    # Add a context menu item for showing the Web Inspector in web views
+    - { key: "WebKitDeveloperExtras", type: "bool", value: "true" }
+    # Trackpad: enable tap to click for this user and for the login screen
+    - { key: "com.apple.mouse.tapBehavior", type: "int", value: "1" }
+
+- name: Set some other settings
+  osx_defaults: domain={{ item.domain }} key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  with_items:
+    # Enable the WebKit Developer Tools in the Mac App Store
+    - { domain: "com.apple.appstore", key: "WebKitDeveloperExtras", type: "bool", value: "true" }
+    # Enable Debug Menu in the Mac App Store
+    - { domain: "com.apple.appstore", key: "ShowDebugMenu", type: "bool", value: "true" }
+    - { domain: "~/Library/Preferences/org.gpgtools.gpgmail", key: "SignNewEmailsByDefault", type: "bool", value: "false" }
+    # Use plain text mode for new TextEdit documents
+    - { domain: "com.apple.TextEdit", key: "RichText", type: "int", value: "0" }
+    #defaults write com.apple.TextEdit PlainTextEncoding -int 4
+    - { domain: "com.apple.TextEdit", key: "PlainTextEncoding", type: "int", value: "4" }
+    #defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+    - { domain: "com.apple.TextEdit", key: "PlainTextEncodingForWrite", type: "int", value: "4" }
+    # Enable the debug menu in Disk Utility
+    - { domain: "com.apple.DiskUtility", key: "DUDebugMenuEnabled", type: "bool", value: "true" }
+    - { domain: "com.apple.DiskUtility", key: "image", type: "bool", value: "true" }
+    # Show the main window when launching Activity Monitor
+    - { domain: "com.apple.ActivityMonitor", key: "OpenMainWindow", type: "bool", value: "true" }
+    # Visualize CPU usage in the Activity Monitor Dock icon
+    - { domain: "com.apple.ActivityMonitor", key: "IconType", type: "int", value: "5" }
+    # Show all processes in Activity Monitor
+    - { domain: "com.apple.ActivityMonitor", key: "ShowCategory", type: "int", value: "0" }
+    # Sort Activity Monitor results by CPU usage
+    - { domain: "com.apple.ActivityMonitor", key: "SortColumn", type: "string", value: "CPUUsage" }
+    - { domain: "com.apple.ActivityMonitor", key: "SortDirection", type: "int", value: "0" }
+    # Prevent Time Machine from prompting to use new hard drives as backup volume
+    - { domain: "com.apple.TimeMachine", key: "DoNotOfferNewDisksForBackup", type: "bool", value: "true" }
+    # Automatically quit printer app once the print jobs complete
+    - { domain: "com.apple.print.PrintingPrefs", key: "Quit When Finished", type: "bool", value: "true" }
+    # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
+    - { domain: "com.apple.mail", key: "AddressesIncludeNameOnPasteboard", type: "bool", value: "false" }
+    # Enable AirDrop over Ethernet and on unsupported Macs running Lion
+    - { domain: "com.apple.NetworkBrowser", key: "BrowseAllInterfaces", type: "bool", value: "true" }
+    # Automatically open a new Finder window when a volume is mounted
+    - { domain: "com.apple.frameworks.diskimages", key: "auto-open-ro-root", type: "bool", value: "true" }
+    - { domain: "com.apple.frameworks.diskimages", key: "auto-open-rw-root", type: "bool", value: "true" }
+    # Avoid creating .DS_Store files on network volumes
+    - { domain: "com.apple.desktopservices", key: "DSDontWriteNetworkStores", type: "bool", value: "true" }
+    # Save screenshots to the desktop
+    - { domain: "com.apple.screencapture", key: "location", type: "string", value: "{{ ansible_env.HOME }}/Desktop" }
+    # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+    - { domain: "com.apple.screencapture", key: "type", type: "string", value: "png" }
+    # Disable shadow in screenshots
+    - { domain: "com.apple.screencapture", key: "disable-shadow", type: "bool", value: "true" }
+    # Increase sound quality for Bluetooth headphones/headsets
+    - { domain: "com.apple.BluetoothAudioAgent", key: "Apple Bitpool Min (editable)", type: "int", value: "40" }
+    # Trackpad: enable tap to click for this user and for the login screen
+    - { domain: "com.apple.driver.AppleBluetoothMultitouch.trackpad", key: "Clicking", type: "bool", value: "true" }
+    # Check for software updates daily, not just once per week
+    - { domain: "com.apple.SoftwareUpdate", key: "ScheduleFrequency", type: "int", value: "1" }
+    # Set Help Viewer windows to non-floating mode
+    - { domain: "com.apple.helpviewer", key: "DevMode", type: "bool", value: "true" }
+
+- name: Bottom left screen corner sleep screen
+  osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  with_items:
+    - { key: "wvous-bl-corner", type: "int", value: "10" }
+    - { key: "wvous-bl-modifier", type: "int", value: "0" }
