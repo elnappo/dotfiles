@@ -30,13 +30,25 @@
     - name: create ~/.virtualenvs
       file: dest=~/.virtualenvs state=directory
 
-    - include: tasks/link_files.yml tags=links
-    - include: tasks/packages.yml tags=packages
-    - include: tasks/shells.yml tags=shells
+    - include: tasks/link_files.yml
+      tags:
+        - links
+
+    - include: tasks/packages.yml
+      tags:
+        - packages
+
+    - include: tasks/shells.yml
+      tags:
+        - shells
 
     - name: check if docker-machine is installed
       stat: path=/usr/local/bin/docker-machine
       register: docker_machine_stat
+      tags:
+        - always
 
     - include: tasks/docker.yml
       when: docker_machine_stat.stat.exists
+      tags:
+        - docker
