@@ -58,7 +58,7 @@
     - gem
 
 - name: Manage python packages
-  pip: name={{ item.key }} state={{ item.value.state | default("latest") }} executable={{ item.value.executable | default("pip3") }}
+  pip: name={{ item.key }} state={{ item.value.state | default("latest") }} executable={{ item.value.executable | default("/usr/local/bin/pip3") }}
   with_dict: pip
   tags:
     - pip
