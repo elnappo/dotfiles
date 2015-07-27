@@ -21,6 +21,7 @@ NeoBundleCheck
 filetype plugin indent on " Enhance command-line completion
 
 syntax enable " Enable syntax highlighting
+let g:neocomplcache_temporary_dir = '~/.dotfiles/vim/tmp/'
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
