@@ -3,7 +3,7 @@ language:
   - objective-c
 install:
   - brew update
-  - brew install ansible
+  - brew install ansible --HEAD
   - ansible --version
 before_script:
   - rm ~/.bashrc
