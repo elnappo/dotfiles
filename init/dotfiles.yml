@@ -5,6 +5,7 @@
     osx_login_shell: /usr/local/bin/zsh
     sudo_without_password: true
     docker_machine_memory: 4096
+    login_window_text: Enter any 11-digit prime number to continue.
   connection: local
   tasks:
     - name: make sure dotfiles are present

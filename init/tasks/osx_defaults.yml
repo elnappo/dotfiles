@@ -189,6 +189,14 @@
     - { domain: "com.apple.SoftwareUpdate", key: "ScheduleFrequency", type: "int", value: "1" }
     # Set Help Viewer windows to non-floating mode
     - { domain: "com.apple.helpviewer", key: "DevMode", type: "bool", value: "true" }
+    # Set LoginwindowText
+    - { domain: "/Library/Preferences/com.apple.loginwindow", key: "LoginwindowText", type: "string", value: "{{ login_window_text }}" }
+    # Make sure there is no password hint set.
+    - { domain: "/Library/Preferences/com.apple.loginwindow", key: "RetriesUntilHint", type: "int", value: 0 }
+    # Disable IR remote control
+    - { domain: "/Library/Preferences/com.apple.driver.AppleIRController", key: "DeviceEnabled", type: "bool", value: "false" }
+    # Enable Firewall. 0 = off, 1 = specific services, 2 = essential services
+    - { domain: "/Library/Preferences/com.apple.alf", key: "globalstate", type: "int", value: "2" }
 
 - name: Bottom left screen corner sleep screen
   osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}

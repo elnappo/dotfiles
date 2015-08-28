@@ -24,6 +24,15 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+# Disable Restart automatically after power failure
+sudo pmset -a autorestart 0
+
+# Disable Wake for Ethernet network administrator access
+sudo pmset -a womp 0
+
+# Destroy File Vault Key when going to standby mode
+sudo pmset -a destroyfvkeyonstandby 1
+
 # Disable transparency in the menu bar and elsewhere on Yosemite
 #defaults write com.apple.universalaccess reduceTransparency -bool true
 
