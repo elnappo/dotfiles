@@ -24,3 +24,5 @@ setopt HIST_REDUCE_BLANKS
 
 source $HOME/.dotfiles/shellrc
 
+# Load iTerm 2 shell integration
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
