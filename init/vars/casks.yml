@@ -3,10 +3,8 @@ casks:
   dropbox:
   google-chrome:
   firefox:
-  opera:
   torbrowser:
   iterm2:
-  textmate:
   transmission:
   vlc:
   plex-home-theater:
@@ -15,7 +13,6 @@ casks:
   unrarx:
   steam:
   sourcetree:
-  mysqlworkbench:
   ios7-screensaver:
   wireshark:
   qlstephen:
@@ -31,11 +28,10 @@ casks:
   qlrest:
   teamspeak-client:
   xquartz:
-  pycharm:
+  pycharm-bundled-jdk:
   bittorrent-sync:
   launchrocket:
   macdown:
-  namebench:
   virtualbox:
   the-unarchiver:
   vmware-fusion:
@@ -43,7 +39,6 @@ casks:
   vagrant-manager:
   shiftit:
   gpgtools:
-  java6:
   macpass:
   sublime-text3:
   quassel-client:
