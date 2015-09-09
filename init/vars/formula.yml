@@ -9,6 +9,8 @@ formula:
     options: override-system-vi,with-lua,with-luajit
   john:
     options: with-libssh,with-libidn
+  hydra:
+    options: with-libssh,with-libidn
   openssl:
   zsh:
   coreutils:
@@ -25,7 +27,6 @@ formula:
   p7zip:
   ssh-copy-id:
   cowsay:
-  sl:
   nmap:
   htop-osx:
   unp:
@@ -49,9 +50,9 @@ formula:
   httpie:
   ruby:
   nikto:
-  hydra:
   grc:
   masscan:
   smartmontools:
   mtr:
   ncdu:
+  tmux:
