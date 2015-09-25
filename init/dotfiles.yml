@@ -24,6 +24,9 @@
     - name: install oh-my-zsh
       git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.dotfiles/zsh/oh-my-zsh update=yes
 
+    - name: install Tmux Plugin Manager
+      git: repo=https://github.com/tmux-plugins/tpm.git dest=~/.dotfiles/tmux/plugins/tpm update=yes
+
     - name: install alias-tips
       git: repo=https://github.com/djui/alias-tips.git dest=~/.dotfiles/zsh/zsh_custom/plugins/alias-tips update=yes
 

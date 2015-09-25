@@ -1,18 +1,11 @@
 ---
-- name: link bashrc
-  file: src=~/.dotfiles/bashrc dest=~/.bashrc state=link
-
-- name: link zshrc
-  file: src=~/.dotfiles/zshrc dest=~/.zshrc state=link
-
-- name: link wgetrc
-  file: src=~/.dotfiles/wgetrc dest=~/.wgetrc state=link
-
-- name: link vimrc
-  file: src=~/.dotfiles/vimrc dest=~/.vimrc state=link
-
-- name: link curlrc
-  file: src=~/.dotfiles/curlrc dest=~/.curlrc state=link
-
-- name: link gitignore_global
-  file: src=~/.dotfiles/gitignore_global dest=~/.gitignore_global state=link
+- name: link dotfiles
+  file: src={{ item.src }} dest={{ item.dest }} state=link
+  with_items:
+    - { src: "~/.dotfiles/bashrc", dest: "~/.bashrc "}
+    - { src: "~/.dotfiles/zshrc", dest: "~/.zshrc"}
+    - { src: "~/.dotfiles/wgetrc", dest: "~/.wgetrc"}
+    - { src: "~/.dotfiles/vimrc", dest: "~/.vimrc"}
+    - { src: "~/.dotfiles/curlrc", dest: "~/.curlrc"}
+    - { src: "~/.dotfiles/gitignore_global", dest: "~/.gitignore_global"}
+    - { src: "~/.dotfiles/tmux.conf", dest: "~/.tmux.conf"}
