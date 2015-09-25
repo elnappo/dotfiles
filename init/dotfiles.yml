@@ -16,6 +16,10 @@
       sudo: yes
       when: sudo_without_password
 
+    - name: enable tty_tickets
+      lineinfile: 'dest=/etc/sudoers state=present line="Defaults tty_tickets" validate="visudo -cf %s"'
+      sudo: yes
+
     - name: install oh-my-zsh
       git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.dotfiles/zsh/oh-my-zsh update=yes
 
