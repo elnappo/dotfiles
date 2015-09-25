@@ -1,0 +1,28 @@
+---
+- name: Install dnsmasq and dnscrypt-proxy
+  homebrew: name={{ item }} state=present
+  with_items:
+    - dnsmasq
+    - dnscrypt-proxy
+
+- name: Configute dnsmasq
+  copy: src=files/dnsmasq.conf dest=/usr/local/etc/dnsmasq.conf
+
+- name: Patch dnscrypt-proxy plist to listen on port 5355 instead of 53
+  lineinfile: dest=/usr/local/opt/dnscrypt-proxy/homebrew.mxcl.dnscrypt-proxy.plist line="      <string>--local-address=127.0.0.1:5355</string>" insertafter="^      <string>/usr/local/opt/dnscrypt-proxy/sbin/dnscrypt-proxy</string>" validate="plutil -lint %s"
+
+- name: Copy launchd plists
+  copy: src={{ item.src }} dest={{ item.dest }} owner=root group=wheel mode=0644
+  with_items:
+    - { src: "/usr/local/opt/dnsmasq/homebrew.mxcl.dnsmasq.plist", dest: "/Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist"}
+    - { src: "/usr/local/opt/dnscrypt-proxy/homebrew.mxcl.dnscrypt-proxy.plist", dest: "/Library/LaunchDaemons/homebrew.mxcl.dnscrypt-proxy.plist"}
+  register: copy_plists
+  sudo: yes
+
+- name: Start services
+  command: launchctl load {{ item }}
+  with_items:
+    - /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+    - /Library/LaunchDaemons/homebrew.mxcl.dnscrypt-proxy.plist
+  when: copy_plists.changed
+  sudo: yes
