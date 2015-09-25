@@ -49,8 +49,6 @@
     - { key: "FXPreferredViewStyle", type: "string", value: "Nlsv" }
     # Disable the warning before emptying the Trash
     - { key: "WarnOnEmptyTrash", type: "bool", value: "false" }
-    # Empty Trash securely by default
-    - { key: "EmptyTrashSecurely", type: "bool", value: "true" }
   notify:
     - kill Finder
 
