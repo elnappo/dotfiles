@@ -195,8 +195,10 @@
     - { domain: "/Library/Preferences/com.apple.driver.AppleIRController", key: "DeviceEnabled", type: "bool", value: "false" }
     # Enable Firewall. 0 = off, 1 = specific services, 2 = essential services
     - { domain: "/Library/Preferences/com.apple.alf", key: "globalstate", type: "int", value: "2" }
+    # Enable HiDPI display modes (requires restart)
+    - { domain: "/Library/Preferences/com.apple.windowserver", key: "DisplayResolutionEnabled", type: "bool", value: "true" }
 
-- name: Bottom left screen corner sleep screen
+- name: Configure hot-corners: bottom left screen corner - sleep screen
   osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     - { key: "wvous-bl-corner", type: "int", value: "10" }

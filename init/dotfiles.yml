@@ -36,8 +36,8 @@
     - name: install neobundle
       git: repo=https://github.com/Shougo/neobundle.vim dest=~/.dotfiles/vim/bundle/neobundle.vim update=yes
 
-    - name: create ~/.virtualenvs
-      file: dest=~/.virtualenvs state=directory
+    #- name: create ~/.virtualenvs
+    #  file: dest=~/.virtualenvs state=directory
 
     - include: tasks/link_files.yml
       tags:
