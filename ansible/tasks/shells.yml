@@ -17,6 +17,15 @@
   when: brew_zsh.stat.exists
   sudo: yes
 
+- name: check if homebrew fish is installed
+  stat: path=/usr/local/bin/fish
+  register: brew_fish
+
+- name: add homwbrew fish to /etc/shells
+  lineinfile: dest=/etc/shells line="/usr/local/bin/fish" state=present
+  when: brew_fish.stat.exists
+  sudo: yes
+
 - name: check default user shell
   shell: dscl . read ~ UserShell | awk '{print $2}'
   register: current_login_shell

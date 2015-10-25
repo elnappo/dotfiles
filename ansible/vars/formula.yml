@@ -12,12 +12,13 @@ formula:
   hydra:
     options: with-libssh,with-libidn
   openssl:
+  bash:
+  bash-completion:
   zsh:
+  fish:
   coreutils:
   moreutils:
   findutils:
-  bash:
-  bash-completion:
   grep:
   ack:
   rename:
@@ -48,7 +49,6 @@ formula:
   docker:
   docker-machine:
   httpie:
-  ruby:
   nikto:
   grc:
   masscan:
