@@ -9,8 +9,6 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ###############################################################################
-# General UI/UX                                                               #
-###############################################################################
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -24,15 +22,12 @@ sudo pmset -a womp 0
 # Destroy File Vault Key when going to standby mode
 sudo pmset -a destroyfvkeyonstandby 1
 
-# Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+# Restart automatically if the computer freezes
+sudo systemsetup -setrestartfreeze on
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-
-# Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
@@ -45,10 +40,6 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	General -bool true \
 	OpenWith -bool true \
 	Privileges -bool true
-
-###############################################################################
-# Messages                                                                    #
-###############################################################################
 
 # Disable automatic emoji substitution (i.e. use plain text smileys)
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
@@ -66,4 +57,4 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 	"Terminal" "Transmission" "Twitter" "iCal"; do
 	killall "${app}" > /dev/null 2>&1
 done
-echo "Done. Note that some of these changes require a logout/restart to take effect.")
+echo "[i] Done. Note that some of these changes require a logout/restart to take effect.")

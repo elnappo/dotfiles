@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # set osx defaults
-echo "[i] Set OS X defaults"
-./osx
+echo "[i] Set OS X settings"
+./osx.sh
 
 # install Command Line Tools
 if [[ ! -x /usr/bin/gcc ]]; then
@@ -28,3 +28,4 @@ ansible-playbook -i inventory dotfiles.yml -ask-sudo-pass
 
 echo "[i] From now on you can use $ dotfiles to manage your dotfiles"
 echo "[+] Done :)"
+
