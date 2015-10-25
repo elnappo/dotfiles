@@ -30,9 +30,6 @@
     - name: install alias-tips
       git: repo=https://github.com/djui/alias-tips.git dest=~/.dotfiles/zsh/zsh_custom/plugins/alias-tips update=yes
 
-    - name: install k
-      git: repo=https://github.com/supercrabtree/k.git dest=~/.dotfiles/zsh/zsh_custom/plugins/k update=yes
-
     - name: install neobundle
       git: repo=https://github.com/Shougo/neobundle.vim dest=~/.dotfiles/vim/bundle/neobundle.vim update=yes
 

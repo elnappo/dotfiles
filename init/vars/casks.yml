@@ -1,6 +1,5 @@
 ---
 casks:
-  dropbox:
   google-chrome:
   firefox:
   torbrowser:
@@ -15,17 +14,19 @@ casks:
   sourcetree:
   ios7-screensaver:
   wireshark:
+  # Quick Look plugins
+  betterzipql:
+  webpquicklook:
+  suspicious-package:
   qlstephen:
   qlcolorcode:
   qlmarkdown:
   quicklook-json:
   quicklook-csv:
-  betterzipql:
-  webpquicklook:
-  suspicious-package:
   ipaql:
   qlprettypatch:
   qlrest:
+  qlimagesize:
   teamspeak-client:
   xquartz:
   pycharm-bundled-jdk:

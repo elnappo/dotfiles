@@ -1,6 +1,6 @@
 ---
 taps:
   homebrew/dupes:
-  caskroom/versions:
   caskroom/cask:
+  caskroom/versions:
   caskroom/fonts:

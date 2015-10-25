@@ -7,3 +7,4 @@ pip:
   requests:
   git-up:
   pep8:
+  tox:
