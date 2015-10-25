@@ -5,7 +5,7 @@ ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 ZSH_THEME="bira"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git git-extra python django copydir brew osx pip web-search colored-man docker brew-cask k alias-tips jump)
+plugins=(git git-extra python django copydir brew osx pip web-search colored-man docker brew-cask alias-tips)
 
 # Set oh-my-zsh customization directory
 if [[ ! -f $HOME/.dotfiles/zsh/zsh_custom ]]; then
