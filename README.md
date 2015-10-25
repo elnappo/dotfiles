@@ -23,17 +23,18 @@ $ ./setup.sh
 * Edit at least the following files (better take a look at all files):
 
 ```
-├── init
-│   ├── dotfiles.yml
-│   ├── osx
+├── ansible
 │   ├── tasks
 │   │   ├── osx_defaults.yml
-│   └── vars
-│       ├── casks.yml
-│       ├── formula.yml
-│       ├── gems.yml
-│       ├── pip.yml
-│       └── taps.yml
+│   ├── vars
+│   │   ├── casks.yml
+│   │   ├── formula.yml
+│   │   ├── gems.yml
+│   │   ├── pip.yml
+│   │   └── taps.yml
+│   └── vars.yml
+├── init
+│   ├── osx.sh
 ```
 
 ```bash
@@ -49,9 +50,9 @@ $ ./setup.sh
 * [OSXDefaults](https://github.com/kevinSuttle/OSXDefaults)
 * [ansible](https://github.com/ansible/ansible)
 * [alias-tips](https://github.com/djui/alias-tips)
-* [k](https://github.com/supercrabtree/k)
 * [NeoBundle](https://github.com/Shougo/neobundle.vim)
 * [VimAwesome](http://vimawesome.com/)
+* [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 
 ## Inspired by
 * https://github.com/mathiasbynens/dotfiles
@@ -60,3 +61,4 @@ $ ./setup.sh
 * https://github.com/monstermunchkin/dotfiles
 * https://bitbucket.org/keimlink/dotfiles
 * https://gist.github.com/brandonb927/3195465
+* https://github.com/donnemartin/dev-setup
