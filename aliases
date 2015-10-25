@@ -59,7 +59,7 @@ alias p8="ping 8.8.8.8"
 alias pg="ping google.de"
 
 # Generate some save passwords
-alias pwgen="pwgen --capitalize --numerals --symbols --secure --ambiguous 14"
+alias pwgen="pwgen --capitalize --numerals --symbols --secure 16"
 
 # Wifi stuff
 alias wifipass="security find-generic-password -g -D \"AirPort network password\" -w -a"
@@ -81,3 +81,4 @@ alias brewsync="ansible-playbook -i $HOME/.dotfiles/init/inventory $HOME/.dotfil
 alias dotfiles="ansible-playbook -i $HOME/.dotfiles/init/inventory $HOME/.dotfiles/init/dotfiles.yml"
 alias play="ansible-playbook"
 alias s="subl"
+alias smod='stat -c "%a %n"'
