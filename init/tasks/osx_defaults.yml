@@ -57,8 +57,8 @@
   with_items:
     # Enable highlight hover effect for the grid view of a stack (Dock)
     - { key: "mouse-over-hilite-stack", type: "bool", value: "true" }
-    # Set the icon size of Dock items to 36 pixels
-    - { key: "tilesize", type: "float", value: "40" }
+    # Set the icon size (px) of Dock items
+    - { key: "tilesize", type: "float", value: {{ dock_icon_size }} }
     # Show indicator lights for open applications in the Dock
     - { key: "show-process-indicators", type: "bool", value: "true" }
     # Speed up Mission Control animations
@@ -106,7 +106,7 @@
     - { key: "PMPrintingExpandedStateForPrint", type: "bool", value: "true" }
     - { key: "PMPrintingExpandedStateForPrint2", type: "bool", value: "false" }
     # Save to disk (not to iCloud) by default
-    - { key: "NSDocumentSaveNewDocumentsToCloud", type: "bool", value: "true" }
+    - { key: "NSDocumentSaveNewDocumentsToCloud", type: "bool", value: "false" }
     # Display ASCII control characters using caret notation in standard text views
     # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
     - { key: "NSTextShowsControlCharacters", type: "bool", value: "true" }
@@ -119,8 +119,8 @@
     # Disable press-and-hold for keys in favor of key repeat
     - { key: "ApplePressAndHoldEnabled", type: "bool", value: "false" }
     # Set a blazingly fast keyboard repeat rate
-    - { key: "KeyRepeat", type: "int", value: "2" }
-    - { key: "InitialKeyRepeat", type: "int", value: "20" }
+    - { key: "KeyRepeat", type: "int", value: {{keyboard_key_repeat_rate}} }
+    - { key: "InitialKeyRepeat", type: "int", value: {{keyboard_initial_key_repeat_delay}} }
     # Enable subpixel font rendering on non-Apple LCDs
     - { key: "AppleFontSmoothing", type: "int", value: "2" }
     # Finder: show all filename extensions
@@ -162,6 +162,8 @@
     - { domain: "com.apple.ActivityMonitor", key: "SortDirection", type: "int", value: "0" }
     # Prevent Time Machine from prompting to use new hard drives as backup volume
     - { domain: "com.apple.TimeMachine", key: "DoNotOfferNewDisksForBackup", type: "bool", value: "true" }
+    # Change Time Machine backup interval
+    - { domain: "/System/Library/Launch Daemons/com.apple.backupd-auto", key: "StartInterval", type: "int", value: {{time_machine_backup_interval}} }
     # Automatically quit printer app once the print jobs complete
     - { domain: "com.apple.print.PrintingPrefs", key: "Quit When Finished", type: "bool", value: "true" }
     # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
@@ -173,6 +175,8 @@
     - { domain: "com.apple.frameworks.diskimages", key: "auto-open-rw-root", type: "bool", value: "true" }
     # Avoid creating .DS_Store files on network volumes
     - { domain: "com.apple.desktopservices", key: "DSDontWriteNetworkStores", type: "bool", value: "true" }
+    # Avoid creating .DS_Store files on usb drives
+    - { domain: "com.apple.desktopservices", key: "DSDontWriteUSBStores", type: "bool", value: "true" }
     # Save screenshots to the desktop
     - { domain: "com.apple.screencapture", key: "location", type: "string", value: "{{ ansible_env.HOME }}/Desktop" }
     # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
@@ -198,9 +202,8 @@
     # Enable HiDPI display modes (requires restart)
     - { domain: "/Library/Preferences/com.apple.windowserver", key: "DisplayResolutionEnabled", type: "bool", value: "true" }
 
-- name: Configure hot-corners
+- name: Configure hot-corners: bottom left screen corner - sleep screen
   osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
-    # bottom left - sleep screen
     - { key: "wvous-bl-corner", type: "int", value: "10" }
     - { key: "wvous-bl-modifier", type: "int", value: "0" }
