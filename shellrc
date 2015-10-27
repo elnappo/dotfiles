@@ -1,8 +1,6 @@
 # User configuration
-if [ -f $HOME/.extra ];
-then
-	source $HOME/.extra
-fi
+test -e $HOME/.extra && source $HOME/.extra
+
 source $HOME/.dotfiles/aliases
 export EDITOR=vim
 export VISUAL=vim
@@ -25,5 +23,3 @@ source "`brew --prefix`/etc/grc.bashrc"
 export DOCKER_TLS_VERIFY=yes
 export DOCKER_CERT_PATH=$HOME/.docker/machine/machines/dev
 export DOCKER_HOST=tcp://192.168.99.100:2376
-
-/usr/local/bin/archey -c

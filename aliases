@@ -4,7 +4,6 @@ alias lsa='ls -lah'
 alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
-alias sl='sl' # Override oh-my-zsh for fun (brew install sl ;))
 
 # Easier navigation
 alias ..="cd .."

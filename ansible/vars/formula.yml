@@ -36,7 +36,6 @@ formula:
   python:
   python3:
   watch:
-  ffind:
   git-cola:
   iftop:
   tor:
