@@ -16,11 +16,24 @@ function l -d "l"
 function tree -d "List contents of directories in a tree-like format"
     command tree -C; end
 
-function reload -d "Reload fish config"
-    source ~/.config/fish/config.fish; end
-
+# Set custom params
 function df -d "Display free disk space"
     command df -h $argv; end
+
+function pwgen -d "Generate saves passwords"
+    command pwgen --capitalize --numerals --symbols --secure 16; end
+
+function axel -d "Multiple connections wget"
+    command axel -an 10 $argv; end
+
+function gp -d "Run git push"
+    git push $argv; end
+
+function gu -d "Run git-up"
+    git-up; end
+
+function reload -d "Reload fish config"
+    source ~/.config/fish/config.fish; end
 
 function ip -d "Get public IP"
     dig +short myip.opendns.com @resolver1.opendns.com; end
@@ -55,17 +68,11 @@ function p8 -d "Ping 8.8.8.8"
 function p8 -d "Ping google.de"
     ping google.de; end
 
-function pwgen -d "Generate saves passwords"
-    command pwgen --capitalize --numerals --symbols --secure 16; end
-
 function wifipass -d "Get password from a saved AP"
     security find-generic-password -g -D "AirPort network password" -w -a $argv; end
 
 function wifipow -d "Perform a wireless broadcast scan"
     /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s; end
-
-function axel -d "Multiple connections wget"
-    command axel -an 10 $argv; end
 
 function ccat -d "Syntax highlighting cat"
     pygmentize -g $argv; end
@@ -80,7 +87,7 @@ function brewsync -d "Sync your installed tools"
     ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml --tags packages; end
 
 function dotfiles -d "Run dotfiles Playbook"
-    ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml; end
+    ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml $argv; end
 
 function play -d "Run an ansible playbook (alias)"
     ansible-playbook $argv; end

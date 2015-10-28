@@ -27,6 +27,11 @@
     - name: install Tmux Plugin Manager
       git: repo=https://github.com/tmux-plugins/tpm.git dest=~/.local/share/tpm update=yes
 
+    - name: Create folder
+      file: path={{item}} state=directory
+      with_items:
+        - "~/.local/share/zsh/"
+
     - name: install neobundle
       git: repo=https://github.com/Shougo/neobundle.vim.git dest=~/.local/share/neobundle update=yes
 

@@ -58,7 +58,7 @@
     # Enable highlight hover effect for the grid view of a stack (Dock)
     - { key: "mouse-over-hilite-stack", type: "bool", value: "true" }
     # Set the icon size (px) of Dock items
-    - { key: "tilesize", type: "float", value: {{ dock_icon_size }} }
+    - { key: "tilesize", type: "float", value: "{{ dock_icon_size }}" }
     # Show indicator lights for open applications in the Dock
     - { key: "show-process-indicators", type: "bool", value: "true" }
     # Speed up Mission Control animations
@@ -119,8 +119,8 @@
     # Disable press-and-hold for keys in favor of key repeat
     - { key: "ApplePressAndHoldEnabled", type: "bool", value: "false" }
     # Set a blazingly fast keyboard repeat rate
-    - { key: "KeyRepeat", type: "int", value: {{keyboard_key_repeat_rate}} }
-    - { key: "InitialKeyRepeat", type: "int", value: {{keyboard_initial_key_repeat_delay}} }
+    - { key: "KeyRepeat", type: "int", value: "{{keyboard_key_repeat_rate}}" }
+    - { key: "InitialKeyRepeat", type: "int", value: "{{keyboard_initial_key_repeat_delay}}" }
     # Enable subpixel font rendering on non-Apple LCDs
     - { key: "AppleFontSmoothing", type: "int", value: "2" }
     # Finder: show all filename extensions
@@ -162,8 +162,6 @@
     - { domain: "com.apple.ActivityMonitor", key: "SortDirection", type: "int", value: "0" }
     # Prevent Time Machine from prompting to use new hard drives as backup volume
     - { domain: "com.apple.TimeMachine", key: "DoNotOfferNewDisksForBackup", type: "bool", value: "true" }
-    # Change Time Machine backup interval
-    - { domain: "/System/Library/Launch Daemons/com.apple.backupd-auto", key: "StartInterval", type: "int", value: {{time_machine_backup_interval}} }
     # Automatically quit printer app once the print jobs complete
     - { domain: "com.apple.print.PrintingPrefs", key: "Quit When Finished", type: "bool", value: "true" }
     # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
