@@ -1,20 +1,15 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
+ZSH=$HOME/.local/share/oh-my-zsh
 
 # Set name of the theme to load.
 ZSH_THEME="bira"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git git-extra python django copydir brew osx pip web-search colored-man docker brew-cask alias-tips)
-
-# Set oh-my-zsh customization directory
-if [[ ! -f $HOME/.dotfiles/zsh/zsh_custom ]]; then
-	ZSH_CUSTOM=$HOME/.dotfiles/zsh/zsh_custom
-fi
+plugins=(git git-extra python django copydir brew osx pip web-search colored-man docker brew-cask)
 
 source $ZSH/oh-my-zsh.sh
 
-HISTFILE=~/.dotfiles/zsh/zsh_history
+HISTFILE=~/.local/share/zsh/zsh_history
 
 setopt NO_HIST_VERIFY
 setopt APPEND_HISTORY # adds history

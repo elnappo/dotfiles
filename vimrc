@@ -2,10 +2,10 @@ if has('vim_starting')
 	if &compatible
 		set nocompatible
 	endif
-	set runtimepath+=~/.local/share/vim/bundle/neobundle.vim/
+	set runtimepath+=~/.local/share/neobundle/
 endif
 
-call neobundle#begin(expand('~/.local/share/vim/bundle/'))
+call neobundle#begin(expand('~/.local/share/vim-plugins/'))
 	NeoBundleFetch 'Shougo/neobundle.vim'
 	NeoBundle 'tpope/vim-fugitive'
 	NeoBundle 'scrooloose/nerdtree'
@@ -14,7 +14,7 @@ call neobundle#begin(expand('~/.local/share/vim/bundle/'))
 	NeoBundle 'bling/vim-airline'
 	NeoBundle 'Raimondi/delimitMate'
 	if has('lua')
-			NeoBundle 'Shougo/neocomplcache.vim'		
+		NeoBundle 'Shougo/neocomplcache.vim'		
 	endif
 call neobundle#end()
 NeoBundleCheck

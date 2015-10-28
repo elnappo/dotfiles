@@ -19,19 +19,16 @@
       sudo: yes
 
     - name: install oh-my-zsh
-      git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.local/share/zsh/oh-my-zsh update=yes
+      git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.local/share/oh-my-zsh update=yes
 
     - name: install oh-my-fish
-      git: repo=https://github.com/oh-my-fish/oh-my-fish.git dest=~/.local/share/fish/omf update=yes
+      git: repo=https://github.com/oh-my-fish/oh-my-fish.git dest=~/.local/share/omf update=yes
 
     - name: install Tmux Plugin Manager
-      git: repo=https://github.com/tmux-plugins/tpm.git dest=~/.local/share/tmux/tpm update=yes
-
-    - name: install alias-tips
-      git: repo=https://github.com/djui/alias-tips.git dest=~/.local/share/zsh/plugins/alias-tips update=yes
+      git: repo=https://github.com/tmux-plugins/tpm.git dest=~/.local/share/tpm update=yes
 
     - name: install neobundle
-      git: repo=https://github.com/Shougo/neobundle.vim dest=~/.local/share/vim/bundle/neobundle.vim update=yes
+      git: repo=https://github.com/Shougo/neobundle.vim.git dest=~/.local/share/neobundle update=yes
 
     #- name: create ~/.virtualenvs
     #  file: dest=~/.virtualenvs state=directory
