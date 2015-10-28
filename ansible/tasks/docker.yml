@@ -1,11 +1,11 @@
 ---
 - name: remove localdocker from /etc/hosts (boot2docker replaced by docker-machine)
   lineinfile: dest=/etc/hosts line="192.168.59.103 localdocker" state=absent
-  sudo: yes
+  become: yes
 
 - name: add localdocker to /etc/hosts (for docker-machine)
   lineinfile: dest=/etc/hosts line="192.168.99.100 localdocker" state=present
-  sudo: yes
+  become: yes
 
 - name: check if docker-machine vm is allready created
   command: docker-machine inspect dev

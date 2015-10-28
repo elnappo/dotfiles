@@ -17,7 +17,7 @@
     - { src: "/usr/local/opt/dnsmasq/homebrew.mxcl.dnsmasq.plist", dest: "/Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist"}
     - { src: "/usr/local/opt/dnscrypt-proxy/homebrew.mxcl.dnscrypt-proxy.plist", dest: "/Library/LaunchDaemons/homebrew.mxcl.dnscrypt-proxy.plist"}
   register: copy_plists
-  sudo: yes
+  become: yes
 
 - name: Start services
   command: launchctl load {{ item }}
@@ -25,4 +25,4 @@
     - /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
     - /Library/LaunchDaemons/homebrew.mxcl.dnscrypt-proxy.plist
   when: copy_plists.changed
-  sudo: yes
+  become: yes
