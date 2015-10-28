@@ -2,10 +2,10 @@ if has('vim_starting')
 	if &compatible
 		set nocompatible
 	endif
-	set runtimepath+=~/.dotfiles/vim/bundle/neobundle.vim/
+	set runtimepath+=~/.local/share/vim/bundle/neobundle.vim/
 endif
 
-call neobundle#begin(expand('~/.dotfiles/vim/bundle/'))
+call neobundle#begin(expand('~/.local/share/vim/bundle/'))
 	NeoBundleFetch 'Shougo/neobundle.vim'
 	NeoBundle 'tpope/vim-fugitive'
 	NeoBundle 'scrooloose/nerdtree'
@@ -21,7 +21,7 @@ NeoBundleCheck
 filetype plugin indent on " Enhance command-line completion
 
 syntax enable " Enable syntax highlighting
-let g:neocomplcache_temporary_dir = '~/.dotfiles/vim/tmp/'
+let g:neocomplcache_temporary_dir = '~/.cache/vim/tmp/'
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
