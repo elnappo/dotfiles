@@ -202,8 +202,9 @@
     # Enable HiDPI display modes (requires restart)
     - { domain: "/Library/Preferences/com.apple.windowserver", key: "DisplayResolutionEnabled", type: "bool", value: "true" }
 
-- name: Configure hot-corners: bottom left screen corner - sleep screen
+- name: Configure hot-corners
   osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
+    # bottom left - sleep screen
     - { key: "wvous-bl-corner", type: "int", value: "10" }
     - { key: "wvous-bl-modifier", type: "int", value: "0" }
