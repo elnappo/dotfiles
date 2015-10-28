@@ -76,8 +76,8 @@ alias ssh_ignore="ssh -F /dev/null"
 # Some more stuff
 alias starwars="telnet towel.blinkenlights.nl"
 alias ubuntu="docker run -t -i ubuntu /bin/bash"
-alias brewsync="ansible-playbook -i $HOME/.dotfiles/init/inventory $HOME/.dotfiles/init/dotfiles.yml --tags packages"
-alias dotfiles="ansible-playbook -i $HOME/.dotfiles/init/inventory $HOME/.dotfiles/init/dotfiles.yml"
+alias brewsync="ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml --tags packages"
+alias dotfiles="ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml"
 alias play="ansible-playbook"
 alias s="subl"
 alias smod='stat -c "%a %n"'

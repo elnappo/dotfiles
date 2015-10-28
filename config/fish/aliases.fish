@@ -77,10 +77,10 @@ function starwars -d "Play Star Wars in ASCII"
     telnet towel.blinkenlights.nl; end
 
 function brewsync -d "Sync your installed tools"
-    ansible-playbook -i $HOME/.dotfiles/init/inventory $HOME/.dotfiles/init/dotfiles.yml --tags packages; end
+    ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml --tags packages; end
 
 function dotfiles -d "Run dotfiles Playbook"
-    ansible-playbook -i $HOME/.dotfiles/init/inventory $HOME/.dotfiles/init/dotfiles.yml; end
+    ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml; end
 
 function play -d "Run an ansible playbook (alias)"
     ansible-playbook $argv; end
