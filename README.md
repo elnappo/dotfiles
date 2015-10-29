@@ -49,10 +49,10 @@ $ ./setup.sh
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * [OSXDefaults](https://github.com/kevinSuttle/OSXDefaults)
 * [ansible](https://github.com/ansible/ansible)
-* [alias-tips](https://github.com/djui/alias-tips)
 * [NeoBundle](https://github.com/Shougo/neobundle.vim)
 * [VimAwesome](http://vimawesome.com/)
 * [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+* [Oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 
 ## Inspired by
 * https://github.com/mathiasbynens/dotfiles

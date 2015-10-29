@@ -26,6 +26,9 @@ function pwgen -d "Generate saves passwords"
 function axel -d "Multiple connections wget"
     command axel -an 10 $argv; end
 
+function ssht -d "Attach to remote tmux session"
+    ssh $argv -t "tmux a"; end
+
 function gp -d "Run git push"
     git push $argv; end
 
@@ -65,7 +68,7 @@ function pubkey -d "Copy my public key to the pasteboard"
 function p8 -d "Ping 8.8.8.8"
     ping 8.8.8.8; end
 
-function p8 -d "Ping google.de"
+function pg -d "Ping google.de"
     ping google.de; end
 
 function wifipass -d "Get password from a saved AP"

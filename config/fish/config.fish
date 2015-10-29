@@ -1,12 +1,12 @@
+# Paths
+test -d /usr/local/bin ; and set -x PATH /usr/local/bin $PATH
+test -d /usr/local/sbin; and set -x PATH /usr/local/sbin $PATH
+
 # Path to Oh My Fish install.
 set -gx OMF_PATH $HOME/.local/share/omf
 
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
-
-# Paths
-test -d /usr/local/sbin; and set -x PATH /usr/local/sbin $PATH
-test -d /usr/local/bin ; and set -x PATH /usr/local/bin $PATH
 
 set -x EDITOR vim
 set -x VISUAL vim
