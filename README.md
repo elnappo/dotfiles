@@ -9,7 +9,7 @@ add ~/.extra for your stuff
 * update osx, brew and the dotfiles repository with `$ update`
 * update your settings (dotfiles) with `$ dotfiles`
 * set some osx defaults
-* configuration is mainly handled by ansible (Playbook: ~/.dotfiles/init/dotfiles.yml)
+* configuration is mainly handled by ansible (Playbook: ~/.dotfiles/ansible/dotfiles.yml)
 
 ## Install (for me)
 ```bash
