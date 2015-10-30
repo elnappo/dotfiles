@@ -10,10 +10,10 @@ before_script:
   - rm ~/.zshrc
   - brew doctor || true
 script:
-  - ansible-playbook -i init/inventory --syntax-check --list-tasks init/dotfiles.yml
-  - ansible-playbook -i init/inventory init/dotfiles.yml --skip-tags "packages"
+  - ansible-playbook -i init/inventory --syntax-check --list-tasks ansible/dotfiles.yml
+  - ansible-playbook -i init/inventory ansible/dotfiles.yml --skip-tags "packages"
   - >
-    ansible-playbook -i init/inventory init/dotfiles.yml --skip-tags "packages"
+    ansible-playbook -i init/inventory ansible/dotfiles.yml --skip-tags "packages"
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)

@@ -102,4 +102,4 @@ function smod -d "Show permissions in decimal"
     stat -c "%a %n"; end
 
 function ubuntu -d "Create a short lived Ubuntu container"
-    docker run -rm -ti ubuntu /bin/bash; end
+    docker run --rm -ti ubuntu /bin/bash; end
