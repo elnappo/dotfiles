@@ -5,6 +5,8 @@
   tasks:
     - name: load custom vars
       include_vars: ../vars.yml
+      tags:
+        - always
 
     - name: make sure dotfiles are present
       git: repo=https://github.com/elnappo/dotfiles.git dest=~/.dotfiles
