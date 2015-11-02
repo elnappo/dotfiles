@@ -115,7 +115,7 @@
     # Disable smart dashes as they’re annoying when typing code
     - { key: "NSAutomaticDashSubstitutionEnabled", type: "bool", value: "false" }
     # Disable “natural” (Lion-style) scrolling
-    - { key: "AppleKeyboardUIMode", type: "int", value: "3" }
+    - { key: "com.apple.swipescrolldirection", type: "bool", value: "false" }
     # Disable press-and-hold for keys in favor of key repeat
     - { key: "ApplePressAndHoldEnabled", type: "bool", value: "false" }
     # Set a blazingly fast keyboard repeat rate
@@ -125,14 +125,8 @@
     - { key: "AppleFontSmoothing", type: "int", value: "2" }
     # Finder: show all filename extensions
     - { key: "AppleShowAllExtensions", type: "bool", value: "true" }
-    # Enable spring loading for directories
-    - { key: "com.apple.springing.enabled", type: "bool", value: "true" }
-    # Remove the spring loading delay for directories
-    - { key: "com.apple.springing.delay", type: "float", value: "0" }
     # Add a context menu item for showing the Web Inspector in web views
     - { key: "WebKitDeveloperExtras", type: "bool", value: "true" }
-    # Trackpad: enable tap to click for this user and for the login screen
-    - { key: "com.apple.mouse.tapBehavior", type: "int", value: "1" }
 
 - name: Set some other settings
   osx_defaults: domain={{ item.domain }} key={{ item.key }} type={{ item.type }} value={{ item.value }}
@@ -184,11 +178,15 @@
     # Increase sound quality for Bluetooth headphones/headsets
     - { domain: "com.apple.BluetoothAudioAgent", key: "Apple Bitpool Min (editable)", type: "int", value: "40" }
     # Trackpad: enable tap to click for this user and for the login screen
-    - { domain: "com.apple.driver.AppleBluetoothMultitouch.trackpad", key: "Clicking", type: "bool", value: "true" }
+    - { domain: "com.apple.driver.AppleBluetoothMultitouch.trackpad", key: "Clicking", type: "int", value: "1" }
     # Check for software updates daily, not just once per week
     - { domain: "com.apple.SoftwareUpdate", key: "ScheduleFrequency", type: "int", value: "1" }
     # Set Help Viewer windows to non-floating mode
     - { domain: "com.apple.helpviewer", key: "DevMode", type: "bool", value: "true" }
+
+- name: Set some other settings (with sudo)
+  osx_defaults: domain={{ item.domain }} key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  with_items:
     # Set LoginwindowText
     - { domain: "/Library/Preferences/com.apple.loginwindow", key: "LoginwindowText", type: "string", value: "{{ login_window_text }}" }
     # Make sure there is no password hint set.
@@ -197,8 +195,7 @@
     - { domain: "/Library/Preferences/com.apple.driver.AppleIRController", key: "DeviceEnabled", type: "bool", value: "false" }
     # Enable Firewall. 0 = off, 1 = specific services, 2 = essential services
     - { domain: "/Library/Preferences/com.apple.alf", key: "globalstate", type: "int", value: "2" }
-    # Enable HiDPI display modes (requires restart)
-    - { domain: "/Library/Preferences/com.apple.windowserver", key: "DisplayResolutionEnabled", type: "bool", value: "true" }
+  become: yes
 
 - name: Configure hot-corners
   osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}
