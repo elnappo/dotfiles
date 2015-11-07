@@ -50,6 +50,11 @@
       tags:
         - packages
 
+    # Needs to be after packages
+    - include: tasks/tmux_plugins.yml
+      tags:
+        - tmux_plugins
+
     - include: tasks/shells.yml
       tags:
         - shells

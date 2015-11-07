@@ -1,0 +1,12 @@
+---
+- name: check if homebrew tmux is installed
+  stat: path=/usr/local/bin/tmux
+  register: brew_tmux
+
+- name: check if tmux plugins are installed
+  stat: path=~/.local/share/tmux-plugins
+  register: tmux_plugins_folder
+
+- name: install tmux plugins
+  command: ~/.local/share/tpm/bin/install_plugins
+  when: not tmux_plugins_folder.stat.exists and brew_tmux.stat.exists
