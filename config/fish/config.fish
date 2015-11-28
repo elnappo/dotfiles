@@ -23,3 +23,5 @@ set -x DOCKER_HOST tcp://192.168.99.100:2376
 # Load iTerm 2 shell integration
 test -e {$HOME}/.config/fish/iterm2_shell_integration.fish; and source {$HOME}/.config/fish/iterm2_shell_integration.fish
 
+brew command command-not-found-init > /dev/null; and . (brew command-not-found-init)
+
