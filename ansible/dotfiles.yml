@@ -33,6 +33,7 @@
       file: path={{item}} state=directory
       with_items:
         - "~/.local/share/zsh/"
+        - "~/.local/share/bash/"
         - "~/.config/fish/"
         - "~/.config/omf/"
 
