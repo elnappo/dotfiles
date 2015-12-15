@@ -26,6 +26,7 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+set viminfo+=n~/.cache/vim/viminfo
 set wildmenu
 set autoread  " automatically read changed file
 set esckeys  " Allow cursor keys in insert mode
