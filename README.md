@@ -1,15 +1,17 @@
 # elnappo’s dotfiles [![Build Status](https://travis-ci.org/elnappo/dotfiles.svg?branch=master)](https://travis-ci.org/elnappo/dotfiles)
 
-These are my dotfiles, have fun!
+These are my dotfiles, have fun! 
 
 add ~/.extra for your stuff
 
 ## Features
-* sync your homebrew taps, formulas and casks with `$ brewsync`
+* sync your homebrew taps, formulas, casks, python packages and gems with `$ brewsync`
 * update osx, brew and the dotfiles repository with `$ update`
 * update your settings (dotfiles) with `$ dotfiles`
-* set some osx defaults
-* configuration is mainly handled by ansible (Playbook: ~/.dotfiles/ansible/dotfiles.yml)
+* set some osx defaults (`dotfiles/ansible/tasks/osx_defaults.yml`)
+* dnsmasq with dnscrypt for encrypted and localy cached DNS queries
+* try to keep `~/` clean
+* configuration is mainly handled by ansible (Playbook: `~/.dotfiles/ansible/dotfiles.yml`)
 
 ## Install (for me)
 ```bash
@@ -20,6 +22,7 @@ $ ./setup.sh
 
 ## Install (for you)
 * Fork this repository
+* Some interesting variables for the ansible playbook are set in `dotfiles/ansible/vars.yml`
 * Edit at least the following files (better take a look at all files):
 
 ```
