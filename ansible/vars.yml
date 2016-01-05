@@ -1,5 +1,5 @@
 ---
-osx_login_shell: /usr/local/bin/zsh
+osx_login_shell: /usr/local/bin/fish
 sudo_without_password: true
 docker_machine_memory: 4096
 use_dnscrypt: true
