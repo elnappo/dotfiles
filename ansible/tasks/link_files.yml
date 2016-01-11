@@ -7,7 +7,6 @@
     - { src: "~/.dotfiles/wgetrc", dest: "~/.wgetrc"}
     - { src: "~/.dotfiles/vimrc", dest: "~/.vimrc"}
     - { src: "~/.dotfiles/curlrc", dest: "~/.curlrc"}
-    - { src: "~/.dotfiles/gitignore_global", dest: "~/.gitignore_global"}
     - { src: "~/.dotfiles/tmux.conf", dest: "~/.tmux.conf"}
     - { src: "~/.dotfiles/config/fish/config.fish", dest: "~/.config/fish/config.fish"}
     - { src: "~/.dotfiles/config/omf/bundle", dest: "~/.config/omf/bundle"}
