@@ -46,6 +46,21 @@ $ cd ~/.dotfiles/init
 $ ./setup.sh
 ```
 
+## What is missing?
+### SSH client configuration
+`~/.ssh/config` or system wide in `/etc/ssh/ssh_config`
+
+```
+Host *
+    HashKnownHosts yes
+    PasswordAuthentication no
+    ChallengeResponseAuthentication no
+    PubkeyAuthentication yes
+    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
+    Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+    MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,umac-128@openssh.com
+```
+
 ## Projects used
 * [homebrew](https://github.com/Homebrew/homebrew)
 * [homebrew cask](https://github.com/phinze/homebrew-cask)
@@ -65,3 +80,5 @@ $ ./setup.sh
 * https://bitbucket.org/keimlink/dotfiles
 * https://gist.github.com/brandonb927/3195465
 * https://github.com/donnemartin/dev-setup
+* https://github.com/herrbischoff/awesome-osx-command-line
+* https://github.com/drduh/OS-X-Security-and-Privacy-Guide
