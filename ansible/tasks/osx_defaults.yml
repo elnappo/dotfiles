@@ -127,6 +127,8 @@
     - { key: "AppleShowAllExtensions", type: "bool", value: "true" }
     # Add a context menu item for showing the Web Inspector in web views
     - { key: "WebKitDeveloperExtras", type: "bool", value: "true" }
+    # Set auto correct as in vars.yml
+    - { key: "NSAutomaticSpellingCorrectionEnabled", type: "bool", value: "{{osx_auto_correct}}" }
 
 - name: Set some other settings
   osx_defaults: domain={{ item.domain }} key={{ item.key }} type={{ item.type }} value={{ item.value }}
@@ -197,6 +199,9 @@
     - { domain: "/Library/Preferences/com.apple.driver.AppleIRController", key: "DeviceEnabled", type: "bool", value: "false" }
     # Enable Firewall. 0 = off, 1 = specific services, 2 = essential services
     - { domain: "/Library/Preferences/com.apple.alf", key: "globalstate", type: "int", value: "2" }
+    # Disable the captive portal window
+    - { domain: "/Library/Preferences/SystemConfiguration/com.apple.captive.control", key: "Active", type: "bool", value: "false" }
+
   become: yes
 
 - name: Configure hot-corners
