@@ -26,6 +26,9 @@ function pwgen -d "Generate saves passwords"
 function axel -d "Multiple connections wget"
     command axel -an 10 $argv; end
 
+function ssh-copy-id -d "Use locally available keys to authorise logins on a remote machine"
+    env SSH_OPTS='-F /dev/null' command ssh-copy-id $argv; end
+
 function ssht -d "Attach to remote tmux session"
     ssh $argv -t "tmux a"; end
 
