@@ -30,7 +30,6 @@ casks:
   teamspeak-client:
   xquartz:
   pycharm:
-  bittorrent-sync:
   launchrocket:
   macdown:
   virtualbox:
@@ -38,7 +37,6 @@ casks:
   vmware-fusion:
   vagrant:
   vagrant-manager:
-  shiftit:
   gpgtools:
   macpass:
   sublime-text3:
@@ -48,4 +46,3 @@ casks:
   sshfs:
   adium:
   amethyst:
-
