@@ -35,10 +35,12 @@ formula:
   axel:
   python:
   python3:
+  go:
   watch:
   git-cola:
   iftop:
   tor:
+  torsocks:
   youtube-dl:
   git-extras:
   pwgen:
@@ -55,3 +57,4 @@ formula:
   mtr:
   ncdu:
   tmux:
+  syncthing:
