@@ -28,7 +28,7 @@ formula:
   ssh-copy-id:
   cowsay:
   nmap:
-  htop-osx:
+  htop:
   unp:
   speedtest_cli:
   axel:
