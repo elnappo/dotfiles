@@ -10,11 +10,21 @@ source $HOME/.dotfiles/shellrc
 export HISTFILE=$HOME/.local/share/bash/bash_history
 shopt -s histappend # Append history instead of rewriting it
 shopt -s cmdhist # Use one command per line
-HISTCONTROL=ignoreboth # Don’t store specific lines
+HISTCONTROL="erasedups:ignoreboth" # Avoid duplicate entries
 HISTFILESIZE=1000000 # Allow a larger history file
 HISTSIZE=1000000 # Allow a larger history file
 HISTTIMEFORMAT='%F %T ' # Record timestamps
 PROMPT_COMMAND='history -a' # Store history immediately
+
+# Perform file completion in a case insensitive fashion
+bind "set completion-ignore-case on"
+
+# Treat hyphens and underscores as equivalent
+bind "set completion-map-case on"
+
+# Display matches for ambiguous patterns at first tab press
+bind "set show-all-if-ambiguous on"
+
 
 # Load iTerm 2 shell integration
 test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash

@@ -62,11 +62,11 @@ Host *
 ```
 
 ## Projects used
+* [ansible](https://github.com/ansible/ansible)
 * [homebrew](https://github.com/Homebrew/homebrew)
 * [homebrew cask](https://github.com/phinze/homebrew-cask)
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * [OSXDefaults](https://github.com/kevinSuttle/OSXDefaults)
-* [ansible](https://github.com/ansible/ansible)
 * [NeoBundle](https://github.com/Shougo/neobundle.vim)
 * [VimAwesome](http://vimawesome.com/)
 * [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
@@ -82,3 +82,4 @@ Host *
 * https://github.com/donnemartin/dev-setup
 * https://github.com/herrbischoff/awesome-osx-command-line
 * https://github.com/drduh/OS-X-Security-and-Privacy-Guide
+* https://github.com/mrzool/bash-sensible
