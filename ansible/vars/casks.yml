@@ -6,11 +6,8 @@ casks:
   iterm2:
   transmission:
   vlc:
-  plex-home-theater:
   libreoffice:
-  sabnzbd:
   unrarx:
-  steam:
   sourcetree:
   ios-saver:
   wireshark:
@@ -27,7 +24,6 @@ casks:
   qlprettypatch:
   qlrest:
   qlimagesize:
-  teamspeak-client:
   xquartz:
   pycharm:
   launchrocket:
@@ -43,6 +39,5 @@ casks:
   quassel-client:
   moneymoney:
   teamviewer:
-  sshfs:
   adium:
   amethyst:
