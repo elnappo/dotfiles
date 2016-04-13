@@ -1,6 +1,5 @@
 ---
 pip:
-  Django:
   virtualenvwrapper:
   flake8:
   pylint:
