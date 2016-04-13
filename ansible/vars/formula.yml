@@ -57,3 +57,7 @@ formula:
   ncdu:
   tmux:
   syncthing:
+  binwalk:
+  ddrescue:
+  docker-compose:
+  hub:
