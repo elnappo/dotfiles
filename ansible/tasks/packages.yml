@@ -33,19 +33,19 @@
 
 - name: Manage taps
   homebrew_tap: name={{ item.key }} state={{ item.value.state | default("present") }}
-  with_dict: taps
+  with_dict: "{{taps}}"
   tags:
     - brew_taps
 
 - name: Manage formula
   homebrew: name={{ item.key }} install_options={{ item.value.options | default(omit) }} state={{ item.value.state | default("present") }}
-  with_dict: formula
+  with_dict: "{{formula}}"
   tags:
     - brew_formula
 
 - name: Manage casks
   homebrew_cask: name={{ item.key }} state={{ item.value.state | default("present") }}
-  with_dict: casks
+  with_dict: "{{casks}}"
   environment:
     HOMEBREW_CASK_OPTS: --appdir=/Applications
   tags:
@@ -53,12 +53,12 @@
 
 - name: Manage gems
   gem: name={{ item.key }} state={{ item.value.state | default("latest") }}
-  with_dict: gems
+  with_dict: "{{gems}}"
   tags:
     - gem
 
 - name: Manage python packages
   pip: name={{ item.key }} state={{ item.value.state | default("latest") }} executable={{ item.value.executable | default("/usr/local/bin/pip3") }}
-  with_dict: pip
+  with_dict: "{{pip}}"
   tags:
     - pip
