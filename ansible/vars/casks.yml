@@ -20,7 +20,6 @@ casks:
   qlmarkdown:
   quicklook-json:
   quicklook-csv:
-  ipaql:
   qlprettypatch:
   qlrest:
   qlimagesize:
