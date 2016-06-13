@@ -12,9 +12,6 @@ set -x EDITOR vim
 set -x VISUAL vim
 source $HOME/.dotfiles/config/fish/aliases.fish
 
-# Install brew casks in /Applications
-set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
-
 # docker-machine
 set -x DOCKER_TLS_VERIFY yes
 set -x DOCKER_CERT_PATH $HOME/.docker/machine/machines/dev
