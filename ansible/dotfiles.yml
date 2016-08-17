@@ -66,11 +66,6 @@
       tags:
         - always
 
-    - include: tasks/docker.yml
-      when: docker_machine_stat.stat.exists
-      tags:
-        - docker
-
     - include: tasks/osx_defaults.yml
       tags:
         - osx_defaults

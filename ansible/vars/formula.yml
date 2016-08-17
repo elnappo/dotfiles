@@ -46,8 +46,6 @@ formula:
   archey:
   peco:
   ansible:
-  docker:
-  docker-machine:
   httpie:
   nikto:
   grc:
@@ -59,5 +57,4 @@ formula:
   syncthing:
   binwalk:
   ddrescue:
-  docker-compose:
   hub:

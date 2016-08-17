@@ -1,7 +1,6 @@
 ---
 osx_login_shell: /usr/local/bin/fish
 sudo_without_password: true
-docker_machine_memory: 4096
 use_dnscrypt: true
 login_window_text: Enter any 11-digit prime number to continue.
 dock_icon_size: 40
