@@ -60,12 +60,6 @@
       tags:
         - shells
 
-    - name: check if docker-machine is installed
-      stat: path=/usr/local/bin/docker-machine
-      register: docker_machine_stat
-      tags:
-        - always
-
     - include: tasks/osx_defaults.yml
       tags:
         - osx_defaults

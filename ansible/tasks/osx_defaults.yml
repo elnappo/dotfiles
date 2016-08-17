@@ -11,9 +11,8 @@
     # Hide the legal disclaimer
     - { key: "WarningLegal", type: "bool", value: "false" }
     - { key: "EncryptionRequire", type: "bool", value: "true" }
-    # Setting up the best block list
+    # Setting up block list
     - { key: "BlocklistAutoUpdate", type: "bool", value: "true" }
-    - { key: "BlocklistNew", type: "bool", value: "true" }
     - { key: "BlocklistURL", type: "string", value: "http://john.bitsurge.net/public/biglist.p2p.gz" }
     # Auto-resizing the window to fit transfers
     - { key: "AutoSize", type: "bool", value: "true" }
@@ -89,8 +88,8 @@
 - name: Set Terminal settings
   osx_defaults: domain=com.apple.Terminal key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
+    # Enable Secure Keyboard Entry in Terminal.app
     - { key: "SecureKeyboardEntry", type: "bool", value: "true" }
-    - { key: "StringEncodings", type: "array", value: ["4"] }
   notify:
     - kill Terminal
 
@@ -119,7 +118,7 @@
     # Disable press-and-hold for keys in favor of key repeat
     - { key: "ApplePressAndHoldEnabled", type: "bool", value: "false" }
     # Set a blazingly fast keyboard repeat rate
-    - { key: "KeyRepeat", type: "int", value: "{{keyboard_key_repeat_rate}}" }
+    - { key: "KeyRepeat", type: "float", value: "{{keyboard_key_repeat_rate}}" }
     - { key: "InitialKeyRepeat", type: "int", value: "{{keyboard_initial_key_repeat_delay}}" }
     # Enable subpixel font rendering on non-Apple LCDs
     - { key: "AppleFontSmoothing", type: "int", value: "2" }
@@ -183,6 +182,14 @@
     - { domain: "com.apple.driver.AppleBluetoothMultitouch.trackpad", key: "Clicking", type: "int", value: "1" }
     # Check for software updates daily, not just once per week
     - { domain: "com.apple.SoftwareUpdate", key: "ScheduleFrequency", type: "int", value: "1" }
+    # Enable the automatic update check
+    - { domain: "com.apple.SoftwareUpdate", key: "AutomaticCheckEnabled", type: "bool", value: "true" }
+    # Download newly available updates in background
+    - { domain: "com.apple.SoftwareUpdate", key: "AutomaticDownload", type: "int", value: "1" }
+    # Install System data files & security updates
+    - { domain: "com.apple.SoftwareUpdate", key: "CriticalUpdateInstall", type: "int", value: "1" }
+    # Turn on app auto-update
+    - { domain: "com.apple.commerce", key: "AutoUpdate", type: "bool", value: "true" }
     # Set Help Viewer windows to non-floating mode
     - { domain: "com.apple.helpviewer", key: "DevMode", type: "bool", value: "true" }
     # Stop Apple Photos from Auto Launching
