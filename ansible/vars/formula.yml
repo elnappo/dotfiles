@@ -3,13 +3,12 @@ formula:
   wget:
     options: enable-iri
   openssh:
-    options: with-keychain-support,with-ldns
+    options: with-ldns
   vim:
     options: override-system-vi,with-lua,with-luajit
-  john:
-    options: with-libssh,with-libidn
   hydra:
     options: with-libssh,with-libidn
+  john:
   openssl:
   bash:
   bash-completion:

@@ -3,7 +3,5 @@ taps:
   homebrew/dupes:
   caskroom/cask:
   caskroom/versions:
-  caskroom/fonts:
   homebrew/services:
   homebrew/command-not-found:
-

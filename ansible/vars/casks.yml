@@ -25,19 +25,17 @@ casks:
   qlimagesize:
   xquartz:
   pycharm:
-  launchrocket:
   macdown:
-  virtualbox:
   the-unarchiver:
   vmware-fusion:
   vagrant:
-  vagrant-manager:
   gpgtools:
   macpass:
-  sublime-text3:
+  sublime-text:
   quassel-client:
   moneymoney:
   teamviewer:
   adium:
   amethyst:
   docker:
+  steam:
