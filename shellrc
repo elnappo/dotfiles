@@ -15,9 +15,4 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # colorize these commands if possible with grc
 source "`brew --prefix`/etc/grc.bashrc"
 
-# docker-machine
-export DOCKER_TLS_VERIFY=yes
-export DOCKER_CERT_PATH=$HOME/.docker/machine/machines/dev
-export DOCKER_HOST=tcp://192.168.99.100:2376
-
 if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi

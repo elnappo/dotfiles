@@ -12,11 +12,6 @@ set -x EDITOR vim
 set -x VISUAL vim
 source $HOME/.dotfiles/config/fish/aliases.fish
 
-# docker-machine
-set -x DOCKER_TLS_VERIFY yes
-set -x DOCKER_CERT_PATH $HOME/.docker/machine/machines/dev
-set -x DOCKER_HOST tcp://192.168.99.100:2376
-
 # Load iTerm 2 shell integration
 test -e {$HOME}/.config/fish/iterm2_shell_integration.fish; and source {$HOME}/.config/fish/iterm2_shell_integration.fish
 
