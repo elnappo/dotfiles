@@ -20,7 +20,7 @@ function tree -d "List contents of directories in a tree-like format"
 function df -d "Display free disk space"
     command df -h $argv; end
 
-function pwgen -d "Generate saves passwords"
+function pwgen -d "Generate safe passwords"
     command pwgen --capitalize --numerals --symbols --secure 16; end
 
 function axel -d "Multiple connections wget"

@@ -45,9 +45,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-	"Dock" "Finder" "Mail" "Messages" "Safari" "SizeUp" "SystemUIServer" \
-	"Terminal" "Transmission" "Twitter" "iCal"; do
+for app in "cfprefsd" "Dock" "Finder" "SystemUIServer"; do
 	killall "${app}" > /dev/null 2>&1
 done
 echo "[i] Done. Note that some of these changes require a logout/restart to take effect.")

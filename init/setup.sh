@@ -19,7 +19,7 @@ fi
 # install ansible
 if [[ ! -x /usr/local/bin/ansible ]]; then
 	echo "[i] Install Ansible"
-	brew install ansible --HEAD
+	brew install ansible
 fi
 
 # run playbook
@@ -28,4 +28,3 @@ ansible-playbook -i ../ansible/inventory ../ansible/dotfiles.yml --ask-become-pa
 
 echo "[i] From now on you can use $ dotfiles to manage your dotfiles"
 echo "[+] Done :)"
-
