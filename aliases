@@ -15,7 +15,7 @@ alias grep='grep --color=auto'
 alias tree="tree -C"
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update && brew upgrade --all; brew cleanup; brew cask cleanup; git -C ~/.dotfiles pull'
+alias update='sudo softwareupdate -i -a; brew update && brew upgrade; brew cleanup; brew cask cleanup; git -C ~/.dotfiles pull'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
