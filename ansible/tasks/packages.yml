@@ -46,8 +46,6 @@
 - name: Manage casks
   homebrew_cask: name={{ item.key }} state={{ item.value.state | default("present") }}
   with_dict: "{{casks}}"
-  environment:
-    HOMEBREW_CASK_OPTS: --appdir=/Applications
   tags:
     - brew_cask
 

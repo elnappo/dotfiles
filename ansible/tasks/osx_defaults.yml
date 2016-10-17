@@ -192,7 +192,7 @@
     - { domain: "com.apple.commerce", key: "AutoUpdate", type: "bool", value: "true" }
     # Set Help Viewer windows to non-floating mode
     - { domain: "com.apple.helpviewer", key: "DevMode", type: "bool", value: "true" }
-    # Stop Apple Photos from Auto Launching
+    # Prevent Photos from opening automatically when devices are plugged in
     - { domain: "com.apple.ImageCapture", key: "disableHotPlug", type: "bool", value: "true" }
 
 - name: Set some other settings (with sudo)

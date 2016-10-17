@@ -27,4 +27,4 @@ echo "[i] Run Playbook"
 ansible-playbook -i ../ansible/inventory ../ansible/dotfiles.yml --ask-become-pass
 
 echo "[i] From now on you can use $ dotfiles to manage your dotfiles"
-echo "[+] Done :)"
+echo "[i] Done."
