@@ -31,11 +31,11 @@
   register: current_login_shell
   changed_when: false
 
-- name: check if preferred osx_login_shell is installed
-  stat: path={{ osx_login_shell }}
-  register: osx_login_shell_installed
+- name: check if preferred macos_login_shell is installed
+  stat: path={{ macos_login_shell }}
+  register: macos_login_shell_installed
 
 - name: set default shell
-  shell: chsh -s {{ osx_login_shell }} {{ ansible_user_id }}
-  when: osx_login_shell_installed.stat.exists and current_login_shell.stdout != "{{ osx_login_shell }}" 
+  shell: chsh -s {{ macos_login_shell }} {{ ansible_user_id }}
+  when: macos_login_shell_installed.stat.exists and current_login_shell.stdout != "{{ macos_login_shell }}" 
   become: yes

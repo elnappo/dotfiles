@@ -127,7 +127,7 @@
     # Add a context menu item for showing the Web Inspector in web views
     - { key: "WebKitDeveloperExtras", type: "bool", value: "true" }
     # Set auto correct as in vars.yml
-    - { key: "NSAutomaticSpellingCorrectionEnabled", type: "bool", value: "{{osx_auto_correct}}" }
+    - { key: "NSAutomaticSpellingCorrectionEnabled", type: "bool", value: "{{macos_auto_correct}}" }
 
 - name: Set some other settings
   osx_defaults: domain={{ item.domain }} key={{ item.key }} type={{ item.type }} value={{ item.value }}

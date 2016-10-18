@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# set osx defaults
-echo "[i] Set OS X settings"
-./osx.sh
+# set macos defaults
+echo "[i] Set macOS settings"
+./macos.bash
 
 # install Command Line Tools
 if [[ ! -x /usr/bin/gcc ]]; then

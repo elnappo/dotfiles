@@ -1,9 +1,9 @@
 ---
-osx_login_shell: /usr/local/bin/fish
+macos_login_shell: /usr/local/bin/fish
 sudo_without_password: true
 use_dnscrypt: true
 login_window_text: Enter any 11-digit prime number to continue.
 dock_icon_size: 40
 keyboard_key_repeat_rate: 1
 keyboard_initial_key_repeat_delay: 20
-osx_auto_correct: "false"
+macos_auto_correct: "false"

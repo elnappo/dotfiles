@@ -60,9 +60,9 @@
       tags:
         - shells
 
-    - include: tasks/osx_defaults.yml
+    - include: tasks/macos_defaults.yml
       tags:
-        - osx_defaults
+        - macos_defaults
 
     - include: tasks/dnscrypt.yml
       when: use_dnscrypt

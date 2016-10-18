@@ -1,4 +1,4 @@
-# OSX Default Values Command Reference
+# macOS Default Values Command Reference
 
 ## chflags
 change file flags
@@ -69,37 +69,37 @@ Unload daemons/agents and generally control launchd
 ❯ launchctl help
 
 usage: launchctl <subcommand>
-	load       	Load configuration files and/or directories
-	unload     	Unload configuration files and/or directories
-	start      	Start specified job
-	stop       	Stop specified job
-	submit     	Submit a job from the command line
-	remove     	Remove specified job
-	bootstrap  	Bootstrap launchd
-	list       	List jobs and information about jobs
-	setenv     	Set an environmental variable in launchd
-	unsetenv   	Unset an environmental variable in launchd
-	getenv     	Get an environmental variable from launchd
-	export     	Export shell settings from launchd
-	debug      	Set the WaitForDebugger flag for the target job to true.
-	limit      	View and adjust launchd resource limits
-	stdout     	Redirect launchd's standard out to the given path
-	stderr     	Redirect launchd's standard error to the given path
-	shutdown   	Prepare for system shutdown
-	singleuser 	Switch to single-user mode
-	getrusage  	Get resource usage statistics from launchd
-	log        	Adjust the logging level or mask of launchd
-	umask      	Change launchd's umask
-	bsexec     	Execute a process within a different Mach bootstrap subset
-	bslist     	List Mach bootstrap services and optional servers
-	bstree     	Show the entire Mach bootstrap tree. Requires root privileges.
-	managerpid 	Print the PID of the launchd managing this Mach bootstrap.
-	manageruid 	Print the UID of the launchd managing this Mach bootstrap.
-	managername	Print the name of this Mach bootstrap.
-	asuser     	Execute a subcommand in the given user's context.
-	exit       	Exit the interactive invocation of launchctl
-	quit       	Quit the interactive invocation of launchctl
-	help       	This help output
+    load        Load configuration files and/or directories
+    unload      Unload configuration files and/or directories
+    start       Start specified job
+    stop        Stop specified job
+    submit      Submit a job from the command line
+    remove      Remove specified job
+    bootstrap   Bootstrap launchd
+    list        List jobs and information about jobs
+    setenv      Set an environmental variable in launchd
+    unsetenv    Unset an environmental variable in launchd
+    getenv      Get an environmental variable from launchd
+    export      Export shell settings from launchd
+    debug       Set the WaitForDebugger flag for the target job to true.
+    limit       View and adjust launchd resource limits
+    stdout      Redirect launchd's standard out to the given path
+    stderr      Redirect launchd's standard error to the given path
+    shutdown    Prepare for system shutdown
+    singleuser  Switch to single-user mode
+    getrusage   Get resource usage statistics from launchd
+    log         Adjust the logging level or mask of launchd
+    umask       Change launchd's umask
+    bsexec      Execute a process within a different Mach bootstrap subset
+    bslist      List Mach bootstrap services and optional servers
+    bstree      Show the entire Mach bootstrap tree. Requires root privileges.
+    managerpid  Print the PID of the launchd managing this Mach bootstrap.
+    manageruid  Print the UID of the launchd managing this Mach bootstrap.
+    managername Print the name of this Mach bootstrap.
+    asuser      Execute a subcommand in the given user's context.
+    exit        Exit the interactive invocation of launchctl
+    quit        Quit the interactive invocation of launchctl
+    help        This help output
 ```
 
 **Tip:** Use `launchctl list` to show the currently set values for `launchctl`.
@@ -113,16 +113,16 @@ Manage the metadata stores used by Spotlight
 ```
 Usage: mdutil -pEsa -i (on|off) -d volume ...
        mdutil -t {volume-path | deviceid} fileid
-	Utility to manage Spotlight indexes.
-	-p             Publish metadata.
-	-i (on|off)    Turn indexing on or off.
-	-d             Disable Spotlight activity for volume (re-enable using -i on).
-	-E             Erase and rebuild index.
-	-s             Print indexing status.
-	-t             Resolve files from file id with an optional volume path or device id.
-	-a             Apply command to all volumes.
-	-V vol         Apply command to all stores on the specified volume.
-	-v             Display verbose information.
+    Utility to manage Spotlight indexes.
+    -p             Publish metadata.
+    -i (on|off)    Turn indexing on or off.
+    -d             Disable Spotlight activity for volume (re-enable using -i on).
+    -E             Erase and rebuild index.
+    -s             Print indexing status.
+    -t             Resolve files from file id with an optional volume path or device id.
+    -a             Apply command to all volumes.
+    -V vol         Apply command to all stores on the specified volume.
+    -v             Display verbose information.
 NOTE: Run as owner for network homes, otherwise run as root.
 ```
 
@@ -133,14 +133,14 @@ Manipulate firmware NVRAM variables
 
 ```
 nvram [-x] [-p] [-f filename] [-d name] [-c] name[=value] ...
-	-x         use XML format for printing or reading variables
-	           (must appear before -p or -f)
-	-p         print all firmware variables
-	-f         set firmware variables from a text file
-	-d         delete the named variable
-	-c         delete all variables
-	name=value set named variable
-	name       print variable
+    -x         use XML format for printing or reading variables
+               (must appear before -p or -f)
+    -p         print all firmware variables
+    -f         set firmware variables from a text file
+    -d         delete the named variable
+    -c         delete all variables
+    name=value set named variable
+    name       print variable
 Note that arguments and options are executed in order.
 ```
 
@@ -223,8 +223,8 @@ Manipulate power management settings
 ```
 ❯ pmset -g
 Active Profiles:
-Battery Power		-1*
-AC Power		-1
+Battery Power       -1*
+AC Power        -1
 Currently in use:
  standbydelay         86400
  standby              1
@@ -246,7 +246,7 @@ Currently in use:
 ```
 ❯ pmset -g ps
 Now drawing from 'Battery Power'
- -InternalBattery-0	98%; discharging; 4:52 remaining
+ -InternalBattery-0 98%; discharging; 4:52 remaining
 ```
 [pmset man page](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/pmset.1.html)
 
@@ -256,40 +256,40 @@ Manage system configuration parameters
 
 ```
 Usage: scutil
-	interactive access to the dynamic store.
+    interactive access to the dynamic store.
 
    or: scutil --prefs [preference-file]
-	interactive access to the [raw] stored preferences.
+    interactive access to the [raw] stored preferences.
 
    or: scutil [-W] -r nodename
    or: scutil [-W] -r address
    or: scutil [-W] -r local-address remote-address
-	check reachability of node, address, or address pair (-W to "watch").
+    check reachability of node, address, or address pair (-W to "watch").
 
    or: scutil -w dynamic-store-key [ -t timeout ]
-	-w	wait for presense of dynamic store key
-	-t	time to wait for key
+    -w  wait for presense of dynamic store key
+    -t  time to wait for key
 
    or: scutil --get pref
    or: scutil --set pref [newval]
    or: scutil --get filename path key
-	pref	display (or set) the specified preference.  Valid preferences
-		include:
-			ComputerName, LocalHostName, HostName
-	newval	New preference value to be set.  If not specified,
-		the new value will be read from standard input.
+    pref    display (or set) the specified preference.  Valid preferences
+        include:
+            ComputerName, LocalHostName, HostName
+    newval  New preference value to be set.  If not specified,
+        the new value will be read from standard input.
 
    or: scutil --dns
-	show DNS configuration.
+    show DNS configuration.
 
    or: scutil --proxy
-	show "proxy" configuration.
+    show "proxy" configuration.
 
    or: scutil --nwi
-	show network information
+    show network information
 
    or: scutil --nc
-	show VPN network configuration information. Use --nc help for full command list
+    show VPN network configuration information. Use --nc help for full command list
 ```
 [scutil man page](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/scutil.8.html)
 
@@ -303,149 +303,149 @@ Configuration tool for certain machine settings in System Preferences.
 systemsetup Help Information
 -------------------------------------
 Usage: systemsetup -getdate
-	Display current date.
+    Display current date.
 
 Usage: systemsetup -setdate <mm:dd:yy>
-	Set current date to <mm:dd:yy>.
+    Set current date to <mm:dd:yy>.
 
 Usage: systemsetup -gettime
-	Display current time.
+    Display current time.
 
 Usage: systemsetup -settime <hh:mm:ss>
-	Set current time to <hh:mm:ss>.
+    Set current time to <hh:mm:ss>.
 
 Usage: systemsetup -gettimezone
-	Display current time zone.
+    Display current time zone.
 
 Usage: systemsetup -settimezone <timezone>
-	Set current time zone to <timezone>. Use "-listtimezones" to list time zones.
+    Set current time zone to <timezone>. Use "-listtimezones" to list time zones.
 
 Usage: systemsetup -listtimezones
-	List time zones supported by this machine.
+    List time zones supported by this machine.
 
 Usage: systemsetup -getusingnetworktime
-	Display whether network time is on or off.
+    Display whether network time is on or off.
 
 Usage: systemsetup -setusingnetworktime <on off>
-	Set using network time to either <on> or <off>.
+    Set using network time to either <on> or <off>.
 
 Usage: systemsetup -getnetworktimeserver
-	Display network time server.
+    Display network time server.
 
 Usage: systemsetup -setnetworktimeserver <timeserver>
-	Set network time server to <timeserver>.
+    Set network time server to <timeserver>.
 
 Usage: systemsetup -getsleep
-	Display amount of idle time until computer, display and hard disk sleep.
+    Display amount of idle time until computer, display and hard disk sleep.
 
 Usage: systemsetup -setsleep <minutes>
-	Set amount of idle time until computer, display and hard disk sleep to <minutes>.
-	Specify "Never" or "Off" for never.
+    Set amount of idle time until computer, display and hard disk sleep to <minutes>.
+    Specify "Never" or "Off" for never.
 
 Usage: systemsetup -getcomputersleep
-	Display amount of idle time until computer sleeps.
+    Display amount of idle time until computer sleeps.
 
 Usage: systemsetup -setcomputersleep <minutes>
-	Set amount of idle time until compputer sleeps to <minutes>.
-	Specify "Never" or "Off" for never.
+    Set amount of idle time until compputer sleeps to <minutes>.
+    Specify "Never" or "Off" for never.
 
 Usage: systemsetup -getdisplaysleep
-	Display amount of idle time until display sleeps.
+    Display amount of idle time until display sleeps.
 
 Usage: systemsetup -setdisplaysleep <minutes>
-	Set amount of idle time until display sleeps to <minutes>.
-	Specify "Never" or "Off" for never.
+    Set amount of idle time until display sleeps to <minutes>.
+    Specify "Never" or "Off" for never.
 
 Usage: systemsetup -getharddisksleep
-	Display amount of idle time until hard disk sleeps.
+    Display amount of idle time until hard disk sleeps.
 
 Usage: systemsetup -setharddisksleep <minutes>
-	Set amount of idle time until hard disk sleeps to <minutes>.
-	Specify "Never" or "Off" for never.
+    Set amount of idle time until hard disk sleeps to <minutes>.
+    Specify "Never" or "Off" for never.
 
 Usage: systemsetup -getwakeonmodem
-	Display whether wake on modem is on or off.
+    Display whether wake on modem is on or off.
 
 Usage: systemsetup -setwakeonmodem <on off>
-	Set wake on modem to either <on> or <off>.
+    Set wake on modem to either <on> or <off>.
 
 Usage: systemsetup -getwakeonnetworkaccess
-	Display whether wake on network access is on or off.
+    Display whether wake on network access is on or off.
 
 Usage: systemsetup -setwakeonnetworkaccess <on off>
-	Set wake on network access to either <on> or <off>.
+    Set wake on network access to either <on> or <off>.
 
 Usage: systemsetup -getrestartpowerfailure
-	Display whether restart on power failure is on or off.
+    Display whether restart on power failure is on or off.
 
 Usage: systemsetup -setrestartpowerfailure <on off>
-	Set restart on power failure to either <on> or <off>.
+    Set restart on power failure to either <on> or <off>.
 
 Usage: systemsetup -getrestartfreeze
-	Display whether restart on freeze is on or off.
+    Display whether restart on freeze is on or off.
 
 Usage: systemsetup -setrestartfreeze <on off>
-	Set restart on freeze to either <on> or <off>.
+    Set restart on freeze to either <on> or <off>.
 
 Usage: systemsetup -getallowpowerbuttontosleepcomputer
-	Display whether the power button is able to sleep the computer.
+    Display whether the power button is able to sleep the computer.
 
 Usage: systemsetup -setallowpowerbuttontosleepcomputer <on off>
-	Enable or disable whether the power button can sleep the computer.
+    Enable or disable whether the power button can sleep the computer.
 
 Usage: systemsetup -getremotelogin
-	Display whether remote login is on or off.
+    Display whether remote login is on or off.
 
 Usage: systemsetup -setremotelogin <on off>
-	Set remote login to either <on> or <off>. Use "systemsetup -f -setremotelogin off" to suppress prompting when turning remote login off.
+    Set remote login to either <on> or <off>. Use "systemsetup -f -setremotelogin off" to suppress prompting when turning remote login off.
 
 Usage: systemsetup -getremoteappleevents
-	Display whether remote apple events are on or off.
+    Display whether remote apple events are on or off.
 
 Usage: systemsetup -setremoteappleevents <on off>
-	Set remote apple events to either <on> or <off>.
+    Set remote apple events to either <on> or <off>.
 
 Usage: systemsetup -getcomputername
-	Display computer name.
+    Display computer name.
 
 Usage: systemsetup -setcomputername <computername>
-	Set computer name to <computername>.
+    Set computer name to <computername>.
 
 Usage: systemsetup -getlocalsubnetname
-	Display local subnet name.
+    Display local subnet name.
 
 Usage: systemsetup -setlocalsubnetname <name>
-	Set local subnet name to <name>.
+    Set local subnet name to <name>.
 
 Usage: systemsetup -getstartupdisk
-	Display current startup disk.
+    Display current startup disk.
 
 Usage: systemsetup -setstartupdisk <disk>
-	Set current startup disk to <disk>.
+    Set current startup disk to <disk>.
 
 Usage: systemsetup -liststartupdisks
-	List startup disks on this machine.
+    List startup disks on this machine.
 
 Usage: systemsetup -getwaitforstartupafterpowerfailure
-	Get the number of seconds after which the computer will start up after a power failure.
+    Get the number of seconds after which the computer will start up after a power failure.
 
 Usage: systemsetup -setwaitforstartupafterpowerfailure <seconds>
-	Set the number of seconds after which the computer will start up after a power failure. The <seconds> value must be a multiple of 30 seconds.
+    Set the number of seconds after which the computer will start up after a power failure. The <seconds> value must be a multiple of 30 seconds.
 
 Usage: systemsetup -getdisablekeyboardwhenenclosurelockisengaged
- 	Get whether or not the keyboard should be disabled when the X Serve enclosure lock is engaged.
+    Get whether or not the keyboard should be disabled when the X Serve enclosure lock is engaged.
 
 Usage: systemsetup -setdisablekeyboardwhenenclosurelockisengaged <yes no>
- 	Set whether or not the keyboard should be disabled when the X Serve enclosure lock is engaged.
+    Set whether or not the keyboard should be disabled when the X Serve enclosure lock is engaged.
 
 Usage: systemsetup -version
-	Display version of systemsetup tool.
+    Display version of systemsetup tool.
 
 Usage: systemsetup -help
-	Display help.
+    Display help.
 
 Usage: systemsetup -printCommands
-	Display commands.
+    Display commands.
 ```
 
 

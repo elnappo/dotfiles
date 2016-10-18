@@ -4,9 +4,9 @@ These are my dotfiles.
 
 ## Features
 * sync your homebrew taps, formulas, casks, python packages and gems with `$ brewsync`
-* update osx, brew and the dotfiles repository with `$ update`
+* update macOS, brew and the dotfiles repository with `$ update`
 * update your settings (dotfiles) with `$ dotfiles`
-* set some osx defaults (`dotfiles/ansible/tasks/osx_defaults.yml`)
+* set some macOS defaults (`dotfiles/ansible/tasks/macos_defaults.yml`)
 * dnsmasq with dnscrypt for encrypted and localy cached DNS queries
 * try to keep `~/` clean
 * configuration is mainly handled by ansible (Playbook: `~/.dotfiles/ansible/dotfiles.yml`)
@@ -26,7 +26,7 @@ $ ./setup.sh
 ```
 ├── ansible
 │   ├── tasks
-│   │   └── osx_defaults.yml
+│   │   └── macos_defaults.yml
 │   ├── vars
 │   │   ├── casks.yml
 │   │   ├── formula.yml
@@ -35,7 +35,7 @@ $ ./setup.sh
 │   │   └── taps.yml
 │   └── vars.yml
 └── init
-    └── osx.sh
+    └── macos.bash
 ```
 
 ```bash
@@ -65,7 +65,7 @@ Host *
 * [homebrew](https://github.com/Homebrew/homebrew)
 * [homebrew cask](https://github.com/phinze/homebrew-cask)
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-* [OSXDefaults](https://github.com/kevinSuttle/OSXDefaults)
+* [macOS Defaults](https://github.com/kevinSuttle/macOS-Defaults)
 * [NeoBundle](https://github.com/Shougo/neobundle.vim)
 * [VimAwesome](http://vimawesome.com/)
 * [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
