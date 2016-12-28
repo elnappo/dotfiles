@@ -9,7 +9,7 @@ These are my dotfiles.
 * set some macOS defaults (`dotfiles/ansible/tasks/macos_defaults.yml`)
 * dnsmasq with dnscrypt for encrypted and localy cached DNS queries
 * try to keep `~/` clean
-* configuration is mainly handled by ansible (Playbook: `~/.dotfiles/ansible/dotfiles.yml`)
+* configuration is mainly handled by Ansible (playbook: `~/.dotfiles/ansible/dotfiles.yml`)
 
 ## Install (for me)
 ```bash
@@ -61,9 +61,9 @@ Host *
 ```
 
 ## Projects used
-* [ansible](https://github.com/ansible/ansible)
-* [homebrew](https://github.com/Homebrew/homebrew)
-* [homebrew cask](https://github.com/phinze/homebrew-cask)
+* [Ansible](https://github.com/ansible/ansible)
+* [Homebrew](https://github.com/Homebrew/homebrew)
+* [Homebrew-Cask](https://github.com/phinze/homebrew-cask)
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * [macOS Defaults](https://github.com/kevinSuttle/macOS-Defaults)
 * [NeoBundle](https://github.com/Shougo/neobundle.vim)
