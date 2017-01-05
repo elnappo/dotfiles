@@ -60,7 +60,7 @@ function mergepdf -d "Merge PDF files"
     System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py $argv; end
 
 function update -d "Update the system"
-    sudo softwareupdate -i -a; brew update; and brew upgrade; brew cleanup; brew cask cleanup; git -C ~/.dotfiles pull; end
+    brew update; and brew upgrade; brew cleanup; brew cask cleanup; git -C ~/.dotfiles pull; end
 
 function afk -d "Lock the screen (when going AFK)"
     /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend; end

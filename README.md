@@ -4,7 +4,7 @@ These are my dotfiles.
 
 ## Features
 * sync your homebrew taps, formulas, casks, python packages and gems with `$ brewsync`
-* update macOS, brew and the dotfiles repository with `$ update`
+* update brew and the dotfiles repository with `$ update`
 * update your settings (dotfiles) with `$ dotfiles`
 * set some macOS defaults (`dotfiles/ansible/tasks/macos_defaults.yml`)
 * dnsmasq with dnscrypt for encrypted and localy cached DNS queries
