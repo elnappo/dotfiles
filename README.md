@@ -20,7 +20,6 @@ $ ./setup.sh
 
 ## Install (for you)
 * Fork this repository
-* Some interesting variables for the ansible playbook are set in `dotfiles/ansible/vars.yml`
 * Edit at least the following files (better take a look at all files):
 
 ```
@@ -37,6 +36,14 @@ $ ./setup.sh
 └── init
     └── macos.bash
 ```
+
+* Some interesting variables for the Ansible playbook are set in `dotfiles/ansible/vars.yml`
+    * `macos_login_shell: /usr/local/bin/fish`
+    * `sudo_without_password: true`
+    * `use_dnscrypt: true` install and configure [DNSCrypt](https://dnscrypt.org/) with [Unbound](https://unbound.net/) as local DNS cache
+    * `login_window_text: Enter any 11-digit prime number to continue.` set a custom message to appear at the bottom of your login window
+
+* Clone and install dotfiles repository:
 
 ```bash
 $ git clone https://github.com/<YOURNAME>/dotfiles.git ~/.dotfiles
