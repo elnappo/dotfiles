@@ -5,21 +5,17 @@
     - dnsmasq
     - dnscrypt-proxy
 
-- name: Configure dnsmasq
-  copy: src=files/dnsmasq.conf dest=/usr/local/etc/dnsmasq.conf
-
-- name: Copy launchd plists
-  copy: src={{ item.src }} dest={{ item.dest }} owner=root group=wheel mode=0644
+- name: Configure dnsmasq and dnscrypt-proxy
+  copy: src={{ item.src }} dest={{ item.dest }}
   with_items:
-    - { src: "/usr/local/opt/dnsmasq/homebrew.mxcl.dnsmasq.plist", dest: "/Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist"}
-    - { src: "files/homebrew.mxcl.dnscrypt-proxy.plist", dest: "/Library/LaunchDaemons/homebrew.mxcl.dnscrypt-proxy.plist"}
-  register: copy_plists
-  become: yes
+    - { src: "files/dnsmasq.conf", dest: "/usr/local/etc/dnsmasq.conf" }
+    - { src: "files/dnscrypt-proxy.conf", dest: "/usr/local/etc/dnscrypt-proxy.conf" }
+  register: config_change
 
 - name: Start services
-  command: launchctl load {{ item }}
+  command: brew services restart {{ item }}
   with_items:
-    - /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
-    - /Library/LaunchDaemons/homebrew.mxcl.dnscrypt-proxy.plist
-  when: copy_plists.changed
+    - dnscrypt-proxy
+    - dnsmasq
+  when: config_change.changed
   become: yes
