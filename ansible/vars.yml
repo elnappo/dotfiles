@@ -1,5 +1,5 @@
 ---
-macos_login_shell: /usr/local/bin/fish
+login_shell: /usr/local/bin/fish
 sudo_without_password: true
 use_dnscrypt: true
 login_window_text: Enter any 11-digit prime number to continue.

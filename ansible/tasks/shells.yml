@@ -1,41 +1,38 @@
 ---
-- name: check if homebrew bash is installed
-  stat: path=/usr/local/bin/bash
-  register: brew_bash
+# Add shells installed via homebrew on macOS to /etc/shells
+- block:
+  - name: check if homebrew bash is installed
+    stat: path=/usr/local/bin/bash
+    register: brew_bash
 
-- name: add homwbrew bash to /etc/shells
-  lineinfile: dest=/etc/shells line="/usr/local/bin/bash" state=present
-  when: brew_bash.stat.exists
+  - name: add homwbrew bash to /etc/shells
+    lineinfile: dest=/etc/shells line="/usr/local/bin/bash" state=present
+    when: brew_bash.stat.exists
+
+  - name: check if homebrew zsh is installed
+    stat: path=/usr/local/bin/zsh
+    register: brew_zsh
+
+  - name: add homwbrew zsh to /etc/shells
+    lineinfile: dest=/etc/shells line="/usr/local/bin/zsh" state=present
+    when: brew_zsh.stat.exists
+
+  - name: check if homebrew fish is installed
+    stat: path=/usr/local/bin/fish
+    register: brew_fish
+
+  - name: add homwbrew fish to /etc/shells
+    lineinfile: dest=/etc/shells line="/usr/local/bin/fish" state=present
+    when: brew_fish.stat.exists
+
+  when: ansible_os_family == "Darwin"
   become: yes
 
-- name: check if homebrew zsh is installed
-  stat: path=/usr/local/bin/zsh
-  register: brew_zsh
+- name: check if preferred login_shell is installed
+  stat: path={{ login_shell }}
+  register: login_shell_installed
 
-- name: add homwbrew zsh to /etc/shells
-  lineinfile: dest=/etc/shells line="/usr/local/bin/zsh" state=present
-  when: brew_zsh.stat.exists
-  become: yes
-
-- name: check if homebrew fish is installed
-  stat: path=/usr/local/bin/fish
-  register: brew_fish
-
-- name: add homwbrew fish to /etc/shells
-  lineinfile: dest=/etc/shells line="/usr/local/bin/fish" state=present
-  when: brew_fish.stat.exists
-  become: yes
-
-- name: check default user shell
-  shell: dscl . read ~ UserShell | awk '{print $2}'
-  register: current_login_shell
-  changed_when: false
-
-- name: check if preferred macos_login_shell is installed
-  stat: path={{ macos_login_shell }}
-  register: macos_login_shell_installed
-
-- name: set default shell
-  shell: chsh -s {{ macos_login_shell }} {{ ansible_user_id }}
-  when: macos_login_shell_installed.stat.exists and current_login_shell.stdout != "{{ macos_login_shell }}" 
+- name: Set default shell
+  user: name={{ ansible_user_id }} shell={{ login_shell }}
+  when: login_shell_installed.stat.exists
   become: yes

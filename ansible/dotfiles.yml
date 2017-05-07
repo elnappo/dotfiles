@@ -48,6 +48,7 @@
         - links
 
     - include: tasks/packages.yml
+      when: ansible_os_family == "Darwin"
       tags:
         - packages
 
@@ -61,11 +62,12 @@
         - shells
 
     - include: tasks/macos_defaults.yml
+      when: ansible_os_family == "Darwin"
       tags:
         - macos_defaults
 
     - include: tasks/dnscrypt.yml
-      when: use_dnscrypt
+      when: use_dnscrypt and ansible_os_family == "Darwin"
       tags:
         - dnscrypt
 
