@@ -50,7 +50,7 @@ function ips -d "Get all IPs"
 function lscleanup -d "Clean up LaunchServices to remove duplicates in the Open With menu"
     /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder; end
 
-function cleanup -d " Recursively delete .DS_Store"
+function cleanup -d "Recursively delete .DS_Store"
     find . -type f -name '*.DS_Store' -ls -delete; end
 
 function emptytrash -d "Empty all Trashs and clear system log"

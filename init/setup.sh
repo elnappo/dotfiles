@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-
-# set macos defaults
-echo "[i] Set macOS settings"
-./macos.bash
+set -e
 
 # install Command Line Tools
 if [[ ! -x /usr/bin/gcc ]]; then
@@ -21,6 +18,12 @@ if [[ ! -x /usr/local/bin/ansible ]]; then
 	echo "[i] Install Ansible"
 	brew install ansible
 fi
+
+set +e
+
+# set macos defaults
+echo "[i] Set macOS settings"
+./macos.bash
 
 # run playbook
 echo "[i] Run Playbook"
