@@ -1,5 +1,5 @@
+# See https://github.com/oh-my-fish/packages-main
 package grc
-package osx
 package python
 theme bira
 theme default

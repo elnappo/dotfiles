@@ -5,14 +5,14 @@ source $HOME/.dotfiles/aliases
 export EDITOR=vim
 export VISUAL=vim
 
-# homebrew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+case "$(uname -s)" in
+    Linux)
+        ;;
 
-# virtualenvwrapper
-#export WORKON_HOME=$HOME/.virtualenvs
-#source /Library/Frameworks/Python.framework/Versions/3.3/bin/virtualenvwrapper.sh
+    Darwin)
+        # add homebrew to $PATH
+        export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-# colorize these commands if possible with grc
-source "`brew --prefix`/etc/grc.bashrc"
-
-if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
+        if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
+        ;;
+esac
