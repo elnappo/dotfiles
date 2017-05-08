@@ -41,44 +41,49 @@ function gu -d "Run git-up"
 function reload -d "Reload fish config"
     source ~/.config/fish/config.fish; end
 
-function ip -d "Get public IP"
+function myip -d "Get public IP"
     dig +short myip.opendns.com @resolver1.opendns.com; end
-
-function ips -d "Get all IPs"
-    ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'; end
-
-function lscleanup -d "Clean up LaunchServices to remove duplicates in the Open With menu"
-    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder; end
 
 function cleanup -d "Recursively delete .DS_Store"
     find . -type f -name '*.DS_Store' -ls -delete; end
 
-function emptytrash -d "Empty all Trashs and clear system log"
-    sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; end
-
-function mergepdf -d "Merge PDF files"
-    System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py $argv; end
-
 function update -d "Update the system"
-    brew update; and brew upgrade; brew cleanup; brew cask cleanup; git -C ~/.dotfiles pull; end
+    switch (uname -s)
+        case Linux
+            if test -f /etc/os-release
+                switch (cat /etc/os-release | grep "ID_LIKE" | cut -d "=" -f 2)
+                    case archlinux
+                        sudo pacman -Syu --noconfirm
+                    case debian
+                        sudo apt update
+                        sudo apt dist-upgrade -y
+                        sudo apt autoremove -y
+                end
+            end
+
+        case Darwin
+            brew update
+            brew upgrade
+            brew cleanup
+            brew cask cleanup; 
+    end
+    git -C ~/.dotfiles pull
+end
 
 function afk -d "Lock the screen (when going AFK)"
-    /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend; end
-
-function pubkey -d "Copy my public key to the pasteboard"
-    more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'; end
+    switch (uname -s)
+    case Linux
+        i3lock
+    case Darwin
+        /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
+    end
+end
 
 function p8 -d "Ping 8.8.8.8"
     ping 8.8.8.8; end
 
 function pg -d "Ping google.de"
     ping google.de; end
-
-function wifipass -d "Get password from a saved AP"
-    security find-generic-password -g -D "AirPort network password" -w -a $argv; end
-
-function wifipow -d "Perform a wireless broadcast scan"
-    /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s; end
 
 function ccat -d "Syntax highlighting cat"
     pygmentize -g $argv; end
@@ -90,10 +95,10 @@ function starwars -d "Play Star Wars in ASCII"
     telnet towel.blinkenlights.nl; end
 
 function brewsync -d "Sync your installed tools"
-    ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml --tags packages; end
+    ansible-playbook $HOME/.dotfiles/ansible/dotfiles.yml --tags packages; end
 
 function dotfiles -d "Run dotfiles Playbook"
-    ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml $argv; end
+    ansible-playbook $HOME/.dotfiles/ansible/dotfiles.yml $argv; end
 
 function play -d "Run an ansible playbook (alias)"
     ansible-playbook $argv; end
@@ -106,3 +111,30 @@ function smod -d "Show permissions in decimal"
 
 function ubuntu -d "Create a short lived Ubuntu container"
     docker run --rm -ti ubuntu /bin/bash; end
+
+# Load OS specific functions
+switch (uname -s)
+    case Linux
+        function pacman -d "Package manager utility"
+            command sudo pacman $argv; end
+
+        function apt -d ""
+            command sudo apt $argv; end
+
+    case Darwin
+        function wifipass -d "Get password from a saved AP"
+            security find-generic-password -g -D "AirPort network password" -w -a $argv; end
+
+        function wifipow -d "Perform a wireless broadcast scan"
+            /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s; end
+
+        function pubkey -d "Copy my public key to the pasteboard"
+            more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'; end
+
+        function lscleanup -d "Clean up LaunchServices to remove duplicates in the Open With menu"
+            /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder; end
+
+        function mergepdf -d "Merge PDF files"
+            System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py $argv; end
+
+end
