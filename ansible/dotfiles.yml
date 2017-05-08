@@ -48,7 +48,6 @@
         - links
 
     - include: tasks/packages.yml
-      when: ansible_os_family == "Darwin"
       tags:
         - packages
 

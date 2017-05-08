@@ -21,15 +21,13 @@ formula:
   ack:
   rename:
   tree:
-  webkit2png:
-  zopfli:
   p7zip:
   ssh-copy-id:
   cowsay:
   nmap:
   htop:
   unp:
-  speedtest_cli:
+  speedtest-cli:
   axel:
   python:
   python3:
