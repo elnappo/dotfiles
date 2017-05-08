@@ -1,0 +1,14 @@
+---
+- block:
+  - name: Configure pacman
+    lineinfile: path=/etc/pacman.conf line="Color" regexp="#Color"
+
+  - name: Enable Multilib
+    ini_file: path=/etc/pacman.conf section={{ item.section }} option={{ item.option }} value={{ item.value | default(omit) }}
+    with_items:
+      - { section: "multilib", option: "Include", value: "/etc/pacman.d/mirrorlist" }
+
+  - name: Enable pkgfile update timer
+    systemd: name=pkgfile-update.timer enabled=True state=started
+
+  become: yes
