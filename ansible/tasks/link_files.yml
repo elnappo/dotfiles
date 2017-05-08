@@ -11,3 +11,4 @@
     - { src: "~/.dotfiles/config/fish/config.fish", dest: "~/.config/fish/config.fish"}
     - { src: "~/.dotfiles/config/omf/bundle", dest: "~/.config/omf/bundle"}
     - { src: "~/.dotfiles/config/omf/theme", dest: "~/.config/omf/theme"}
+    - { src: "~/.dotfiles/config/i3/config", dest: "~/.config/i3/config"}

@@ -36,6 +36,7 @@
         - "~/.local/share/bash/"
         - "~/.config/fish/"
         - "~/.config/omf/"
+        - "~/.config/i3/"
 
     - name: install neobundle
       git: repo=https://github.com/Shougo/neobundle.vim.git dest=~/.local/share/neobundle update=yes
