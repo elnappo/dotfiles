@@ -13,6 +13,7 @@ call neobundle#begin(expand('~/.local/share/vim-plugins/'))
 	NeoBundle 'scrooloose/syntastic'
 	NeoBundle 'bling/vim-airline'
 	NeoBundle 'Raimondi/delimitMate'
+	NeoBundle 'arcticicestudio/nord-vim'
 	if has('lua')
 		NeoBundle 'Shougo/neocomplcache.vim'		
 	endif
