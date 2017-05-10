@@ -1,3 +1,18 @@
+# Returns OS ID_LIKE variable
+function __fish_os_id_like
+    switch (uname -s)
+        case Linux
+            if test -s /etc/os-release
+                echo (cat /etc/os-release | grep "ID_LIKE" | cut -d "=" -f 2)
+            else
+                echo "Linux"
+            end
+
+        case Darwin
+            echo "Darwin" 
+    end
+end
+
 # Path to Oh My Fish install.
 set -gx OMF_PATH $HOME/.local/share/omf
 
@@ -8,10 +23,9 @@ set -x EDITOR vim
 set -x VISUAL vim
 source $HOME/.dotfiles/config/fish/aliases.fish
 
-
-switch (uname -s)
-    case Linux
-        source /usr/share/doc/pkgfile/command-not-found.fish
+switch (__fish_os_id_like)
+    case archlinux
+        test -s /usr/share/doc/pkgfile/command-not-found.fish ; and source /usr/share/doc/pkgfile/command-not-found.fish
 
     case Darwin
         # Add homebrew to $PATH

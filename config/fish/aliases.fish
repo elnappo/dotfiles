@@ -48,18 +48,15 @@ function cleanup -d "Recursively delete .DS_Store"
     find . -type f -name '*.DS_Store' -ls -delete; end
 
 function update -d "Update the system"
-    switch (uname -s)
-        case Linux
-            if test -f /etc/os-release
-                switch (cat /etc/os-release | grep "ID_LIKE" | cut -d "=" -f 2)
-                    case archlinux
-                        sudo pacman -Syu --noconfirm
-                    case debian
-                        sudo apt update
-                        sudo apt dist-upgrade -y
-                        sudo apt autoremove -y
-                end
-            end
+    switch (__fish_os_id_like)
+        case archlinux
+            sudo pacman -Syu --noconfirm
+
+        case debian
+            sudo apt update
+            sudo apt dist-upgrade -y
+            sudo apt autoremove -y
+            sudo apt autoclean
 
         case Darwin
             brew update
