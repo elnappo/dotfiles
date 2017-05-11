@@ -4,6 +4,7 @@ test -e $HOME/.extra && source $HOME/.extra
 source $HOME/.dotfiles/aliases
 export EDITOR=vim
 export VISUAL=vim
+export GOPATH=$HOME/Coding/golang
 
 case "$(uname -s)" in
     Linux)

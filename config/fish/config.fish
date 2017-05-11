@@ -21,6 +21,7 @@ source $OMF_PATH/init.fish
 
 set -x EDITOR vim
 set -x VISUAL vim
+set -x GOPATH $HOME/Coding/golang
 source $HOME/.dotfiles/config/fish/aliases.fish
 
 switch (__fish_os_id_like)
