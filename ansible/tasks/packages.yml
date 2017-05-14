@@ -86,6 +86,24 @@
   when: ansible_os_family == "Archlinux"
   tags: pacman
 
+- block:
+  - name: Update/Upgrade apt
+    apt: update_cache=yes upgrade=dist
+
+  - name: Manage apt packages
+    apt: name={{ item.key }} state={{ item.value.state | default("latest") }}
+    with_dict: "{{apt}}"
+
+  - name: Manage python packages
+    pip: name={{ item.key }} state={{ item.value.state | default("latest") }} executable={{ item.value.executable | default("pip3") }}
+    with_dict: "{{pip}}"
+    tags:
+      - pip
+  
+  become: yes
+  when: ansible_os_family == "debian"
+  tags: apt
+
 - name: Manage gems
   gem: name={{ item.key }} state={{ item.value.state | default("latest") }}
   with_dict: "{{gems}}"
