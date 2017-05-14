@@ -64,6 +64,12 @@ case "$(uname -s)" in
         ;;
 esac
 
+echo "[i] Move .bashrc to bashrc_backup if exists"
+if [ -f $HOME/.bashrc ] && [ ! -h $HOME/.bashrc ]
+then
+    mv $HOME/.bashrc $HOME/bashrc_backup
+fi
+
 # run playbook
 echo "[i] Run Playbook"
 ansible-playbook ../ansible/dotfiles.yml --ask-become-pass
