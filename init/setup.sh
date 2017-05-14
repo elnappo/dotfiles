@@ -38,8 +38,10 @@ case "$(uname -s)" in
 
                 case "$ID_LIKE" in
                     debian)
-                        echo "[i] Install Ansible"
-                        sudo apt-get install -y ansible
+                        if [[ ! -x /usr/bin/ansible ]]; then
+                            echo "[i] Install Ansible"
+                            sudo apt-get install -y ansible
+                        fi
                         ;;
 
                     archlinux)
@@ -65,9 +67,9 @@ case "$(uname -s)" in
 esac
 
 echo "[i] Move .bashrc to bashrc_backup if exists"
-if [ -f $HOME/.bashrc ] && [ ! -h $HOME/.bashrc ]
+if [ -f "$HOME/.bashrc" ] && [ ! -h "$HOME/.bashrc" ]
 then
-    mv $HOME/.bashrc $HOME/bashrc_backup
+    mv "$HOME/.bashrc" "$HOME/bashrc_backup"
 fi
 
 # run playbook

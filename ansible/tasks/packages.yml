@@ -24,6 +24,11 @@
   tags:
     - aur
 
+- name: Include APT package list
+  include_vars: vars/apt.yml
+  tags:
+    - apt
+
 - name: Include gems list
   include_vars: vars/gems.yml
   tags:
@@ -101,7 +106,7 @@
       - pip
   
   become: yes
-  when: ansible_os_family == "debian"
+  when: ansible_os_family == "Debian"
   tags: apt
 
 - name: Manage gems
