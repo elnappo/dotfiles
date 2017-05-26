@@ -51,12 +51,13 @@ apt:
   binwalk:
   gddrescue:
   vagrant:
-  docker:
+  docker.io:
   unrar:
   openvpn:
   redshift:
   cups:
   pulseaudio:
+  autotools-dev:
 
   # GUI
   xorg:
@@ -65,9 +66,11 @@ apt:
   i3-wm:
   i3lock:
   i3status:
+  i3blocks:
   suckless-tools:
   dmenu:
   gnome:
+  gnome-boxes:
   gnome-icon-theme:
   arc-theme:
   terminator:
@@ -75,12 +78,12 @@ apt:
   sushi:
   thunar:
   lxappearance:
-  i3status:
   gnome-keyring:
   seahorse:
   chromium-browser:
   chromium-codecs-ffmpeg-extra: 
   firefox:
+  thunderbird:
   transmission-gtk:
   vlc:
   libreoffice:
