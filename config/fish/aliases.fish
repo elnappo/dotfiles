@@ -62,9 +62,22 @@ function update -d "Update the system"
             brew update
             brew upgrade
             brew cleanup
-            brew cask cleanup; 
+            brew cask cleanup
     end
     git -C ~/.dotfiles pull
+end
+
+function mpi -d "Install packages"
+    switch (__fish_os_id_like)
+        case archlinux
+            sudo pacman -S $argv
+
+        case debian
+            sudo apt install $argv
+
+        case Darwin
+            brew install $argv
+    end
 end
 
 function afk -d "Lock the screen (when going AFK)"
