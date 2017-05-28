@@ -1,0 +1,9 @@
+gtk-theme-name="Arc-Darker"
+gtk-icon-theme-name="Arc"
+gtk-font-name="System San Francisco Display 10"
+gtk-cursor-theme-name="Adwaita"
+gtk-cursor-theme-size=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintfull"
+gtk-key-theme-name="Emacs"

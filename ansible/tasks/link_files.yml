@@ -8,7 +8,9 @@
     - { src: "~/.dotfiles/vimrc", dest: "~/.vimrc"}
     - { src: "~/.dotfiles/curlrc", dest: "~/.curlrc"}
     - { src: "~/.dotfiles/tmux.conf", dest: "~/.tmux.conf"}
+    - { src: "~/.dotfiles/gtkrc-2.0", dest: "~/.gtkrc-2.0" }
     - { src: "~/.dotfiles/config/fish/config.fish", dest: "~/.config/fish/config.fish"}
     - { src: "~/.dotfiles/config/omf/bundle", dest: "~/.config/omf/bundle"}
     - { src: "~/.dotfiles/config/omf/theme", dest: "~/.config/omf/theme"}
     - { src: "~/.dotfiles/config/i3/config", dest: "~/.config/i3/config"}
+    - { src: "~/.dotfiles/config/gtk-3.0/settings.ini", dest: "~/.config/gtk-3.0/settings.ini" }
