@@ -13,6 +13,7 @@
     - { src: "~/.dotfiles/config/omf/bundle", dest: "~/.config/omf/bundle"}
     - { src: "~/.dotfiles/config/omf/theme", dest: "~/.config/omf/theme"}
     - { src: "~/.dotfiles/config/i3/config", dest: "~/.config/i3/config"}
+    - { src: "~/.dotfiles/config/i3blocks/config", dest: "~/.config/i3blocks/config"}
     - { src: "~/.dotfiles/config/termite/config", dest: "~/.config/termite/config" }
     - { src: "~/.dotfiles/config/terminator/config", dest: "~/.config/terminator/config" }
     - { src: "~/.dotfiles/config/gtk-3.0/settings.ini", dest: "~/.config/gtk-3.0/settings.ini" }

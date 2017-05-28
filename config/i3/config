@@ -204,4 +204,3 @@ for_window [class="Cerebro"] floating enable, move absolute position center
 
 #exec --no-startup-id cerebro
 exec --no-startup-id compton -f
-

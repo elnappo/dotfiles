@@ -1,5 +1,6 @@
 [options]
     scrollback_lines = -1
+    font = Source Code Pro 10
 
 [colors]
     foreground = #D8DEE9

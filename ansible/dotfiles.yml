@@ -40,6 +40,7 @@
         - "~/.config/fish/"
         - "~/.config/omf/"
         - "~/.config/i3/"
+        - "~/.config/i3blocks/"
         - "~/.config/termite/"
         - "~/.config/terminator/"
         - "~/.config/gtk-3.0"

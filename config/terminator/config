@@ -25,3 +25,5 @@
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
+    use_system_font = False
+    font = Source Code Pro 10
