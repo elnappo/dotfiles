@@ -40,6 +40,8 @@
         - "~/.config/fish/"
         - "~/.config/omf/"
         - "~/.config/i3/"
+        - "~/.config/termite/"
+        - "~/.config/terminator/"
         - "~/.config/gtk-3.0"
         - "~/.cache/vim/"
         - "~/Coding/"
