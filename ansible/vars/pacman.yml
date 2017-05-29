@@ -78,6 +78,9 @@ pacman:
   nautilus:
   sushi:
   thunar:
+  thunar-archive-plugin:
+  thunar-media-tags-plugin:
+  thunar-volman:
   lxappearance:
   i3status:
   gnome-keyring:
@@ -85,9 +88,11 @@ pacman:
   seahorse:
   chromium:
   firefox:
+  thunderbird:
   transmission-gtk:
   vlc:
   libreoffice-fresh:
   wireshark-gtk:
   steam:
   pidgin:
+

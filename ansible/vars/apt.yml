@@ -52,12 +52,17 @@ apt:
   gddrescue:
   vagrant:
   docker.io:
+  docker-compose:
   unrar:
   openvpn:
   redshift:
   cups:
   pulseaudio:
   autotools-dev:
+  autoreconf:
+  peco:
+  lxc:
+  net-tools:
 
   # GUI
   xorg:
@@ -77,6 +82,10 @@ apt:
   nautilus:
   sushi:
   thunar:
+  thunar-media-tags-plugin:
+  thunar-archive-plugin:
+  thunar-volman:
+  thunar-vcs-plugin:
   lxappearance:
   gnome-keyring:
   seahorse:
@@ -90,3 +99,6 @@ apt:
   wireshark-gtk:
   steam:
   pidgin:
+  pidgin-otr:
+  pidgin-gnome-keyring:
+
