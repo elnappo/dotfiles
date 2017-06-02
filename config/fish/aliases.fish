@@ -8,7 +8,13 @@ function grep -d "File pattern searcher"
     command grep --color=auto $argv; end
 
 function ls -d "Colorized ls"
-    command ls -G $argv; end
+    switch (uname -s)
+        case Darwin
+            command ls -G $argv
+        case "*"
+            command ls --color $argv
+    end
+end
 
 function l -d "l"
     ls -lah $argv; end
@@ -82,10 +88,10 @@ end
 
 function afk -d "Lock the screen (when going AFK)"
     switch (uname -s)
-    case Linux
-        i3lock
-    case Darwin
-        /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
+        case Linux
+            i3lock
+        case Darwin
+            /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
     end
 end
 
