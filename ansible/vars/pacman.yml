@@ -59,10 +59,18 @@ pacman:
   pkgfile:
   cups:
   pulseaudio-alsa:
+  pkgstats:
+  numlockx:
+  mlocate:
+  ttf-dejavu:
+  ttf-ionicons:
+  adobe-source-code-pro-fonts:
+  ttf-ubuntu-font-family:
+  util-linux:
+  ufw:
 
   # GUI
   xorg-server:
-  xorg-server-utils:
   compton:
   pavucontrol:
   gdm:
@@ -70,6 +78,7 @@ pacman:
   dmenu:
   gnome:
   gnome-extra:
+  gnome-search-tool:
   gnome-icon-theme:
   arc-gtk-theme:
   arc-icon-theme:
@@ -93,6 +102,4 @@ pacman:
   vlc:
   libreoffice-fresh:
   wireshark-gtk:
-  steam:
   pidgin:
-

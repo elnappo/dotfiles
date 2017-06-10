@@ -14,11 +14,12 @@
     - name: allow sudo without password
       lineinfile: 'dest=/etc/sudoers state=present line="{{ ansible_user_id }}	ALL=NOPASSWD: ALL" insertafter="^%admin\tALL=\(ALL\) ALL" validate="visudo -cf %s"'
       become: yes
-      when: sudo_without_password
+      when: sudo_without_password and ansible_os_family == "Darwin"
 
     - name: enable tty_tickets
       lineinfile: 'dest=/etc/sudoers state=present line="Defaults tty_tickets" validate="visudo -cf %s"'
       become: yes
+      when: ansible_os_family == "Darwin"
 
     - name: install oh-my-zsh
       git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.local/share/oh-my-zsh update=yes

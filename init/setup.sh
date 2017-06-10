@@ -45,8 +45,10 @@ case "$(uname -s)" in
                         ;;
 
                     archlinux)
-                        echo "[i] Install Ansible"
-                        sudo pacman -S ansible --noconfirm
+                        if [[ ! -x /usr/bin/ansible ]]; then
+                            echo "[i] Install Ansible"
+                            sudo pacman -S ansible --noconfirm
+                        fi
                         ;;
 
                     *)
@@ -66,13 +68,13 @@ case "$(uname -s)" in
         ;;
 esac
 
-echo "[i] Move .bashrc to bashrc_backup if exists"
 if [ -f "$HOME/.bashrc" ] && [ ! -h "$HOME/.bashrc" ]
 then
+    echo "[i] Move .bashrc to bashrc_backup if exists"
     mv "$HOME/.bashrc" "$HOME/bashrc_backup"
 fi
 
-# run playbook
+# Run main playbook
 echo "[i] Run Playbook"
 ansible-playbook ../ansible/dotfiles.yml --ask-become-pass
 
