@@ -70,7 +70,7 @@ esac
 
 if [ -f "$HOME/.bashrc" ] && [ ! -h "$HOME/.bashrc" ]
 then
-    echo "[i] Move .bashrc to bashrc_backup if exists"
+    echo "[i] Move current ~/.bashrc to ~/bashrc_backup"
     mv "$HOME/.bashrc" "$HOME/bashrc_backup"
 fi
 

@@ -4,6 +4,7 @@ pacman:
   wget:
   openssh:
   vim:
+  vte3-ng:
   hydra:
   john:
   masscan:
@@ -33,6 +34,7 @@ pacman:
   python2-pip:
   python-setuptools:
   python2-setuptools:
+  ruby:
   go:
   iftop:
   tor:
@@ -71,6 +73,7 @@ pacman:
 
   # GUI
   xorg-server:
+  xorg-xinit:
   compton:
   pavucontrol:
   gdm:
