@@ -2,10 +2,7 @@
 - name: Install tmux
   package: name=tmux state=latest
 
-- name: check if tmux plugins are installed
-  stat: path=~/.local/share/tmux-plugins
-  register: tmux_plugins_folder
-
-- name: install tmux plugins
+- name: Install tmux plugins
   command: ~/.local/share/tpm/bin/install_plugins
-  when: not tmux_plugins_folder.stat.exists
+  args:
+    creates: ~/.local/share/tmux-plugins
