@@ -70,6 +70,11 @@ pacman:
   ttf-ubuntu-font-family:
   util-linux:
   ufw:
+  libsecret:
+  rsync:
+  aspell-de
+  aspell-en
+  shellcheck:
 
   # GUI
   xorg-server:
@@ -96,13 +101,15 @@ pacman:
   lxappearance:
   i3status:
   gnome-keyring:
-  libgnome-keyring:
   seahorse:
   chromium:
   firefox:
-  thunderbird:
   transmission-gtk:
   vlc:
   libreoffice-fresh:
   wireshark-gtk:
   pidgin:
+  pidgin-otr:
+  pidgin-libnotify:
+  purple-plugin-pack:
+  feh:
