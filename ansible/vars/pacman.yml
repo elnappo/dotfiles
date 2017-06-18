@@ -72,6 +72,12 @@ pacman:
   ufw:
   netcat:
   net-tools:
+  gnome-keyring:
+  libsecret:
+  rsync:
+  aspell-de:
+  aspell-en:
+  shellcheck:
 
   # GUI
   xorg-server:
@@ -80,6 +86,7 @@ pacman:
   pavucontrol:
   gdm:
   i3:
+  i3status:
   feh:
   dmenu:
   gnome:
@@ -97,13 +104,9 @@ pacman:
   thunar-media-tags-plugin:
   thunar-volman:
   lxappearance:
-  i3status:
-  gnome-keyring:
-  libsecret:
   seahorse:
   chromium:
   firefox:
-  thunderbird:
   transmission-gtk:
   vlc:
   libreoffice-fresh:

@@ -57,6 +57,7 @@ function update -d "Update the system"
     switch (__fish_os_id_like)
         case archlinux
             sudo pacman -Syu --noconfirm
+            pacaur -Syu --noconfirm
 
         case debian
             sudo apt update
@@ -89,7 +90,7 @@ end
 function afk -d "Lock the screen (when going AFK)"
     switch (uname -s)
         case Linux
-            i3lock
+            i3lock -i $HOME/Pictures/i3lock.png
         case Darwin
             /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
     end
