@@ -70,6 +70,8 @@ pacman:
   ttf-ubuntu-font-family:
   util-linux:
   ufw:
+  netcat:
+  net-tools:
 
   # GUI
   xorg-server:
@@ -78,6 +80,7 @@ pacman:
   pavucontrol:
   gdm:
   i3:
+  feh:
   dmenu:
   gnome:
   gnome-extra:
@@ -96,7 +99,7 @@ pacman:
   lxappearance:
   i3status:
   gnome-keyring:
-  libgnome-keyring:
+  libsecret:
   seahorse:
   chromium:
   firefox:
@@ -106,3 +109,7 @@ pacman:
   libreoffice-fresh:
   wireshark-gtk:
   pidgin:
+  pidgin-otr:
+  pidgin-libnotify:
+  purple-plugin-pack:
+

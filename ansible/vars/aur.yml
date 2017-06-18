@@ -4,8 +4,10 @@ aur:
   yaourt:
   tor-browser:
   pycharm-professional:
-  sublime-text:
+  sublime-text-dev:
   teamviewer:
   chromium-widevine:
   ttf-font-awesome:
   system-san-francisco-font-git:
+  purple-gnome-keyring:
+
