@@ -78,6 +78,7 @@ pacman:
   aspell-de:
   aspell-en:
   shellcheck:
+  net-tools:
 
   # GUI
   xorg-server:
@@ -113,6 +114,5 @@ pacman:
   wireshark-gtk:
   pidgin:
   pidgin-otr:
-  pidgin-libnotify:
   purple-plugin-pack:
 
