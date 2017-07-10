@@ -60,6 +60,8 @@
       command: fish -c "omf install"
       args:
         creates: ~/.local/share/omf/themes/default/
+      tags:
+        - packages
 
     # Needs to be after packages
     - include: tasks/tmux_plugins.yml

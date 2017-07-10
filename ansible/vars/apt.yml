@@ -92,12 +92,10 @@ apt:
   chromium-browser:
   chromium-codecs-ffmpeg-extra: 
   firefox:
-  thunderbird:
   transmission-gtk:
   vlc:
   libreoffice:
   wireshark-gtk:
-  steam:
   pidgin:
   pidgin-otr:
   pidgin-gnome-keyring:

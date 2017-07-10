@@ -17,7 +17,7 @@
     # Auto-resizing the window to fit transfers
     - { key: "AutoSize", type: "bool", value: "true" }
   notify:
-    - kill Transmission
+    - Kill Transmission
 
 - name: Set Finder settings
   osx_defaults: domain=com.apple.finder key={{ item.key }} type={{ item.type }} value={{ item.value }}
@@ -49,7 +49,7 @@
     # Disable the warning before emptying the Trash
     - { key: "WarnOnEmptyTrash", type: "bool", value: "false" }
   notify:
-    - kill Finder
+    - Kill Finder
 
 - name: Set Dock settings
   osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}
@@ -65,7 +65,7 @@
     # Don’t show Dashboard as a Space
     - { key: "dashboard-in-overlay", type: "bool", value: "false" }
   notify:
-    - kill Dock
+    - Kill Dock
 
 - name: Set Safari settings
   osx_defaults: domain=com.apple.Safari key={{ item.key }} type={{ item.type }} value={{ item.value }}
@@ -83,15 +83,13 @@
     - { key: "WebKitDeveloperExtrasEnabledPreferenceKey", type: "bool", value: "true" }
     - { key: "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled", type: "bool", value: "true" }
   notify:
-    - kill Safari
+    - Kill Safari
 
 - name: Set Terminal settings
   osx_defaults: domain=com.apple.Terminal key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     # Enable Secure Keyboard Entry in Terminal.app
     - { key: "SecureKeyboardEntry", type: "bool", value: "true" }
-  notify:
-    - kill Terminal
 
 - name: Set global settings
   osx_defaults: domain=NSGlobalDomain key={{ item.key }} type={{ item.type }} value={{ item.value }}
