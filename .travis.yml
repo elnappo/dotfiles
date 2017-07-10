@@ -8,6 +8,7 @@ install:
   - ansible --version
 before_script:
   - rm ~/.bashrc
+  - rm ~/.bash_profile
   - rm ~/.zshrc
   - brew doctor || true
 script:
