@@ -3,6 +3,7 @@
   file: src={{ item.src }} dest={{ item.dest }} state=link
   with_items:
     - { src: "~/.dotfiles/bashrc", dest: "~/.bashrc"}
+    - { src: "~/.dotfiles/bash_profile", dest: "~/.bash_profile"}
     - { src: "~/.dotfiles/zshrc", dest: "~/.zshrc"}
     - { src: "~/.dotfiles/wgetrc", dest: "~/.wgetrc"}
     - { src: "~/.dotfiles/vimrc", dest: "~/.vimrc"}
