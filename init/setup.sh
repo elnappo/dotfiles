@@ -77,7 +77,7 @@ fi
 if [ -f "$HOME/.bash_profile" ] && [ ! -h "$HOME/.bash_profile" ]
 then
     echo "[i] Move current ~/.bash_profile to ~/bash_profile_backup"
-    mv "$HOME/.bash_profile" "$HOME/bashrc_profile_backup"
+    mv "$HOME/.bash_profile" "$HOME/bash_profile_backup"
 fi
 
 # Run main playbook

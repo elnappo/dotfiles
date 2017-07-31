@@ -65,6 +65,9 @@ function update -d "Update the system"
             sudo apt autoremove -y
             sudo apt autoclean
 
+        case "rhel fedora"
+            sudo yum upgrade -y
+
         case Darwin
             brew update
             brew upgrade

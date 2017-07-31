@@ -55,6 +55,7 @@ pacman:
   hub:
   vagrant:
   docker:
+  docker-compose:
   unrar:
   openvpn:
   redshift:
@@ -79,6 +80,8 @@ pacman:
   aspell-en:
   shellcheck:
   net-tools:
+  dialog:
+  iw:
 
   # GUI
   xorg-server:
