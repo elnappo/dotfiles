@@ -27,7 +27,7 @@
     - name: Install oh-my-fish
       git: repo=https://github.com/oh-my-fish/oh-my-fish.git dest=~/.local/share/omf update=yes
 
-    - name: Install tmux Plugin Manager
+    - name: Install tmux plugin manager
       git: repo=https://github.com/tmux-plugins/tpm.git dest=~/.local/share/tpm update=yes
 
     - name: Install neobundle
@@ -48,6 +48,7 @@
         - "~/.cache/vim/"
         - "~/.cache/wget/"
         - "~/Coding/"
+        - "~/Coding/golang/"
 
     - include: tasks/link_files.yml
       tags:

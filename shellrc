@@ -1,5 +1,5 @@
 # User configuration
-test -e $HOME/.extra && source $HOME/.extra
+test -e $HOME/.dotfiles/extra.shell && source $HOME/.dotfiles/extra.shell
 
 source $HOME/.dotfiles/aliases
 export EDITOR=vim

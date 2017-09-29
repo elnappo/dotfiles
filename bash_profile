@@ -1,3 +1,2 @@
-# Use .bashrc
+# Use ~/.bashrc
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-
