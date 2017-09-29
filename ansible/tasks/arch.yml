@@ -11,7 +11,11 @@
   - name: Enable pkgfile update timer
     systemd: name=pkgfile-update.timer enabled=True state=started
   
-  - name: Add user to wireshark group
-    user: name={{ ansible_user_id }} groups=wireshark
+  - name: Add user to wheel and wireshark group
+    user: name={{ ansible_user_id }} groups=wheel,wireshark append=yes
+
+  - name: Add user to docker group
+    user: name={{ ansible_user_id }} groups=docker append=yes
+    when: sudo_without_password
 
   become: yes
