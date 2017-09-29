@@ -205,4 +205,5 @@ for_window [class="Cerebro"] floating enable, move absolute position center
 #exec --no-startup-id cerebro
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper.png
 exec --no-startup-id compton -f
+exec --no-startup-id pasystray
 
