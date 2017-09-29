@@ -82,6 +82,7 @@ pacman:
   net-tools:
   dialog:
   iw:
+  tcpdump:
 
   # GUI
   xorg-server:
@@ -118,4 +119,5 @@ pacman:
   pidgin:
   pidgin-otr:
   purple-plugin-pack:
-
+  gitg:
+  quassel-client:
