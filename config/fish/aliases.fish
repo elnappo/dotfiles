@@ -56,7 +56,6 @@ function cleanup -d "Recursively delete .DS_Store"
 function update -d "Update the system"
     switch (__fish_os_id_like)
         case archlinux
-            sudo pacman -Syu --noconfirm
             pacaur -Syu --noconfirm
 
         case debian
@@ -80,10 +79,13 @@ end
 function mpi -d "Install packages"
     switch (__fish_os_id_like)
         case archlinux
-            sudo pacman -S $argv
+            pacaur -S $argv
 
         case debian
             sudo apt install $argv
+
+        case "rhel fedora"
+            sudo yum install $argv
 
         case Darwin
             brew install $argv
@@ -124,9 +126,15 @@ function play -d "Run an ansible playbook (alias)"
     ansible-playbook $argv; end
 
 function s -d "Open in Sublime Text"
-    subl $argv; end
+    switch (__fish_os_id_like)
+        case archlinux
+            subl3 $argv
+        case Darwin
+            subl $argv
+    end
+end
 
-function smod -d "Show permissions in decimal"
+function smod -d "Show decimal permissions"
     stat -c "%a %n"; end
 
 function ubuntu -d "Create a short lived Ubuntu container"
