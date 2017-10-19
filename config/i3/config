@@ -178,6 +178,7 @@ hide_edge_borders both
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+	tray_output primary
 	position top
         status_command i3blocks
 	colors {
@@ -199,6 +200,9 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+exec --no-startup-id "i3-msg 'workspace 1 ; append_layout ~/.config/i3/workspace-1.json'"
+exec --no-startup-id "i3-msg 'workspace 2 ; append_layout ~/.config/i3/workspace-2.json'"
 
 for_window [class="Cerebro"] floating enable, move absolute position center	
 
