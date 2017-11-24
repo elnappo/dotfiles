@@ -30,12 +30,16 @@ end
 
 switch (__fish_os_id_like)
     case archlinux
-        test -s /usr/share/doc/pkgfile/command-not-found.fish ; and source /usr/share/doc/pkgfile/command-not-found.fish
+        test -s /usr/share/doc/pkgfile/command-not-found.fish; and source /usr/share/doc/pkgfile/command-not-found.fish
+        # Load grc as omf plugin is incomplete
+        test -s /etc/grc.fish; and source /etc/grc.fish
 
     case Darwin
         # Add homebrew to $PATH
         test -d /usr/local/bin ; and set -x PATH /usr/local/bin $PATH
         test -d /usr/local/sbin; and set -x PATH /usr/local/sbin $PATH
         brew command command-not-found-init > /dev/null 2>&1; and . (brew command-not-found-init)
+        # Load grc as omf plugin is incomplete
+        test -s /usr/local/etc/grc.fish; and source /usr/local/etc/grc.fish
 end
 
