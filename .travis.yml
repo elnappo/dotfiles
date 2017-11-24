@@ -1,9 +1,7 @@
 ---
-osx_image: xcode8.2
-language:
-  - objective-c
+os: osx
+osx_image: xcode9.1
 install:
-  - brew update
   - brew install ansible
   - ansible --version
 before_script:
@@ -24,3 +22,4 @@ after_script:
   - brew list
   - brew cleanup
   - brew cask cleanup
+  - ls -la ~/
