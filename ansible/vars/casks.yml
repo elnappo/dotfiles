@@ -12,7 +12,6 @@ casks:
   ios-saver:
   wireshark:
   # Quick Look plugins
-  betterzipql:
   webpquicklook:
   suspicious-package:
   qlstephen:
@@ -29,7 +28,6 @@ casks:
   the-unarchiver:
   vmware-fusion:
   vagrant:
-  gpgtools:
   macpass:
   sublime-text:
   quassel-client:
