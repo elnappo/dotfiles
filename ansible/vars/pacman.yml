@@ -71,7 +71,7 @@ pacman:
   ttf-ubuntu-font-family:
   util-linux:
   ufw:
-  netcat:
+  gnu-netcat:
   net-tools:
   gnome-keyring:
   libsecret:
@@ -90,7 +90,7 @@ pacman:
   compton:
   pavucontrol:
   gdm:
-  i3:
+  i3-wm:
   i3status:
   feh:
   dmenu:
