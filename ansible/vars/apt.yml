@@ -2,7 +2,6 @@
 apt:
   # CLI
   wget:
-  openssh-server:
   vim:
   hydra:
   john:
@@ -38,7 +37,6 @@ apt:
   iftop:
   tor:
   torsocks:
-  youtube-dl:
   pwgen:
   ansible:
   httpie:
@@ -54,7 +52,6 @@ apt:
   docker.io:
   docker-compose:
   unrar:
-  openvpn:
   redshift:
   cups:
   pulseaudio:
@@ -96,6 +93,3 @@ apt:
   vlc:
   libreoffice:
   wireshark-gtk:
-  pidgin:
-  pidgin-otr:
-  pidgin-gnome-keyring:

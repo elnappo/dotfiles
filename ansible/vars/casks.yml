@@ -27,13 +27,11 @@ casks:
   macdown:
   the-unarchiver:
   vmware-fusion:
-  vagrant:
   macpass:
   sublime-text:
-  quassel-client:
   moneymoney:
   teamviewer:
-  adium:
   amethyst:
   docker:
   steam:
+  visual-studio-code:

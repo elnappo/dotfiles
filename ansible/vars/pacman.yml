@@ -116,8 +116,4 @@ pacman:
   vlc:
   libreoffice-fresh:
   wireshark-gtk:
-  pidgin:
-  pidgin-otr:
-  purple-plugin-pack:
   gitg:
-  quassel-client:

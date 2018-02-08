@@ -9,8 +9,9 @@ aur:
   chromium-widevine:
   ttf-font-awesome:
   system-san-francisco-font-git:
-  purple-gnome-keyring:
-  purple-libnotify-plus:
   peco:
   netdiscover:
   pasystray:
+  kubectl-bin:
+  kubernetes-helm:
+  visual-studio-code-bin:

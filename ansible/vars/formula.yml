@@ -37,7 +37,6 @@ formula:
   iftop:
   tor:
   torsocks:
-  youtube-dl:
   git-extras:
   pwgen:
   archey:
@@ -56,3 +55,5 @@ formula:
   ddrescue:
   hub:
   iproute2mac:
+  kubernetes-cli:
+  kubernetes-helm:
