@@ -1,3 +1,5 @@
+ansible/dotfiles.retry
+
 .DS_Store
 .AppleDouble
 .LSOverride

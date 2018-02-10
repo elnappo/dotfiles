@@ -1,9 +1,9 @@
 ---
+dock_icon_size: 40
+keyboard_initial_key_repeat_delay: 20
+keyboard_key_repeat_rate: 1
 login_shell: /usr/local/bin/fish
+login_window_text: Enter any 11-digit prime number to continue.
+macos_auto_correct: "false"
 sudo_without_password: true
 use_dnscrypt: true
-login_window_text: Enter any 11-digit prime number to continue.
-dock_icon_size: 40
-keyboard_key_repeat_rate: 1
-keyboard_initial_key_repeat_delay: 20
-macos_auto_correct: "false"

@@ -1,17 +1,17 @@
 ---
 aur:
-  pacaur:
-  yaourt:
-  tor-browser:
-  pycharm-professional:
-  sublime-text-dev:
-  teamviewer:
   chromium-widevine:
-  ttf-font-awesome:
-  system-san-francisco-font-git:
-  peco:
-  netdiscover:
-  pasystray:
   kubectl-bin:
   kubernetes-helm:
+  netdiscover:
+  pacaur:
+  pasystray:
+  peco:
+  pycharm-professional:
+  sublime-text-dev:
+  system-san-francisco-font-git:
+  teamviewer:
+  tor-browser:
+  ttf-font-awesome:
   visual-studio-code-bin:
+  yaourt:

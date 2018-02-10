@@ -1,9 +1,9 @@
 ---
 pip:
-  virtualenvwrapper:
   flake8:
-  pylint:
-  requests:
   git-up:
   pep8:
+  pylint:
+  requests:
   tox:
+  virtualenvwrapper:

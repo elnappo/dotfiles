@@ -1,7 +1,7 @@
 ---
 taps:
-  homebrew/dupes:
   caskroom/cask:
   caskroom/versions:
-  homebrew/services:
   homebrew/command-not-found:
+  homebrew/dupes:
+  homebrew/services:
