@@ -1,17 +1,41 @@
 # elnappo’s dotfiles [![Build Status](https://travis-ci.org/elnappo/dotfiles.svg?branch=master)](https://travis-ci.org/elnappo/dotfiles)
 
-These are my dotfiles.
+These are my dotfiles, they can be used under macOS and Linux (mainly Arch Linux but Ubuntu is also supported). What is special about it is that Ansible is used to configure and sync your system settings. This has many advantages in contrast to simple bash scripts or a `Makefile`.
 
 ## Features
-* sync your homebrew taps, formulas, casks, python packages and gems with `$ brewsync`
-* update brew and the dotfiles repository with `$ update`
+
+* update packages (homebrew, pacman, apt) and the dotfiles repository with `$ update`
 * update your settings (dotfiles) with `$ dotfiles`
+* sync your packages with `$ brewsync` between hosts
+* Try to use consistent color theme and fonts between all components
 * set some macOS defaults (`dotfiles/ansible/tasks/macos_defaults.yml`)
-* dnsmasq with dnscrypt for encrypted and localy cached DNS queries
+* set some Arch Linux specific options (`dotfiles/ansible/tasks/arch.yml`)
+* dnsmasq with dnscrypt for encrypted and locally cached DNS queries (macOS only)
 * try to keep `~/` clean
 * configuration is mainly handled by Ansible (playbook: `~/.dotfiles/ansible/dotfiles.yml`)
 
+## Included configurations
+
+* OS
+  * macOS
+  * Arch Linux
+  * Ubuntu / (CentOS)
+* curl
+* fish / zsh / bash
+* GTK
+* i3 (i3blocks)
+* iTerm 2
+* SSH
+* Terminator
+* Termite
+* tmux
+* Transmission
+* Vim
+* Visual Studio Code
+* Wget
+
 ## Install (for me)
+
 ```bash
 $ git clone https://github.com/elnappo/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles/init
@@ -19,6 +43,7 @@ $ ./setup.sh
 ```
 
 ## Install (for you)
+
 * Fork this repository
 * Edit at least the following files (better take a look at all files):
 
@@ -38,10 +63,11 @@ $ ./setup.sh
 ```
 
 * Some interesting variables for the Ansible playbook are set in `dotfiles/ansible/vars.yml`
-    * `login_shell: /usr/local/bin/fish`
-    * `sudo_without_password: true`
-    * `use_dnscrypt: true` install and configure [DNSCrypt](https://dnscrypt.org/) with [Unbound](https://unbound.net/) as local DNS cache
-    * `login_window_text: Enter any 11-digit prime number to continue.` set a custom message to appear at the bottom of your login window
+
+  * `login_shell: /usr/local/bin/fish`
+  * `sudo_without_password: true`
+  * `use_dnscrypt: true` install and configure [DNSCrypt](https://dnscrypt.org/) with [Unbound](https://unbound.net/) as local DNS cache
+  * `login_window_text: Enter any 11-digit prime number to continue.` set a custom message to appear at the bottom of your login window (macOS)
 
 * Clone and install dotfiles repository:
 
@@ -51,23 +77,16 @@ $ cd ~/.dotfiles/init
 $ ./setup.sh
 ```
 
-## What is missing?
-### SSH client configuration
-`~/.ssh/config` or system wide in `/etc/ssh/ssh_config`
+## What is missing
 
-```
-Host *
-    HashKnownHosts yes
-    PasswordAuthentication no
-    ChallengeResponseAuthentication no
-    PubkeyAuthentication yes
-    HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,ssh-rsa,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp521,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256
-    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
-    Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
-    MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,umac-128@openssh.com
-```
+* `gitconfig`
+
+### SSH client configuration
+
+`~/.ssh/config` or system wide in `/etc/ssh/ssh_config`, an basic example can be found at `contrib/ssh_config`.
 
 ## Projects used
+
 * [Ansible](https://github.com/ansible/ansible)
 * [Homebrew](https://github.com/Homebrew/homebrew)
 * [Homebrew-Cask](https://github.com/phinze/homebrew-cask)
@@ -79,6 +98,7 @@ Host *
 * [Oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 
 ## Inspired by
+
 * https://github.com/mathiasbynens/dotfiles
 * https://github.com/alrra/dotfiles
 * https://github.com/necolas/dotfiles
