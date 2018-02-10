@@ -36,17 +36,18 @@
     - name: Create folder
       file: path={{item}} state=directory
       with_items:
-        - "~/.local/share/zsh/"
-        - "~/.local/share/bash/"
-        - "~/.config/fish/"
-        - "~/.config/omf/"
-        - "~/.config/i3/"
-        - "~/.config/i3blocks/"
-        - "~/.config/termite/"
-        - "~/.config/terminator/"
-        - "~/.config/gtk-3.0"
         - "~/.cache/vim/"
         - "~/.cache/wget/"
+        - "~/.config/fish/"
+        - "~/.config/gtk-3.0"
+        - "~/.config/i3/"
+        - "~/.config/i3blocks/"
+        - "~/.config/omf/"
+        - "~/.config/terminator/"
+        - "~/.config/termite/"
+        - "~/.config/vscode/"
+        - "~/.local/share/bash/"
+        - "~/.local/share/zsh/"
         - "~/Coding/"
         - "~/Coding/golang/"
 

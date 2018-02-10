@@ -1,0 +1,12 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Nord",
+    "editor.multiCursorModifier": "alt",
+    "projectManager.sortList": "Name",
+    "projectManager.git.baseFolders": [
+        "$home/Coding"
+    ],
+    "cSpell.userWords": [
+        "Ansible"
+    ]
+}
