@@ -27,7 +27,7 @@ function df -d "Display free disk space"
     command df -h $argv; end
 
 function pwgen -d "Generate safe passwords"
-    command pwgen --capitalize --numerals --symbols --secure 16; end
+    command pwgen --capitalize --numerals --secure 16; end
 
 function axel -d "Multiple connections wget"
     command axel -an 10 $argv; end
@@ -132,6 +132,10 @@ function s -d "Open in Sublime Text"
         case Darwin
             subl $argv
     end
+end
+
+function c -d "Open in Visual Studio Code"
+    code $argv
 end
 
 function smod -d "Show decimal permissions"
