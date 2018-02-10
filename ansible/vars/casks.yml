@@ -1,38 +1,38 @@
 ---
 casks:
-  google-chrome:
+  docker:
   firefox:
-  torbrowser:
-  iterm2:
-  transmission:
-  vlc:
-  libreoffice:
-  unrarx:
-  sourcetree:
+  google-chrome:
   ios-saver:
+  iterm2:
+  libreoffice:
+  macdown:
+  macpass:
+  moneymoney:
+  pycharm:
+  riot:
+  sourcetree:
+  steam:
+  sublime-text:
+  teamviewer:
+  the-unarchiver:
+  torbrowser:
+  transmission:
+  unrarx:
+  visual-studio-code:
+  vlc:
+  vmware-fusion:
   wireshark:
+  xquartz:
   # Quick Look plugins
-  webpquicklook:
-  suspicious-package:
-  qlstephen:
   qlcolorcode:
+  qlimagesize:
   qlmarkdown:
-  quicklook-json:
-  quicklook-csv:
   qlprettypatch:
   qlrest:
-  qlimagesize:
-  xquartz:
-  pycharm:
-  macdown:
-  the-unarchiver:
-  vmware-fusion:
-  macpass:
-  sublime-text:
-  moneymoney:
-  teamviewer:
-  amethyst:
-  docker:
-  steam:
-  visual-studio-code:
-  riot:
+  qlstephen:
+  quicklook-csv:
+  quicklook-json:
+  suspicious-package:
+  webpquicklook:
+

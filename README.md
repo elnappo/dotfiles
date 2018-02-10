@@ -85,27 +85,15 @@ $ ./setup.sh
 
 `~/.ssh/config` or system wide in `/etc/ssh/ssh_config`, an basic example can be found at `contrib/ssh_config`.
 
-## Projects used
-
-* [Ansible](https://github.com/ansible/ansible)
-* [Homebrew](https://github.com/Homebrew/homebrew)
-* [Homebrew-Cask](https://github.com/phinze/homebrew-cask)
-* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-* [macOS Defaults](https://github.com/kevinSuttle/macOS-Defaults)
-* [NeoBundle](https://github.com/Shougo/neobundle.vim)
-* [VimAwesome](http://vimawesome.com/)
-* [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
-* [Oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
-
 ## Inspired by
 
-* https://github.com/mathiasbynens/dotfiles
-* https://github.com/alrra/dotfiles
-* https://github.com/necolas/dotfiles
-* https://github.com/monstermunchkin/dotfiles
 * https://bitbucket.org/keimlink/dotfiles
 * https://gist.github.com/brandonb927/3195465
+* https://github.com/alrra/dotfiles
 * https://github.com/donnemartin/dev-setup
-* https://github.com/herrbischoff/awesome-osx-command-line
 * https://github.com/drduh/OS-X-Security-and-Privacy-Guide
+* https://github.com/herrbischoff/awesome-osx-command-line
+* https://github.com/mathiasbynens/dotfiles
+* https://github.com/monstermunchkin/dotfiles
 * https://github.com/mrzool/bash-sensible
+* https://github.com/necolas/dotfiles

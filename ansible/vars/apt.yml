@@ -1,95 +1,95 @@
 ---
 apt:
   # CLI
-  wget:
-  vim:
-  hydra:
-  john:
-  masscan:
-  zmap:
-  nikto:
-  openssl:
-  bash:
-  bash-completion:
-  zsh:
-  fish:
-  coreutils:
-  moreutils:
-  findutils:
-  grep:
   ack:
-  tree:
-  p7zip:
-  cowsay:
-  nmap:
-  htop:
-  unp:
-  speedtest-cli:
-  axel:
-  python:
-  python3:
-  python-pip:
-  python3-pip:
-  python-setuptools:
-  python3-setuptools:
-  golang:
-  ruby:
-  iftop:
-  tor:
-  torsocks:
-  pwgen:
   ansible:
-  httpie:
+  autoreconf:
+  autotools-dev:
+  axel:
+  bash-completion:
+  bash:
+  binwalk:
+  coreutils:
+  cowsay:
+  cups:
+  docker-compose:
+  docker.io:
+  findutils:
+  fish:
+  gddrescue:
+  golang:
   grc:
-  smartmontools:
+  grep:
+  htop:
+  httpie:
+  hydra:
+  iftop:
+  john:
+  lxc:
+  masscan:
+  moreutils:
   mtr:
   ncdu:
-  tmux:
-  syncthing:
-  binwalk:
-  gddrescue:
-  vagrant:
-  docker.io:
-  docker-compose:
-  unrar:
-  redshift:
-  cups:
-  pulseaudio:
-  autotools-dev:
-  autoreconf:
-  peco:
-  lxc:
   net-tools:
+  nikto:
+  nmap:
+  openssl:
+  p7zip:
+  peco:
+  pulseaudio:
+  pwgen:
+  python-pip:
+  python-setuptools:
+  python:
+  python3-pip:
+  python3-setuptools:
+  python3:
+  redshift:
+  ruby:
+  smartmontools:
+  speedtest-cli:
+  syncthing:
+  tmux:
+  tor:
+  torsocks:
+  tree:
+  unp:
+  unrar:
+  vagrant:
+  vim:
+  wget:
+  zmap:
+  zsh:
 
   # GUI
-  xorg:
-  compton:
-  pavucontrol:
-  i3-wm:
-  i3lock:
-  i3status:
-  i3blocks:
-  suckless-tools:
-  dmenu:
-  gnome:
-  gnome-boxes:
-  gnome-icon-theme:
   arc-theme:
-  terminator:
-  nautilus:
-  sushi:
-  thunar:
-  thunar-media-tags-plugin:
-  thunar-archive-plugin:
-  thunar-volman:
-  thunar-vcs-plugin:
-  lxappearance:
-  gnome-keyring:
-  seahorse:
   chromium-browser:
   chromium-codecs-ffmpeg-extra: 
+  compton:
+  dmenu:
   firefox:
+  gnome-boxes:
+  gnome-icon-theme:
+  gnome-keyring:
+  gnome:
+  i3-wm:
+  i3blocks:
+  i3lock:
+  i3status:
+  libreoffice:
+  lxappearance:
+  nautilus:
+  pavucontrol:
+  seahorse:
+  suckless-tools:
+  sushi:
+  terminator:
+  thunar-archive-plugin:
+  thunar-media-tags-plugin:
+  thunar-vcs-plugin:
+  thunar-volman:
+  thunar:
   transmission-gtk:
   vlc:
-  libreoffice:
   wireshark-gtk:
+  xorg:
