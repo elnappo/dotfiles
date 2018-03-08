@@ -9,7 +9,7 @@ function __fish_os_id_like
             end
 
         case Darwin
-            echo "Darwin" 
+            echo "Darwin"
     end
 end
 
@@ -26,6 +26,11 @@ source $HOME/.dotfiles/config/fish/aliases.fish
 
 if test -e $HOME/.dotfiles/extra.fish
     source $HOME/.dotfiles/extra.fish
+end
+
+if status --is-interactive
+    set -g fish_user_abbreviations
+    abbr --add k kubectl
 end
 
 switch (__fish_os_id_like)
