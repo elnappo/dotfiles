@@ -57,3 +57,5 @@ formula:
   iproute2mac:
   kubernetes-cli:
   kubernetes-helm:
+  jq:
+  mas:
