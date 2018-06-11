@@ -64,6 +64,7 @@ pacman:
   smartmontools:
   speedtest-cli:
   syncthing:
+  sysstat:
   tcpdump:
   tmux:
   tor:
@@ -85,6 +86,7 @@ pacman:
   zsh:
 
   # GUI
+  arandr:
   arc-gtk-theme:
   arc-icon-theme:
   chromium:
@@ -118,3 +120,4 @@ pacman:
   wireshark-gtk:
   xorg-server:
   xorg-xinit:
+  
