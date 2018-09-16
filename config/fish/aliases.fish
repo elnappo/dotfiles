@@ -2,7 +2,7 @@
 function ..; cd ..; end
 function ...; cd ../..; end
 function ....; cd ../../..; end
-  
+
 # Color output
 function grep -d "File pattern searcher"
     command grep --color=auto $argv; end
@@ -71,7 +71,6 @@ function update -d "Update the system"
             brew update
             brew upgrade
             brew cleanup
-            brew cask cleanup
     end
     git -C ~/.dotfiles pull
 end
