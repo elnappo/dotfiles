@@ -1,13 +1,12 @@
 ---
 os: osx
-osx_image: xcode9.1
+osx_image: xcode10
 install:
-  - brew install ansible
+  - brew upgrade ansible
   - ansible --version
 before_script:
   - rm ~/.bashrc
   - rm ~/.bash_profile
-  - rm ~/.zshrc
   - brew doctor || true
 script:
   - ansible-playbook -i ansible/inventory --syntax-check --list-tasks ansible/dotfiles.yml
