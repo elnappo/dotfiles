@@ -1,7 +1,6 @@
 ---
 formula:
   wget:
-    options: enable-iri
   openssh:
     options: with-ldns
   vim:

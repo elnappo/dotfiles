@@ -39,7 +39,6 @@ pacman:
   mtr:
   ncdu:
   net-tools:
-  net-tools:
   nikto:
   nmap:
   numlockx:
@@ -120,4 +119,3 @@ pacman:
   wireshark-gtk:
   xorg-server:
   xorg-xinit:
-  
