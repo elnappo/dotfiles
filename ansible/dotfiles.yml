@@ -50,6 +50,7 @@
         - "~/.local/share/zsh/"
         - "~/Coding/"
         - "~/Coding/golang/"
+        - "~/Library/Application Support/Code/User/"
 
     - include: tasks/link_files.yml
       tags:
@@ -58,7 +59,7 @@
     - include: tasks/packages.yml
       tags:
         - packages
-    
+
     - name: Install oh-my-fish themes and plugins
       command: fish -c "omf install"
       args:
@@ -79,7 +80,7 @@
       when: ansible_os_family == "Darwin"
       tags:
         - macos_defaults
-    
+
     - include: tasks/arch.yml
       when: ansible_os_family == "Archlinux"
       tags:
@@ -98,13 +99,13 @@
       command: killall Finder
 
     - name: Kill Transmission
-      command: killall Transmission 
+      command: killall Transmission
       ignore_errors: yes
 
     - name: Kill Safari
-      command: killall Safari 
+      command: killall Safari
       ignore_errors: yes
 
     - name: Kill Terminal
-      command: killall Terminal 
+      command: killall Terminal
       ignore_errors: yes
