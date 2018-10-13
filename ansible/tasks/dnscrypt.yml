@@ -1,12 +1,13 @@
 ---
 - name: Install dnsmasq and dnscrypt-proxy
-  homebrew: name={{ item }} state=present
-  with_items:
-    - dnsmasq
-    - dnscrypt-proxy
+  homebrew:
+    name: ["dnsmasq", "dnscrypt-proxy"]
+    state: present
 
 - name: Configure dnsmasq and dnscrypt-proxy
-  copy: src={{ item.src }} dest={{ item.dest }}
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
   with_items:
     - { src: "files/dnsmasq.conf", dest: "/usr/local/etc/dnsmasq.conf" }
     - { src: "files/dnscrypt-proxy.conf", dest: "/usr/local/etc/dnscrypt-proxy.conf" }
