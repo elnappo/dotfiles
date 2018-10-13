@@ -1,22 +1,23 @@
 ---
 - name: Install dnsmasq and dnscrypt-proxy
-  homebrew:
-    name: ["dnsmasq", "dnscrypt-proxy"]
+  package:
+    name: dnscrypt-proxy
     state: present
 
-- name: Configure dnsmasq and dnscrypt-proxy
-  copy:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
+- name: Configure dnscrypt-proxy
+  ini_file:
+    path: /usr/local/etc/dnscrypt-proxy.toml
+    section: "{{ item.section }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+    backup: yes
   with_items:
-    - { src: "files/dnsmasq.conf", dest: "/usr/local/etc/dnsmasq.conf" }
-    - { src: "files/dnscrypt-proxy.conf", dest: "/usr/local/etc/dnscrypt-proxy.conf" }
+    - { section: "", option: "server_names", value: "['cloudflare', 'google']" }
+    - { section: "", option: "require_dnssec", value: "true" }
+    - { section: "", option: "cache_size", value: "2560" }
   register: config_change
 
-- name: Start services
-  command: brew services restart {{ item }}
-  with_items:
-    - dnscrypt-proxy
-    - dnsmasq
+- name: Start dnscrypt-proxy
+  command: brew services restart dnscrypt-proxy
   when: config_change.changed
   become: yes
