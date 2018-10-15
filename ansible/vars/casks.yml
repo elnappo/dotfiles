@@ -24,6 +24,7 @@ casks:
   vmware-fusion:
   wireshark:
   xquartz:
+  amethyst:
   # Quick Look plugins
   qlcolorcode:
   qlimagesize:
