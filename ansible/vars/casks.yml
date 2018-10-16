@@ -25,6 +25,7 @@ casks:
   wireshark:
   xquartz:
   amethyst:
+  flux:
   # Quick Look plugins
   qlcolorcode:
   qlimagesize:
