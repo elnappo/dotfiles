@@ -3,7 +3,6 @@ casks:
   docker:
   firefox:
   google-chrome:
-  ios-saver:
   iterm2:
   libreoffice:
   macdown:
@@ -25,7 +24,7 @@ casks:
   wireshark:
   xquartz:
   amethyst:
-  flux:
+  owasp-zap:
   # Quick Look plugins
   qlcolorcode:
   qlimagesize:
