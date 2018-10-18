@@ -33,6 +33,11 @@ if status --is-interactive
     abbr --add k kubectl
 end
 
+if status --is-interactive
+    set -g fish_user_abbreviations
+    abbr --add c code
+end
+
 switch (__fish_os_id_like)
     case archlinux
         test -s /usr/share/doc/pkgfile/command-not-found.fish; and source /usr/share/doc/pkgfile/command-not-found.fish
@@ -47,4 +52,3 @@ switch (__fish_os_id_like)
         # Load grc as omf plugin is incomplete
         test -s /usr/local/etc/grc.fish; and source /usr/local/etc/grc.fish
 end
-

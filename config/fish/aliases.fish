@@ -133,10 +133,6 @@ function s -d "Open in Sublime Text"
     end
 end
 
-function c -d "Open in Visual Studio Code"
-    code $argv
-end
-
 function smod -d "Show decimal permissions"
     stat -c "%a %n"; end
 
