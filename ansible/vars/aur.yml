@@ -4,7 +4,6 @@ aur:
   kubectl-bin:
   kubernetes-helm:
   netdiscover:
-  pacaur:
   pasystray:
   peco:
   pycharm-professional:
@@ -14,4 +13,4 @@ aur:
   tor-browser:
   ttf-font-awesome:
   visual-studio-code-bin:
-  yaourt:
+  yay:
