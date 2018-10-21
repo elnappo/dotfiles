@@ -31,10 +31,6 @@ end
 if status --is-interactive
     set -g fish_user_abbreviations
     abbr --add k kubectl
-end
-
-if status --is-interactive
-    set -g fish_user_abbreviations
     abbr --add c code
 end
 
