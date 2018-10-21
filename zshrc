@@ -22,13 +22,13 @@ source $HOME/.dotfiles/shellrc
 
 case "$(uname -s)" in
     Linux)
-        # Load grc as omf plugin is incomplete
+        # Load grc
         [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
         [[ -s "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
         ;;
 
     Darwin)
-        # Load grc as omf plugin is incomplete
+        # Load grc
         [[ -s "`brew --prefix`/etc/grc.zsh" ]] && source "`brew --prefix`/etc/grc.zsh"
         ;;
 esac

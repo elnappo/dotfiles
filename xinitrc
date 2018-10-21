@@ -15,4 +15,3 @@ xset r rate 200 40
 numlockx &
 
 exec i3
-
