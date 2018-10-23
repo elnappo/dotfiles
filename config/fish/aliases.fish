@@ -38,12 +38,6 @@ function ssh-copy-id -d "Use locally available keys to authorise logins on a rem
 function ssht -d "Attach to remote tmux session"
     ssh $argv -t "tmux a"; end
 
-function gp -d "Run git push"
-    git push $argv; end
-
-function gu -d "Run git-up"
-    git-up; end
-
 function reload -d "Reload fish config"
     source ~/.config/fish/config.fish; end
 
@@ -56,7 +50,7 @@ function cleanup -d "Recursively delete .DS_Store"
 function update -d "Update the system"
     switch (__fish_os_id_like)
         case archlinux
-            pacaur -Syu --noconfirm
+            sudo pacman -Syu --noconfirm
 
         case debian
             sudo apt update
@@ -78,7 +72,7 @@ end
 function mpi -d "Install packages"
     switch (__fish_os_id_like)
         case archlinux
-            pacaur -S $argv
+            sudo pacman -S $argv
 
         case debian
             sudo apt install $argv
