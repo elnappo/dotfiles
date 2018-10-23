@@ -25,6 +25,7 @@ casks:
   xquartz:
   amethyst:
   owasp-zap:
+  karabiner-elements:
   # Quick Look plugins
   qlcolorcode:
   qlimagesize:
