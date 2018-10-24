@@ -8,6 +8,7 @@
     - { src: "~/.dotfiles/config/gtk-3.0/settings.ini", dest: "~/.config/gtk-3.0/settings.ini" }
     - { src: "~/.dotfiles/config/i3/config", dest: "~/.config/i3/config"}
     - { src: "~/.dotfiles/config/i3blocks/config", dest: "~/.config/i3blocks/config"}
+    - { src: "~/.dotfiles/config/karabiner/karabiner.json", dest: "~/.config/karabiner/karabiner.json" }
     - { src: "~/.dotfiles/config/omf/bundle", dest: "~/.config/omf/bundle"}
     - { src: "~/.dotfiles/config/omf/theme", dest: "~/.config/omf/theme"}
     - { src: "~/.dotfiles/config/terminator/config", dest: "~/.config/terminator/config" }

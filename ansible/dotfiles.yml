@@ -42,6 +42,7 @@
         - "~/.config/gtk-3.0"
         - "~/.config/i3/"
         - "~/.config/i3blocks/"
+        - "~/.config/karabiner/"
         - "~/.config/omf/"
         - "~/.config/terminator/"
         - "~/.config/termite/"

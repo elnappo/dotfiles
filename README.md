@@ -33,6 +33,7 @@ These are my dotfiles, they can be used under macOS and Linux (mainly Arch Linux
 * Vim
 * Visual Studio Code
 * Wget
+* Karabiner-Elements
 
 ## Install (for me)
 
