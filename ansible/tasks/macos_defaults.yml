@@ -91,13 +91,13 @@
     # Enable Secure Keyboard Entry in Terminal.app
     - { key: "SecureKeyboardEntry", type: "bool", value: "true" }
 
-- name: Set iTerm 2 settings
-  osx_defaults: domain=com.googlecode.iterm2.plist key={{ item.key }} type={{ item.type }} value={{ item.value }}
-  with_items:
-    # Specify the preferences directory
-    - { key: "PrefsCustomFolder", type: "string", value: "~/.dotfiles/config/iterm2" }
-    # Tell iTerm2 to use the custom preferences in the directory
-    - { key: "LoadPrefsFromCustomFolder", type: "bool", value: "true" }
+# - name: Set iTerm 2 settings
+#   osx_defaults: domain=com.googlecode.iterm2.plist key={{ item.key }} type={{ item.type }} value={{ item.value }}
+#   with_items:
+#     # Specify the preferences directory
+#     - { key: "PrefsCustomFolder", type: "string", value: "~/.dotfiles/config/iterm2" }
+#     # Tell iTerm2 to use the custom preferences in the directory
+#     - { key: "LoadPrefsFromCustomFolder", type: "bool", value: "true" }
 
 - name: Set global settings
   osx_defaults: domain=NSGlobalDomain key={{ item.key }} type={{ item.type }} value={{ item.value }}
