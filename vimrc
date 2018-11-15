@@ -15,7 +15,7 @@ call neobundle#begin(expand('~/.local/share/vim-plugins/'))
 	NeoBundle 'Raimondi/delimitMate'
 	NeoBundle 'arcticicestudio/nord-vim'
 	if has('lua')
-		NeoBundle 'Shougo/neocomplcache.vim'		
+		NeoBundle 'Shougo/neocomplcache.vim'
 	endif
 call neobundle#end()
 NeoBundleCheck
@@ -57,6 +57,8 @@ set title " Show the filename in the window titlebar
 set showcmd " Show the (partial) command as it’s being typed
 set scrolloff=3 " Start scrolling three lines before the horizontal window border
 let mapleader="," " Change mapleader
+set undofile " tell it to use an undo file
+set undodir=~/.cache/vim/undo/ " set a directory to store the undo history
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
