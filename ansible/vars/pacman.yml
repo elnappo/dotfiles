@@ -20,6 +20,7 @@ pacman:
   docker:
   findutils:
   fish:
+  fzf:
   gnome-keyring:
   gnu-netcat:
   go:

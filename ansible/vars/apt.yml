@@ -25,6 +25,7 @@ apt:
   hydra:
   iftop:
   john:
+  lnav:
   lxc:
   masscan:
   moreutils:
@@ -64,7 +65,7 @@ apt:
   # GUI
   arc-theme:
   chromium-browser:
-  chromium-codecs-ffmpeg-extra: 
+  chromium-codecs-ffmpeg-extra:
   compton:
   dmenu:
   firefox:

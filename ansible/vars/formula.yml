@@ -1,58 +1,60 @@
 ---
 formula:
-  wget:
-  vim:
-    options: override-system-vi,with-lua,with-luajit
+  ack:
+  ansible:
+  archey:
+  axel:
+  bash-completion:
+  bash:
+  binwalk:
+  coreutils:
+  cowsay:
+  ddrescue:
+  findutils:
+  fish:
+  fzf:
+  git-cola:
+  git-extras:
+  go:
+  grc:
+  grep:
+  htop:
+  httpie:
+  hub:
   hydra:
     options: with-libssh,with-libidn
-  john:
-  openssl:
-  bash:
-  bash-completion:
-  zsh:
-  fish:
-  coreutils:
-  moreutils:
-  findutils:
-  grep:
-  ack:
-  rename:
-  tree:
-  p7zip:
-  ssh-copy-id:
-  cowsay:
-  nmap:
-  htop:
-  unp:
-  speedtest-cli:
-  axel:
-  python:
-  python3:
-  go:
-  watch:
-  git-cola:
   iftop:
-  tor:
-  torsocks:
-  git-extras:
-  pwgen:
-  archey:
-  peco:
-  ansible:
-  httpie:
-  nikto:
-  grc:
-  masscan:
-  smartmontools:
-  mtr:
-  ncdu:
-  tmux:
-  syncthing:
-  binwalk:
-  ddrescue:
-  hub:
   iproute2mac:
+  john:
+  jq:
   kubernetes-cli:
   kubernetes-helm:
-  jq:
+  lnav:
   mas:
+  masscan:
+  moreutils:
+  mtr:
+  ncdu:
+  nikto:
+  nmap:
+  openssl:
+  p7zip:
+  peco:
+  pwgen:
+  python:
+  python3:
+  rename:
+  smartmontools:
+  speedtest-cli:
+  ssh-copy-id:
+  syncthing:
+  tmux:
+  tor:
+  torsocks:
+  tree:
+  unp:
+  vim:
+    options: override-system-vi,with-lua,with-luajit
+  watch:
+  wget:
+  zsh:
