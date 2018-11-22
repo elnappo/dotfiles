@@ -150,7 +150,7 @@ switch (uname -s)
             /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s; end
 
         function pubkey -d "Copy my public key to the pasteboard"
-            more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'; end
+            more ~/.ssh/id_ed25519.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'; end
 
         function lscleanup -d "Clean up LaunchServices to remove duplicates in the Open With menu"
             /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder; end
