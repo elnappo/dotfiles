@@ -1,13 +1,17 @@
 ---
 casks:
+  amethyst:
   docker:
   firefox:
   google-chrome:
   iterm2:
+  karabiner-elements:
   libreoffice:
   macdown:
   macpass:
   moneymoney:
+  openzfs:
+  owasp-zap:
   pycharm:
   riot:
   sourcetree:
@@ -23,9 +27,6 @@ casks:
   vmware-fusion:
   wireshark:
   xquartz:
-  amethyst:
-  owasp-zap:
-  karabiner-elements:
   # Quick Look plugins
   qlcolorcode:
   qlimagesize:

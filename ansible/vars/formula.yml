@@ -48,6 +48,7 @@ formula:
   speedtest-cli:
   ssh-copy-id:
   syncthing:
+  telnet:
   tmux:
   tor:
   torsocks:
