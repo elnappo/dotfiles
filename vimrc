@@ -1,30 +1,30 @@
-if has('vim_starting')
-	if &compatible
-		set nocompatible
-	endif
-	set runtimepath+=~/.local/share/neobundle/
+if &compatible
+  set nocompatible
 endif
 
-call neobundle#begin(expand('~/.local/share/vim-plugins/'))
-	NeoBundleFetch 'Shougo/neobundle.vim'
-	NeoBundle 'tpope/vim-fugitive'
-	NeoBundle 'scrooloose/nerdtree'
-	NeoBundle 'tpope/vim-surround'
-	NeoBundle 'scrooloose/syntastic'
-	NeoBundle 'bling/vim-airline'
-	NeoBundle 'Raimondi/delimitMate'
-	NeoBundle 'arcticicestudio/nord-vim'
-	if has('lua')
-		NeoBundle 'Shougo/neocomplcache.vim'
-	endif
-call neobundle#end()
-NeoBundleCheck
-filetype plugin indent on " Enhance command-line completion
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.local/share/dein/repos/github.com/Shougo/dein.vim
 
+if dein#load_state('~/.cache/vim/dein')
+  call dein#begin('~/.cache/vim/dein')
+
+  call dein#add('~/.local/share/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('arcticicestudio/nord-vim')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+  call dein#end()
+  call dein#save_state()
+endif
+
+let g:deoplete#enable_at_startup = 1
+filetype plugin indent on " Enhance command-line completion
 syntax enable " Enable syntax highlighting
-let g:neocomplcache_temporary_dir = '~/.cache/vim/tmp/'
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
+
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 set viminfo+=n~/.cache/vim/viminfo
@@ -59,6 +59,8 @@ set scrolloff=3 " Start scrolling three lines before the horizontal window borde
 let mapleader="," " Change mapleader
 set undofile " tell it to use an undo file
 set undodir=~/.cache/vim/undo/ " set a directory to store the undo history
+set directory=~/.cache/vim/swap/
+set backupdir=~/.cache/vim/backup/
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
@@ -69,10 +71,3 @@ function! StripWhitespace()
 	call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
-
-" neocomplete dictionary
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : '~/.cache/vim/vimshell_hist',
-    \ 'scheme' : '~/.cache/vim/gosh_completions'
-        \ }

@@ -30,14 +30,17 @@
     - name: Install tmux plugin manager
       git: repo=https://github.com/tmux-plugins/tpm.git dest=~/.local/share/tpm update=yes
 
-    - name: Install neobundle
-      git: repo=https://github.com/Shougo/neobundle.vim.git dest=~/.local/share/neobundle update=yes
+    - name: Install dein.vim
+      git: repo=https://github.com/Shougo/dein.vim.git dest=~/.local/share/dein/repos/github.com/Shougo/dein.vim update=yes
 
     - name: Create folder
       file: path={{item}} state=directory
       with_items:
+        - "~/.cache/bash/"
         - "~/.cache/vim/"
-        - "~/.cache/vim/tmp/"
+        - "~/.cache/vim/backup/"
+        - "~/.cache/vim/dein/"
+        - "~/.cache/vim/swap/"
         - "~/.cache/vim/undo/"
         - "~/.cache/wget/"
         - "~/.config/fish/"
@@ -49,7 +52,6 @@
         - "~/.config/terminator/"
         - "~/.config/termite/"
         - "~/.config/vscode/"
-        - "~/.local/share/bash/"
         - "~/.local/share/zsh/"
         - "~/Coding/"
         - "~/Coding/golang/"
