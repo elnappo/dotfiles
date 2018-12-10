@@ -69,3 +69,10 @@ function! StripWhitespace()
 	call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
+
+" neocomplete dictionary
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : '~/.cache/vim/vimshell_hist',
+    \ 'scheme' : '~/.cache/vim/gosh_completions'
+        \ }
