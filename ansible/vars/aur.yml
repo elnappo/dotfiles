@@ -3,6 +3,7 @@ aur:
   chromium-widevine:
   kubectl-bin:
   kubernetes-helm:
+  lnav:
   netdiscover:
   pasystray:
   peco:
@@ -14,4 +15,3 @@ aur:
   ttf-font-awesome:
   visual-studio-code-bin:
   yay:
-  lnav:
