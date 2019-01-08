@@ -11,9 +11,6 @@ case "$(uname -s)" in
         ;;
 
     Darwin)
-        # add homebrew to $PATH
-        export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
         if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
         ;;
 esac

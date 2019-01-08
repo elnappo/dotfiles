@@ -32,6 +32,7 @@ if status --is-interactive
     set -g fish_user_abbreviations
     abbr --add k kubectl
     abbr --add c code
+    abbr --add g git
 end
 
 switch (__fish_os_id_like)
