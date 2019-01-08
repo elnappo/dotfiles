@@ -44,6 +44,7 @@ formula:
   python:
   python3:
   rename:
+  shellcheck:
   smartmontools:
   speedtest-cli:
   ssh-copy-id:
