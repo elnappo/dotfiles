@@ -146,6 +146,9 @@ switch (uname -s)
         function wifipass -d "Get password from a saved AP"
             security find-generic-password -g -D "AirPort network password" -w -a $argv; end
 
+        function updatedb -d "Update a mlocate database"
+            sudo /usr/libexec/locate.updatedb; end
+
         function wifipow -d "Perform a wireless broadcast scan"
             /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s; end
 
