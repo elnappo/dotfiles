@@ -33,6 +33,8 @@ if status --is-interactive
     abbr --add k kubectl
     abbr --add c code
     abbr --add g git
+    abbr --add v vim
+    abbr --add d docker
 end
 
 switch (__fish_os_id_like)
