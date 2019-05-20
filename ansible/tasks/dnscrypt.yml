@@ -11,7 +11,7 @@
     option: "{{ item.option }}"
     value: "{{ item.value }}"
     backup: yes
-  with_items:
+  loop:
     - { section: "", option: "server_names", value: "['cloudflare', 'google']" }
     - { section: "", option: "require_dnssec", value: "true" }
     - { section: "", option: "cache_size", value: "2560" }

@@ -1,7 +1,10 @@
 ---
 - name: link dotfiles
-  file: src={{ item.src }} dest={{ item.dest }} state=link
-  with_items:
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+  loop:
     - { src: "~/.dotfiles/bash_profile", dest: "~/.bash_profile"}
     - { src: "~/.dotfiles/bashrc", dest: "~/.bashrc"}
     - { src: "~/.dotfiles/config/fish/config.fish", dest: "~/.config/fish/config.fish"}

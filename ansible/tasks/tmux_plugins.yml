@@ -1,6 +1,8 @@
 ---
 - name: Install tmux
-  package: name=tmux state=latest
+  package:
+    name: tmux
+    state: latest
 
 - name: Install tmux plugins
   command: ~/.local/share/tpm/bin/install_plugins
