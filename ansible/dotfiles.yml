@@ -58,7 +58,7 @@
 
     - name: Create folder
       file:
-        path: {{item}}
+        path: "{{item}}"
         state: directory
       loop:
         - "~/.cache/bash/"

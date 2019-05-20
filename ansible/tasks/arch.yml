@@ -3,9 +3,9 @@
   - name: Configure pacman
     lineinfile:
       path: /etc/pacman.conf
-      line: {{ item.line }}
-      regexp: {{ item.regexp }}
-      backrefs: {{ item.backrefs }}
+      line: "{{ item.line }}"
+      regexp: "{{ item.regexp }}"
+      backrefs: "{{ item.backrefs }}"
     loop:
       - { line: "Color", regexp: "#Color", backrefs: true}
       - { line: "ILoveCandy", regexp: "#ILoveCandy", backrefs: true}
@@ -13,9 +13,9 @@
   - name: Enable Multilib
     ini_file:
       path: /etc/pacman.conf
-      section: {{ item.section }}
-      option: {{ item.option }}
-      value: {{ item.value | default(omit) }}
+      section: "{{ item.section }}"
+      option: "{{ item.option }}"
+      value: "{{ item.value | default(omit) }}"
     loop:
       - { section: "multilib", option: "Include", value: "/etc/pacman.d/mirrorlist" }
 
@@ -27,13 +27,13 @@
 
   - name: Add user to wheel and wireshark group
     user:
-      name: {{ ansible_user_id }}
+      name: "{{ ansible_user_id }}"
       groups: wheel,wireshark
       append: true
 
   - name: Add user to docker group
     user:
-      name: {{ ansible_user_id }}
+      name: "{{ ansible_user_id }}"
       groups: docker
       append: true
     when: sudo_without_password

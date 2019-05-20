@@ -42,8 +42,8 @@
 - block:
   - name: Update/Upgrade Homebrew
     homebrew:
-      update_homebrew: yes
-      upgrade_all: yes
+      update_homebrew: true
+      upgrade_all: true
     tags:
       - brew_taps
       - brew_formula
@@ -52,7 +52,7 @@
   - name: Manage taps
     homebrew_tap:
       name: "{{ item.key }}"
-      state: {{ item.value.state | default("present") }}
+      state: "{{ item.value.state | default('present') }}"
     with_dict: "{{taps}}"
     tags:
       - brew_taps
@@ -60,8 +60,8 @@
   - name: Manage formula
     homebrew:
       name: "{{ item.key }}"
-      install_options: {{ item.value.options | default(omit) }}
-      state: {{ item.value.state | default("present") }}
+      install_options: "{{ item.value.options | default(omit) }}"
+      state: "{{ item.value.state | default('present') }}"
     with_dict: "{{formula}}"
     tags:
       - brew_formula
@@ -69,16 +69,16 @@
   - name: Manage casks
     homebrew_cask:
       name: "{{ item.key }}"
-      state: {{ item.value.state | default("present") }}
+      state: "{{ item.value.state | default('present') }}"
     with_dict: "{{casks}}"
     tags:
       - brew_cask
 
   - name: Manage python packages
     pip:
-      name: {{ item.key }}
-      state: {{ item.value.state | default("latest") }}
-      executable: {{ item.value.executable | default("pip3") }}
+      name: "{{ item.key }}"
+      state: "{{ item.value.state | default('latest') }}"
+      executable: "{{ item.value.executable | default('pip3') }}"
     with_dict: "{{pip}}"
     tags:
       - pip
@@ -88,50 +88,50 @@
 - block:
   - name: Update/Upgrade pacman
     pacman:
-      update_cache: yes
-      upgrade: yes
+      update_cache: true
+      upgrade: true
 
   - name: Manage pacman packages
     pacman:
       name: "{{ item.key }}"
-      state: {{ item.value.state | default("latest") }}
+      state: "{{ item.value.state | default('latest') }}"
     with_dict: "{{pacman}}"
 
   - name: Manage python packages
     pip:
       name: "{{ item.key }}"
-      state: {{ item.value.state | default("latest") }}
-      executable: {{ item.value.executable | default("pip3") }}
+      state: "{{ item.value.state | default('latest') }}"
+      executable: "{{ item.value.executable | default('pip3') }}"
     with_dict: "{{pip}}"
     tags:
       - pip
 
-  become: yes
+  become: true
   when: ansible_os_family == "Archlinux"
   tags: pacman
 
 - block:
   - name: Update/Upgrade apt
     apt:
-      update_cache: yes
+      update_cache: true
       upgrade: dist
 
   - name: Manage apt packages
     apt:
       name: "{{ item.key }}"
-      state: {{ item.value.state | default("latest") }}
+      state: "{{ item.value.state | default('latest') }}"
     with_dict: "{{apt}}"
 
   - name: Manage python packages
     pip:
       name: "{{ item.key }}"
-      state: {{ item.value.state | default("latest") }}
-      executable: {{ item.value.executable | default("pip3") }}
+      state: "{{ item.value.state | default('latest') }}"
+      executable: "{{ item.value.executable | default('pip3') }}"
     with_dict: "{{pip}}"
     tags:
       - pip
 
-  become: yes
+  become: true
   when: ansible_os_family == "Debian"
   tags: apt
 
