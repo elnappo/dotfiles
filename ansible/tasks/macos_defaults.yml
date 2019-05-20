@@ -216,6 +216,8 @@
     - { domain: "/Library/Preferences/com.apple.alf", key: "globalstate", type: "int", value: "2" }
     # Disable the captive portal window
     - { domain: "/Library/Preferences/SystemConfiguration/com.apple.captive.control", key: "Active", type: "bool", value: "false" }
+    # Enable dark mode
+    - { domain: "/Library/Preferences/.GlobalPreferences.plist ", key: "AppleInterfaceTheme", type: "string", value: "Dark" }
 
   become: yes
 
