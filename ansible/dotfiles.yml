@@ -53,7 +53,7 @@
     - name: Install dein.vim
       git:
         repo: https://github.com/Shougo/dein.vim.git
-        des: =~/.local/share/dein/repos/github.com/Shougo/dein.vim
+        dest: ~/.local/share/dein/repos/github.com/Shougo/dein.vim
         update: yes
 
     - name: Create folder
