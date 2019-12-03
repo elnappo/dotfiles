@@ -36,15 +36,15 @@ case "$(uname -s)" in
             then
                 . /etc/os-release
 
-                case "$ID_LIKE" in
-                    debian)
+                case "$ID" in
+                    debian | ubuntu)
                         if [[ ! -x /usr/bin/ansible ]]; then
                             echo "[i] Install Ansible"
                             sudo apt-get install -y ansible
                         fi
                         ;;
 
-                    archlinux)
+                    arch)
                         if [[ ! -x /usr/bin/ansible ]]; then
                             echo "[i] Install Ansible"
                             sudo pacman -S ansible --noconfirm
