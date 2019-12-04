@@ -102,6 +102,7 @@ pacman:
   gnome:
   i3-wm:
   i3status:
+  i3blocks:
   libreoffice-fresh:
   lxappearance:
   nautilus:
