@@ -6,10 +6,12 @@ formula:
   axel:
   bash-completion:
   bash:
+  bat:
   binwalk:
   coreutils:
   cowsay:
   ddrescue:
+  fd:
   findutils:
   fish:
   fzf:

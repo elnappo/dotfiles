@@ -10,6 +10,7 @@ pacman:
   axel:
   bash-completion:
   bash:
+  bat:
   binwalk:
   coreutils:
   cowsay:
@@ -18,6 +19,7 @@ pacman:
   dialog:
   docker-compose:
   docker:
+  fd:
   findutils:
   fish:
   fzf:
