@@ -5,12 +5,17 @@ source $HOME/.dotfiles/aliases
 export EDITOR=vim
 export VISUAL=vim
 export GOPATH=$HOME/Coding/golang
+export FZF_DEFAULT_COMMAND="fd --type file --color=always"
+export FZF_DEFAULT_OPTS="--ansi"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 case "$(uname -s)" in
     Linux)
         ;;
 
     Darwin)
-        if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
+        if brew command command-not-found-init > /dev/null; then
+            eval "$(brew command-not-found-init)";
+        fi
         ;;
 esac
