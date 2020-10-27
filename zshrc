@@ -24,7 +24,11 @@ case "$(uname -s)" in
     Linux)
         # Load grc
         [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
-        [[ -s "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
+        # Load Homebrew Command Not Found
+        HB_CNF_HANDLER="$(brew --prefix)/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+        if [ -f "$HB_CNF_HANDLER" ]; then
+            source "$HB_CNF_HANDLER";
+        fi
         ;;
 
     Darwin)
