@@ -48,7 +48,7 @@ switch (__fish_os_id_like)
         test -d /usr/local/bin ; and set -x PATH /usr/local/bin $PATH
         test -d /usr/local/sbin; and set -x PATH /usr/local/sbin $PATH
         # Load Homebrew Command Not Found
-        set HB_CNF_HANDLER (brew --prefix)"/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.fish"
+        set HB_CNF_HANDLER (brew --repository)"/Library/Taps/homebrew/homebrew-command-not-found/handler.fish"
         if test -f $HB_CNF_HANDLER
             source $HB_CNF_HANDLER
         end

@@ -1,6 +1,5 @@
 ---
 casks:
-  amethyst:
   docker:
   firefox:
   google-chrome:
@@ -10,31 +9,18 @@ casks:
   macdown:
   macpass:
   moneymoney:
-  openzfs:
-  owasp-zap:
-  pycharm:
-  riot:
-  sourcetree:
   steam:
-  sublime-text:
   teamviewer:
   the-unarchiver:
-  torbrowser:
   transmission:
-  unrarx:
   visual-studio-code:
-  vlc:
-  vmware-fusion:
+  iina:
   wireshark:
-  xquartz:
   # Quick Look plugins
+  apparency:
   qlcolorcode:
   qlimagesize:
   qlmarkdown:
-  qlprettypatch:
-  qlrest:
+  qlvideo:
   qlstephen:
-  quicklook-csv:
   quicklook-json:
-  suspicious-package:
-  webpquicklook:

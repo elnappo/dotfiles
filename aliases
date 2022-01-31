@@ -5,22 +5,12 @@ alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 
-# Easier navigation
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-
 # Color output
 alias grep='grep --color=auto'
 alias tree="tree -C"
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='brew update && brew upgrade; brew cleanup; git -C ~/.dotfiles pull'
-
-# IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
-alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
@@ -79,5 +69,4 @@ alias ubuntu="docker run -t -i ubuntu /bin/bash"
 alias brewsync="ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml --tags packages"
 alias dotfiles="ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml"
 alias play="ansible-playbook"
-alias s="subl"
 alias smod='stat -c "%a %n"'

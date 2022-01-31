@@ -15,8 +15,6 @@ formula:
   findutils:
   fish:
   fzf:
-  git-cola:
-  git-extras:
   go:
   grc:
   grep:
@@ -32,8 +30,6 @@ formula:
   kubernetes-cli:
   kubernetes-helm:
   lnav:
-  mas:
-  masscan:
   moreutils:
   mtr:
   ncdu:
@@ -44,17 +40,12 @@ formula:
   peco:
   pwgen:
   python:
-  python3:
   rename:
   shellcheck:
   smartmontools:
-  speedtest-cli:
   ssh-copy-id:
-  syncthing:
   telnet:
   tmux:
-  tor:
-  torsocks:
   tree:
   unp:
   vim:

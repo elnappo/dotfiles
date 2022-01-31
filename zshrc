@@ -25,7 +25,7 @@ case "$(uname -s)" in
         # Load grc
         [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
         # Load Homebrew Command Not Found
-        HB_CNF_HANDLER="$(brew --prefix)/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+        HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
         if [ -f "$HB_CNF_HANDLER" ]; then
             source "$HB_CNF_HANDLER";
         fi
