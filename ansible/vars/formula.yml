@@ -2,7 +2,7 @@
 formula:
   ack:
   ansible:
-  archey:
+  archey4:
   axel:
   bash-completion:
   bash:
@@ -21,14 +21,12 @@ formula:
   htop:
   httpie:
   hub:
-  hydra:
-    options: with-libssh,with-libidn
   iftop:
   iproute2mac:
-  john:
   jq:
   kubernetes-cli:
   kubernetes-helm:
+  libusb:
   lnav:
   moreutils:
   mtr:
@@ -36,7 +34,6 @@ formula:
   nikto:
   nmap:
   openssl:
-  p7zip:
   peco:
   pwgen:
   python:
@@ -52,4 +49,5 @@ formula:
     options: override-system-vi,with-lua,with-luajit
   watch:
   wget:
+  youtube-dl:
   zsh:

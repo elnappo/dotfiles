@@ -9,7 +9,7 @@ alias la='ls -lAh'
 alias grep='grep --color=auto'
 alias tree="tree -C"
 
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+# Update Homebrew formulas and casks
 alias update='brew update && brew upgrade; brew cleanup; git -C ~/.dotfiles pull'
 
 # Enhanced WHOIS lookups
@@ -57,15 +57,12 @@ alias wifipow="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/C
 # Multiple connections download
 alias axel="axel -an 10"
 
-# Syntax highlighting cat
-alias ccat="pygmentize -g"
-
 # Ignore ssh config
 alias ssh_ignore="ssh -F /dev/null"
 
 # Some more stuff
 alias starwars="telnet towel.blinkenlights.nl"
-alias ubuntu="docker run -t -i ubuntu /bin/bash"
+alias ubuntu="docker run --rm -ti ubuntu /bin/bash"
 alias brewsync="ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml --tags packages"
 alias dotfiles="ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml"
 alias play="ansible-playbook"

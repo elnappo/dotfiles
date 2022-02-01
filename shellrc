@@ -12,7 +12,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 case "$(uname -s)" in
     Linux)
         ;;
-
     Darwin)
         ;;
 esac

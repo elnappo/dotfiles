@@ -45,13 +45,13 @@ switch (__fish_os_id_like)
 
     case Darwin
         # Add homebrew to $PATH
-        test -d /usr/local/bin ; and set -x PATH /usr/local/bin $PATH
-        test -d /usr/local/sbin; and set -x PATH /usr/local/sbin $PATH
+        test -d /opt/homebrew/bin ; and set -x PATH /opt/homebrew/bin $PATH
+        test -d /opt/homebrew/sbin; and set -x PATH /opt/homebrew/sbin $PATH
         # Load Homebrew Command Not Found
         set HB_CNF_HANDLER (brew --repository)"/Library/Taps/homebrew/homebrew-command-not-found/handler.fish"
         if test -f $HB_CNF_HANDLER
             source $HB_CNF_HANDLER
         end
         # Load grc as omf plugin is incomplete
-        test -s /usr/local/etc/grc.fish; and source /usr/local/etc/grc.fish
+        test -s (brew --repository)/etc/grc.fish; and source (brew --repository)/etc/grc.fish
 end

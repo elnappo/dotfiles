@@ -3,6 +3,7 @@ casks:
   docker:
   firefox:
   google-chrome:
+  iina:
   iterm2:
   karabiner-elements:
   libreoffice:
@@ -14,13 +15,12 @@ casks:
   the-unarchiver:
   transmission:
   visual-studio-code:
-  iina:
   wireshark:
   # Quick Look plugins
   apparency:
   qlcolorcode:
   qlimagesize:
   qlmarkdown:
-  qlvideo:
   qlstephen:
+  qlvideo:
   quicklook-json:

@@ -27,8 +27,8 @@ case "$(uname -s)" in
         [[ -s "/etc/profile.d/grc.bashrc" ]] && source /etc/profile.d/grc.bashrc
         ;;
     Darwin)
-        source "`brew --prefix`/etc/grc.bashrc"
-                # Load Homebrew Command Not Found
+        [[ -s "`brew --repository`/etc/grc.bashrc" ]] && source "`brew --repository`/etc/grc.bashrc"
+        # Load Homebrew Command Not Found
         HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
         if [ -f "$HB_CNF_HANDLER" ]; then
             source "$HB_CNF_HANDLER";
