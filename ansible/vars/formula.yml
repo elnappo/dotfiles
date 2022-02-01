@@ -2,7 +2,7 @@
 formula:
   ack:
   ansible:
-  archey:
+  archey4:
   axel:
   bash-completion:
   bash:
@@ -15,50 +15,39 @@ formula:
   findutils:
   fish:
   fzf:
-  git-cola:
-  git-extras:
   go:
   grc:
   grep:
   htop:
   httpie:
   hub:
-  hydra:
-    options: with-libssh,with-libidn
   iftop:
   iproute2mac:
-  john:
   jq:
   kubernetes-cli:
   kubernetes-helm:
+  libusb:
   lnav:
-  mas:
-  masscan:
   moreutils:
   mtr:
   ncdu:
   nikto:
   nmap:
   openssl:
-  p7zip:
   peco:
   pwgen:
   python:
-  python3:
   rename:
   shellcheck:
   smartmontools:
-  speedtest-cli:
   ssh-copy-id:
-  syncthing:
   telnet:
   tmux:
-  tor:
-  torsocks:
   tree:
   unp:
   vim:
     options: override-system-vi,with-lua,with-luajit
   watch:
   wget:
+  youtube-dl:
   zsh:

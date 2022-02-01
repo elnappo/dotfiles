@@ -25,13 +25,13 @@ bind "set show-all-if-ambiguous on"
 case "$(uname -s)" in
     Linux)
         [[ -s "/etc/profile.d/grc.bashrc" ]] && source /etc/profile.d/grc.bashrc
+        ;;
+    Darwin)
+        [[ -s "`brew --repository`/etc/grc.bashrc" ]] && source "`brew --repository`/etc/grc.bashrc"
         # Load Homebrew Command Not Found
-        HB_CNF_HANDLER="$(brew --prefix)/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+        HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
         if [ -f "$HB_CNF_HANDLER" ]; then
             source "$HB_CNF_HANDLER";
         fi
-        ;;
-    Darwin)
-        source "`brew --prefix`/etc/grc.bashrc"
         ;;
 esac

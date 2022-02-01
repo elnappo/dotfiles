@@ -15,7 +15,7 @@ case "$(uname -s)" in
         # install homwbrew
         if [[ ! -x /usr/local/bin/brew ]]; then
           echo "[i] Install Homebrew"
-          ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         fi
 
         # install ansible

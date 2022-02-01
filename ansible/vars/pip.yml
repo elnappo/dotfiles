@@ -1,8 +1,6 @@
 ---
 pip:
   flake8:
-  git-up:
-  neovim:
   pep8:
   pylint:
   requests:

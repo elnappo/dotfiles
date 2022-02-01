@@ -12,10 +12,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 case "$(uname -s)" in
     Linux)
         ;;
-
     Darwin)
-        if brew command command-not-found-init > /dev/null; then
-            eval "$(brew command-not-found-init)";
-        fi
         ;;
 esac

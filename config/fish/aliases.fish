@@ -1,8 +1,3 @@
-# Easier navigation
-function ..; cd ..; end
-function ...; cd ../..; end
-function ....; cd ../../..; end
-
 # Color output
 function grep -d "File pattern searcher"
     command grep --color=auto $argv; end
@@ -100,9 +95,6 @@ function p8 -d "Ping 8.8.8.8"
 function pg -d "Ping google.de"
     ping google.de; end
 
-function ccat -d "Syntax highlighting cat"
-    pygmentize -g $argv; end
-
 function ssh_ignore -d "Ignore ssh config"
     ssh -F /dev/null $argv; end
 
@@ -117,15 +109,6 @@ function dotfiles -d "Run dotfiles Playbook"
 
 function play -d "Run an ansible playbook (alias)"
     ansible-playbook $argv; end
-
-function s -d "Open in Sublime Text"
-    switch (__fish_os_id_like)
-        case archlinux
-            subl3 $argv
-        case Darwin
-            subl $argv
-    end
-end
 
 function smod -d "Show decimal permissions"
     stat -c "%a %n"; end
