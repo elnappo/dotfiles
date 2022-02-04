@@ -46,7 +46,6 @@ formula:
   tree:
   unp:
   vim:
-    options: override-system-vi,with-lua,with-luajit
   watch:
   wget:
   youtube-dl:
