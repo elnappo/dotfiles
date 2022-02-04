@@ -9,7 +9,7 @@
   "python.formatting.provider": "yapf",
   "workbench.colorTheme": "Nord",
   "workbench.iconTheme": "vscode-icons",
-  "python.pythonPath": "/usr/local/bin/python3",
+  "python.pythonPath": "/opt/homebrew/bin/python3",
   "editor.renderWhitespace": "boundary",
   "window.zoomLevel": 0,
   "workbench.editor.showTabs": true

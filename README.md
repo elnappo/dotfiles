@@ -65,7 +65,7 @@ $ ./setup.sh
 
 * Some interesting variables for the Ansible playbook are set in `dotfiles/ansible/vars.yml`
 
-  * `login_shell: /usr/local/bin/fish`
+  * `login_shell: /opt/homebrew/bin/fish`
   * `sudo_without_password: true`
   * `use_dnscrypt: true` install and configure [DNSCrypt](https://dnscrypt.org/)
   * `login_window_text: Enter any 11-digit prime number to continue.` set a custom message to appear at the bottom of your login window (macOS)
