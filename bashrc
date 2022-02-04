@@ -24,15 +24,13 @@ bind "set show-all-if-ambiguous on"
 
 case "$(uname -s)" in
     Linux)
+        # Load grc
         [[ -s "/etc/profile.d/grc.bashrc" ]] && source /etc/profile.d/grc.bashrc
         ;;
     Darwin)
+        # Load iTerm2 shell integration
         [[ -s "~/.local/share/bash/iterm2_shell_integration.bash" ]] && source "~/.local/share/bash/iterm2_shell_integration.bash"
+        # Load grc
         [[ -s "`brew --repository`/etc/grc.bashrc" ]] && source "`brew --repository`/etc/grc.bashrc"
-        # Load Homebrew Command Not Found
-        HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
-        if [ -f "$HB_CNF_HANDLER" ]; then
-            source "$HB_CNF_HANDLER";
-        fi
         ;;
 esac
