@@ -83,11 +83,11 @@
         - "~/Coding/golang/"
         - "~/Library/Application Support/Code/User/"
 
-    - include: tasks/link_files.yml
+    - include_tasks: tasks/link_files.yml
       tags:
         - links
 
-    - include: tasks/packages.yml
+    - include_tasks: tasks/packages.yml
       tags:
         - packages
 
@@ -109,25 +109,25 @@
       when: ansible_os_family == "Darwin"
 
     # Needs to be after packages
-    - include: tasks/tmux_plugins.yml
+    - include_tasks: tasks/tmux_plugins.yml
       tags:
         - tmux_plugins
 
-    - include: tasks/shells.yml
+    - include_tasks: tasks/shells.yml
       tags:
         - shells
 
-    - include: tasks/macos_defaults.yml
+    - include_tasks: tasks/macos_defaults.yml
       when: ansible_os_family == "Darwin"
       tags:
         - macos_defaults
 
-    - include: tasks/arch.yml
+    - include_tasks: tasks/arch.yml
       when: ansible_os_family == "Archlinux"
       tags:
         - arch
 
-    - include: tasks/dnscrypt.yml
+    - include_tasks: tasks/dnscrypt.yml
       when: use_dnscrypt and ansible_os_family == "Darwin"
       tags:
         - dnscrypt
