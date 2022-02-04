@@ -61,7 +61,6 @@
         path: "{{item}}"
         state: directory
       loop:
-        - "~/.cache/bash/"
         - "~/.cache/vim/"
         - "~/.cache/vim/backup/"
         - "~/.cache/vim/dein/"
@@ -77,6 +76,8 @@
         - "~/.config/terminator/"
         - "~/.config/termite/"
         - "~/.config/vscode/"
+        - "~/.local/share/bash/"
+        - "~/.local/share/fish/"
         - "~/.local/share/zsh/"
         - "~/Coding/"
         - "~/Coding/golang/"
@@ -96,6 +97,16 @@
         creates: ~/.local/share/omf/themes/default/
       tags:
         - packages
+
+    - name: Install iTerm 2 shell integrations
+      get_url:
+        url: https://iterm2.com/shell_integration/{{item}}
+        dest: ~/.local/share/{{item}}/iterm2_shell_integration.{{item}}
+      loop:
+        - "fish"
+        - "zsh"
+        - "bash"
+      when: ansible_os_family == "Darwin"
 
     # Needs to be after packages
     - include: tasks/tmux_plugins.yml

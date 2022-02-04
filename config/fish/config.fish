@@ -24,7 +24,7 @@ set -x VISUAL vim
 set -x GOPATH $HOME/Coding/golang
 source $HOME/.dotfiles/config/fish/aliases.fish
 
-if test -e $HOME/.dotfiles/extra.fish
+if test -s $HOME/.dotfiles/extra.fish
     source $HOME/.dotfiles/extra.fish
 end
 
@@ -44,10 +44,12 @@ switch (__fish_os_id_like)
         test -s /etc/grc.fish; and source /etc/grc.fish
 
     case Darwin
+        # Load iTerm2 shell integration
+        test -s ~/.local/share/fish/iterm2_shell_integration.fish; and source ~/.local/share/fish/iterm2_shell_integration.fish
         # Add homebrew to $PATH
         test -d /opt/homebrew/bin ; and set -x PATH /opt/homebrew/bin $PATH
         test -d /opt/homebrew/sbin; and set -x PATH /opt/homebrew/sbin $PATH
-        # Load Homebrew Command Not Found
+        # Load Homebrew command not found
         set HB_CNF_HANDLER (brew --repository)"/Library/Taps/homebrew/homebrew-command-not-found/handler.fish"
         if test -f $HB_CNF_HANDLER
             source $HB_CNF_HANDLER

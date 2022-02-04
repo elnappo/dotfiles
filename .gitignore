@@ -1,4 +1,5 @@
 ansible/dotfiles.retry
+extra.fish
 
 .DS_Store
 .AppleDouble

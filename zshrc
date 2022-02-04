@@ -26,6 +26,7 @@ case "$(uname -s)" in
         [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
         ;;
     Darwin)
+        [[ -s "~/.local/share/zsh/iterm2_shell_integration.zsh" ]] && source "~/.local/share/zsh/iterm2_shell_integration.zsh"
         # Load grc
         [[ -s "`brew --repository`/etc/grc.zsh" ]] && source "`brew --repository`/etc/grc.zsh"
         # Load Homebrew Command Not Found
