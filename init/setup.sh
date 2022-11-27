@@ -12,7 +12,7 @@ case "$(uname -s)" in
           xcode-select --install
         fi
 
-        # install homwbrew
+        # install homebrew
         if [[ ! -x /usr/local/bin/brew ]]; then
           echo "[i] Install Homebrew"
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
