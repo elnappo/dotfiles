@@ -12,5 +12,8 @@
   "python.pythonPath": "/opt/homebrew/bin/python3",
   "editor.renderWhitespace": "boundary",
   "window.zoomLevel": 0,
-  "workbench.editor.showTabs": true
+  "workbench.editor.showTabs": true,
+  "go.toolsManagement.autoUpdate": true,
+  "redhat.telemetry.enabled": false,
+  "editor.stickyScroll.enabled": true
 }
