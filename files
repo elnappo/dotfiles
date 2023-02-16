@@ -1,0 +1,16 @@
+files:
+/Users/elnappo/.aws/config
+/Users/elnappo/.aws/credentials
+/Users/elnappo/.kube/config
+/Users/elnappo/.gitconfig
+/Users/elnappo/.dotfiles/extra.fish
+
+folder:
+/Users/elnappo/.ssh/
+/Users/elnappo/.gnupg/
+/Users/elnappo/.local/share/keepass/
+
+merge:
+/Users/elnappo/.local/share/zsh/zsh_history
+/Users/elnappo/.local/share/bash/bash_history
+/Users/elnappo/.local/share/fish/fish_history
