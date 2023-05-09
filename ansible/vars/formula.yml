@@ -11,6 +11,7 @@ formula:
   coreutils:
   cowsay:
   ddrescue:
+  exa:
   fd:
   findutils:
   fish:
@@ -20,7 +21,6 @@ formula:
   grep:
   htop:
   httpie:
-  hub:
   iftop:
   iproute2mac:
   jq:
@@ -31,7 +31,6 @@ formula:
   moreutils:
   mtr:
   ncdu:
-  nikto:
   nmap:
   openssl:
   peco:

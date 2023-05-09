@@ -1,6 +1,5 @@
 ---
 casks:
-  docker:
   firefox:
   google-chrome:
   iina:
@@ -11,7 +10,6 @@ casks:
   macpass:
   moneymoney:
   steam:
-  teamviewer:
   the-unarchiver:
   transmission:
   visual-studio-code:

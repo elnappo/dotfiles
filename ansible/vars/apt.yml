@@ -11,55 +11,37 @@ apt:
   binwalk:
   coreutils:
   cowsay:
-  cups:
-  docker-compose:
-  docker.io:
+  exa:
   findutils:
   fish:
+  fzf:
   gddrescue:
   golang:
   grc:
   grep:
   htop:
   httpie:
-  hydra:
   iftop:
-  john:
   lnav:
-  lxc:
-  masscan:
   moreutils:
   mtr:
   ncdu:
   net-tools:
-  nikto:
   nmap:
   openssl:
   p7zip:
   peco:
   pulseaudio:
   pwgen:
-  python-pip:
-  python-setuptools:
-  python:
-  python3-pip:
-  python3-setuptools:
-  python3:
-  redshift:
   ruby:
   smartmontools:
   speedtest-cli:
-  syncthing:
   tmux:
-  tor:
-  torsocks:
   tree:
   unp:
   unrar:
-  vagrant:
   vim:
   wget:
-  zmap:
   zsh:
 
   # GUI
@@ -81,6 +63,7 @@ apt:
   lxappearance:
   nautilus:
   pavucontrol:
+  redshift:
   seahorse:
   suckless-tools:
   sushi:

@@ -17,8 +17,7 @@ pacman:
   cups:
   ddrescue:
   dialog:
-  docker-compose:
-  docker:
+  exa:
   fd:
   findutils:
   fish:
@@ -34,20 +33,16 @@ pacman:
   hydra:
   iftop:
   iw:
-  john:
   libsecret:
-  masscan:
   mlocate:
   moreutils:
   mtr:
   ncdu:
   net-tools:
-  nikto:
   nmap:
   numlockx:
   openssh:
   openssl:
-  openvpn:
   p7zip:
   pkgfile:
   pkgstats:
@@ -56,35 +51,26 @@ pacman:
   python-pip:
   python-setuptools:
   python:
-  python2-pip:
-  python2-setuptools:
-  python2:
   redshift:
   rsync:
   ruby:
   shellcheck:
   smartmontools:
   speedtest-cli:
-  syncthing:
   sysstat:
   tcpdump:
   tmux:
-  tor:
-  torsocks:
   tree:
   ttf-dejavu:
   ttf-ionicons:
   ttf-ubuntu-font-family:
-  ufw:
   unp:
   unrar:
   util-linux:
-  vagrant:
   vim:
   vte3-ng:
   wget:
   youtube-dl:
-  zmap:
   zsh:
 
   # GUI
