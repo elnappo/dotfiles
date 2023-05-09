@@ -2,17 +2,11 @@
 function grep -d "File pattern searcher"
     command grep --color=auto $argv; end
 
-function ls -d "Colorized ls"
-    switch (uname -s)
-        case Darwin
-            command ls -G $argv
-        case "*"
-            command ls --color $argv
-    end
-end
+function ls -w exa -d "exa"
+    command exa $argv; end
 
-function l -d "l"
-    ls -lah $argv; end
+function l -w exa -d "exa with custom parameters"
+    command exa -lah --icons -s type $argv; end
 
 function tree -d "List contents of directories in a tree-like format"
     command tree -C; end
@@ -30,13 +24,13 @@ function axel -d "Multiple connections wget"
 function ssh-copy-id -d "Use locally available keys to authorise logins on a remote machine"
     env SSH_OPTS='-F /dev/null' command ssh-copy-id $argv; end
 
-function ssht -d "Attach to remote tmux session"
+function ssht -w ssh -d "Attach to remote tmux session"
     ssh $argv -t "tmux a"; end
 
 function reload -d "Reload fish config"
     source ~/.config/fish/config.fish; end
 
-function myip -d "Get public IP"
+function myip -w dig -d "Get public IP"
     dig +short myip.opendns.com @resolver1.opendns.com; end
 
 function cleanup -d "Recursively delete .DS_Store"
@@ -89,31 +83,31 @@ function afk -d "Lock the screen (when going AFK)"
     end
 end
 
-function p8 -d "Ping 8.8.8.8"
+function p8 -w ping -d "Ping 8.8.8.8"
     ping 8.8.8.8; end
 
-function pg -d "Ping google.de"
+function pg -w ping -d "Ping google.de"
     ping google.de; end
 
-function ssh_ignore -d "Ignore ssh config"
+function ssh_ignore -w ssh -d "Ignore ssh config"
     ssh -F /dev/null $argv; end
 
-function starwars -d "Play Star Wars in ASCII"
+function starwars -w telnet -d "Play Star Wars in ASCII"
     telnet towel.blinkenlights.nl; end
 
-function brewsync -d "Sync your installed tools"
+function brewsync -w ansible-playbook -d "Sync your installed tools"
     ansible-playbook $HOME/.dotfiles/ansible/dotfiles.yml --tags packages; end
 
-function dotfiles -d "Run dotfiles Playbook"
+function dotfiles -w ansible-playbook -d "Run dotfiles Playbook"
     ansible-playbook $HOME/.dotfiles/ansible/dotfiles.yml $argv; end
 
 function play -d "Run an ansible playbook (alias)"
     ansible-playbook $argv; end
 
-function smod -d "Show decimal permissions"
+function smod -w stat -d "Show decimal permissions"
     stat -c "%a %n"; end
 
-function ubuntu -d "Create a short lived Ubuntu container"
+function ubuntu -w docker -d "Create a short lived Ubuntu container"
     docker run --rm -ti ubuntu /bin/bash; end
 
 # Load OS specific functions
