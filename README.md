@@ -1,4 +1,4 @@
-# elnappo’s dotfiles [![Build Status](https://travis-ci.org/elnappo/dotfiles.svg?branch=master)](https://travis-ci.org/elnappo/dotfiles)
+# elnappo’s dotfiles
 
 These are my dotfiles, they can be used under macOS and Linux (mainly Arch Linux but Ubuntu is also supported). What is special about it is that Ansible is used to configure and sync your system settings. This has many advantages in contrast to simple bash scripts or a `Makefile`.
 

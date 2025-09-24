@@ -80,6 +80,12 @@ then
     mv "$HOME/.bash_profile" "$HOME/bash_profile_backup"
 fi
 
+if [ -f "$HOME/.zshrc" ] && [ ! -h "$HOME/.zshrc" ]
+then
+    echo "[i] Move current ~/.zshrc to ~/zshrc_backup"
+    mv "$HOME/.zshrc" "$HOME/zshrc_backup"
+fi
+
 # Run main playbook
 echo "[i] Run Playbook"
 ansible-playbook ../ansible/dotfiles.yml --ask-become-pass
