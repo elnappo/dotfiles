@@ -144,7 +144,6 @@
     - { domain: "com.apple.appstore", key: "WebKitDeveloperExtras", type: "bool", value: "true" }
     # Enable Debug Menu in the Mac App Store
     - { domain: "com.apple.appstore", key: "ShowDebugMenu", type: "bool", value: "true" }
-    - { domain: "~/Library/Preferences/org.gpgtools.gpgmail", key: "SignNewEmailsByDefault", type: "bool", value: "false" }
     # Use plain text mode for new TextEdit documents
     - { domain: "com.apple.TextEdit", key: "RichText", type: "int", value: "0" }
     #defaults write com.apple.TextEdit PlainTextEncoding -int 4
