@@ -1,0 +1,40 @@
+name: Dotfiles Setup
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Environment
+        run: |
+          brew update
+          brew untap homebrew/cask || true
+          brew untap homebrew/core || true
+          brew cleanup
+          brew doctor || true
+          rm ~/.bashrc
+          rm ~/.bash_profile
+
+      - name: Install Dependencies
+        run: |
+          brew install ansible
+          ansible --version
+
+      - name: Syntax Check Playbook
+        run: ansible-playbook --syntax-check --list-tasks ansible/dotfiles.yml
+
+      - name: Run Playbook
+        run: ansible-playbook ansible/dotfiles.yml --skip-tags "packages,dnscrypt"
+
+      - name: Check if Playbook is idempotent
+        run: |
+          ansible-playbook ansible/dotfiles.yml --skip-tags "packages,dnscrypt" | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
+
+      - name: Debugging Checks
+        if: ${{ !cancelled() }}
+        run: |
+          brew doctor || true
+          brew list
+          brew cleanup
+          ls -la ~/
