@@ -7,17 +7,10 @@ function __fish_os_id_like
             else
                 echo "Linux"
             end
-
         case Darwin
             echo "Darwin"
     end
 end
-
-# Path to Oh My Fish install.
-set -gx OMF_PATH $HOME/.local/share/omf
-
-# Load oh-my-fish configuration.
-source $OMF_PATH/init.fish
 
 set -x EDITOR vim
 set -x VISUAL vim
@@ -40,20 +33,22 @@ end
 switch (__fish_os_id_like)
     case archlinux
         test -s /usr/share/doc/pkgfile/command-not-found.fish; and source /usr/share/doc/pkgfile/command-not-found.fish
-        # Load grc as omf plugin is incomplete
+        # Load grc
         test -s /etc/grc.fish; and source /etc/grc.fish
 
     case Darwin
         # Load iTerm2 shell integration
         test -s ~/.local/share/fish/iterm2_shell_integration.fish; and source ~/.local/share/fish/iterm2_shell_integration.fish
         # Add homebrew to $PATH
-        test -d /opt/homebrew/bin ; and set -x PATH /opt/homebrew/bin $PATH
-        test -d /opt/homebrew/sbin; and set -x PATH /opt/homebrew/sbin $PATH
+        test -d /opt/homebrew/bin ; and fish_add_path -g /opt/homebrew/bin
+        test -d /opt/homebrew/sbin; and fish_add_path -g /opt/homebrew/sbin
         # Load Homebrew command not found
-        set HB_CNF_HANDLER (brew --repository)"/Library/Taps/homebrew/homebrew-command-not-found/handler.fish"
-        if test -f $HB_CNF_HANDLER
-            source $HB_CNF_HANDLER
+        set HOMEBREW_COMMAND_NOT_FOUND_HANDLER (brew --repository)/Library/Homebrew/command-not-found/handler.fish
+        if test -f $HOMEBREW_COMMAND_NOT_FOUND_HANDLER
+          source $HOMEBREW_COMMAND_NOT_FOUND_HANDLER
         end
-        # Load grc as omf plugin is incomplete
+        # Load grc
         test -s (brew --repository)/etc/grc.fish; and source (brew --repository)/etc/grc.fish
 end
+
+starship init fish | source

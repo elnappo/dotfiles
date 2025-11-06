@@ -32,3 +32,4 @@ case "$(uname -s)" in
         [[ -s "`brew --repository`/etc/grc.zsh" ]] && source "`brew --repository`/etc/grc.zsh"
         ;;
 esac
+

@@ -2,11 +2,11 @@
 function grep -d "File pattern searcher"
     command grep --color=auto $argv; end
 
-function ls -w exa -d "exa"
-    command exa $argv; end
+function ls -w exa -d "eza"
+    command eza $argv; end
 
-function l -w exa -d "exa with custom parameters"
-    command exa -lah --icons -s type $argv; end
+function l -w exa -d "eza with custom parameters"
+    command eza -lah --icons -s type $argv; end
 
 function tree -d "List contents of directories in a tree-like format"
     command tree -C; end
@@ -54,6 +54,7 @@ function update -d "Update the system"
             brew update
             brew upgrade
             brew cleanup
+            mas upgrade
     end
     git -C ~/.dotfiles pull
 end
@@ -79,7 +80,7 @@ function afk -d "Lock the screen (when going AFK)"
         case Linux
             i3lock -i $HOME/Pictures/i3lock.png
         case Darwin
-            /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
+            pmset displaysleepnow
     end
 end
 

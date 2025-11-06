@@ -5,22 +5,41 @@
     dest: "{{ item.dest }}"
     state: link
   loop:
-    - { src: "~/.dotfiles/bash_profile", dest: "~/.bash_profile"}
-    - { src: "~/.dotfiles/bashrc", dest: "~/.bashrc"}
-    - { src: "~/.dotfiles/config/fish/config.fish", dest: "~/.config/fish/config.fish"}
-    - { src: "~/.dotfiles/config/gtk-3.0/settings.ini", dest: "~/.config/gtk-3.0/settings.ini" }
-    - { src: "~/.dotfiles/config/i3/config", dest: "~/.config/i3/config"}
-    - { src: "~/.dotfiles/config/i3blocks/config", dest: "~/.config/i3blocks/config"}
-    - { src: "~/.dotfiles/config/karabiner/karabiner.json", dest: "~/.config/karabiner/karabiner.json" }
-    - { src: "~/.dotfiles/config/omf/bundle", dest: "~/.config/omf/bundle"}
-    - { src: "~/.dotfiles/config/omf/theme", dest: "~/.config/omf/theme"}
-    - { src: "~/.dotfiles/config/terminator/config", dest: "~/.config/terminator/config" }
-    - { src: "~/.dotfiles/config/termite/config", dest: "~/.config/termite/config" }
-    - { src: "~/.dotfiles/config/vscode/settings.json", dest: "~/Library/Application Support/Code/User/settings.json" }
-    - { src: "~/.dotfiles/curlrc", dest: "~/.curlrc"}
+    - { src: "~/.dotfiles/bash_profile", dest: "~/.bash_profile" }
+    - { src: "~/.dotfiles/bashrc", dest: "~/.bashrc" }
+    - {
+        src: "~/.dotfiles/config/fish/config.fish",
+        dest: "~/.config/fish/config.fish",
+      }
+    - {
+        src: "~/.dotfiles/config/gtk-3.0/settings.ini",
+        dest: "~/.config/gtk-3.0/settings.ini",
+      }
+    - { src: "~/.dotfiles/config/i3/config", dest: "~/.config/i3/config" }
+    - {
+        src: "~/.dotfiles/config/i3blocks/config",
+        dest: "~/.config/i3blocks/config",
+      }
+    - {
+        src: "~/.dotfiles/config/karabiner/karabiner.json",
+        dest: "~/.config/karabiner/karabiner.json",
+      }
+    - {
+        src: "~/.dotfiles/config/terminator/config",
+        dest: "~/.config/terminator/config",
+      }
+    - {
+        src: "~/.dotfiles/config/termite/config",
+        dest: "~/.config/termite/config",
+      }
+    - {
+        src: "~/.dotfiles/config/vscode/settings.json",
+        dest: "~/Library/Application Support/Code/User/settings.json",
+      }
+    - { src: "~/.dotfiles/curlrc", dest: "~/.curlrc" }
     - { src: "~/.dotfiles/gtkrc-2.0", dest: "~/.gtkrc-2.0" }
-    - { src: "~/.dotfiles/tmux.conf", dest: "~/.tmux.conf"}
-    - { src: "~/.dotfiles/vimrc", dest: "~/.vimrc"}
-    - { src: "~/.dotfiles/wgetrc", dest: "~/.wgetrc"}
+    - { src: "~/.dotfiles/tmux.conf", dest: "~/.tmux.conf" }
+    - { src: "~/.dotfiles/vimrc", dest: "~/.vimrc" }
+    - { src: "~/.dotfiles/wgetrc", dest: "~/.wgetrc" }
     - { src: "~/.dotfiles/xinitrc", dest: "~/.xinitrc" }
-    - { src: "~/.dotfiles/zshrc", dest: "~/.zshrc"}
+    - { src: "~/.dotfiles/zshrc", dest: "~/.zshrc" }

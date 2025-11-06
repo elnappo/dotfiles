@@ -12,8 +12,18 @@
   "python.pythonPath": "/opt/homebrew/bin/python3",
   "editor.renderWhitespace": "boundary",
   "window.zoomLevel": 0,
-  "workbench.editor.showTabs": true,
+  "workbench.editor.showTabs": "multiple",
   "go.toolsManagement.autoUpdate": true,
   "redhat.telemetry.enabled": false,
-  "editor.stickyScroll.enabled": true
+  "editor.stickyScroll.enabled": true,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "security.workspace.trust.untrustedFiles": "open"
 }

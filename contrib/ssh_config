@@ -1,9 +1,3 @@
-Host github.com
-    IdentityFile ~/.ssh/github
-
-Host gitlab.com
-    IdentityFile ~/.ssh/gitlab
-
 Host *.onion
   ProxyCommand /usr/bin/nc -xlocalhost:9050 -X5 %h %p
 

@@ -38,12 +38,6 @@
         dest: ~/.local/share/oh-my-zsh
         update: yes
 
-    - name: Install oh-my-fish
-      git:
-        repo: https://github.com/oh-my-fish/oh-my-fish.git
-        dest: ~/.local/share/omf
-        update: yes
-
     - name: Install tmux plugin manager
       git:
         repo: https://github.com/tmux-plugins/tpm.git
@@ -72,7 +66,6 @@
         - "~/.config/i3/"
         - "~/.config/i3blocks/"
         - "~/.config/karabiner/"
-        - "~/.config/omf/"
         - "~/.config/terminator/"
         - "~/.config/termite/"
         - "~/.config/vscode/"
