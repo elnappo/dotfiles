@@ -14,6 +14,11 @@
   tags:
     - brew_cask
 
+- name: Include mas app list
+  include_vars: vars/mas.yml
+  tags:
+    - mas
+
 - name: Include pacman package list
   include_vars: vars/pacman.yml
   tags:
@@ -29,116 +34,92 @@
   tags:
     - apt
 
-- name: Include gems list
-  include_vars: vars/gems.yml
-  tags:
-    - gem
-
-- name: Include python package list
-  include_vars: vars/pip.yml
-  tags:
-    - pip
-
 - block:
-  - name: Update/Upgrade Homebrew
-    homebrew:
-      update_homebrew: true
-      upgrade_all: true
-    tags:
-      - brew_taps
-      - brew_formula
-      - brew_cask
+    - name: Update/Upgrade Homebrew
+      community.general.homebrew:
+        update_homebrew: true
+        upgrade_all: true
+      tags:
+        - brew_taps
+        - brew_formula
+        - brew_cask
 
-  - name: Manage taps
-    homebrew_tap:
-      name: "{{ item.key }}"
-      state: "{{ item.value.state | default('present') }}"
-    with_dict: "{{taps}}"
-    tags:
-      - brew_taps
+    - name: Manage taps
+      community.general.homebrew_tap:
+        name: "{{ item.key }}"
+        state: "{{ item.value.state | default('present') }}"
+      with_dict: "{{taps}}"
+      tags:
+        - brew_taps
 
-  - name: Manage formula
-    homebrew:
-      name: "{{ item.key }}"
-      install_options: "{{ item.value.options | default(omit) }}"
-      state: "{{ item.value.state | default('present') }}"
-    with_dict: "{{formula}}"
-    tags:
-      - brew_formula
+    - name: Manage formula
+      community.general.homebrew:
+        name: "{{ item.key }}"
+        install_options: "{{ item.value.options | default(omit) }}"
+        state: "{{ item.value.state | default('present') }}"
+      with_dict: "{{formula}}"
+      tags:
+        - brew_formula
 
-  - name: Manage casks
-    homebrew_cask:
-      name: "{{ item.key }}"
-      state: "{{ item.value.state | default('present') }}"
-    with_dict: "{{casks}}"
-    tags:
-      - brew_cask
+    - name: Manage casks
+      community.general.homebrew_cask:
+        name: "{{ item.key }}"
+        state: "{{ item.value.state | default('present') }}"
+      with_dict: "{{casks}}"
+      tags:
+        - brew_cask
 
-  - name: Manage python packages
-    pip:
-      name: "{{ item.key }}"
-      state: "{{ item.value.state | default('latest') }}"
-      executable: "{{ item.value.executable | default('pip3') }}"
-    with_dict: "{{pip}}"
-    tags:
-      - pip
+    - name: Install mas formula
+      community.general.homebrew:
+        name: "mas"
+        state: "present"
+      tags:
+        - mas
+
+    - name: Manage Mac App Store apps
+      community.general.mas:
+        id: "{{ item.id }}"
+        state: "{{ item.value.state | default('present') }}"
+      with_dict: "{{mas}}"
+      tags:
+        - mas
+
+    - name: Make sure all installed Mac App Store apps are up to date
+      community.general.mas:
+        upgrade_all: true
+      tags:
+        - mas
 
   when: ansible_os_family == "Darwin"
 
 - block:
-  - name: Update/Upgrade pacman
-    pacman:
-      update_cache: true
-      upgrade: true
+    - name: Update/Upgrade pacman
+      community.general.pacman:
+        update_cache: true
+        upgrade: true
 
-  - name: Manage pacman packages
-    pacman:
-      name: "{{ item.key }}"
-      state: "{{ item.value.state | default('latest') }}"
-    with_dict: "{{pacman}}"
-
-  - name: Manage python packages
-    pip:
-      name: "{{ item.key }}"
-      state: "{{ item.value.state | default('latest') }}"
-      executable: "{{ item.value.executable | default('pip3') }}"
-    with_dict: "{{pip}}"
-    tags:
-      - pip
+    - name: Manage pacman packages
+      community.general.pacman:
+        name: "{{ item.key }}"
+        state: "{{ item.value.state | default('latest') }}"
+      with_dict: "{{pacman}}"
 
   become: true
   when: ansible_os_family == "Archlinux"
   tags: pacman
 
 - block:
-  - name: Update/Upgrade apt
-    apt:
-      update_cache: true
-      upgrade: dist
+    - name: Update/Upgrade apt
+      ansible.builtin.apt:
+        update_cache: true
+        upgrade: dist
 
-  - name: Manage apt packages
-    apt:
-      name: "{{ item.key }}"
-      state: "{{ item.value.state | default('latest') }}"
-    with_dict: "{{apt}}"
-
-  - name: Manage python packages
-    pip:
-      name: "{{ item.key }}"
-      state: "{{ item.value.state | default('latest') }}"
-      executable: "{{ item.value.executable | default('pip3') }}"
-    with_dict: "{{pip}}"
-    tags:
-      - pip
+    - name: Manage apt packages
+      ansible.builtin.apt:
+        name: "{{ item.key }}"
+        state: "{{ item.value.state | default('latest') }}"
+      with_dict: "{{apt}}"
 
   become: true
   when: ansible_os_family == "Debian"
   tags: apt
-
-- name: Manage gems
-  gem:
-    name: "{{ item.key }}"
-    state: "{{ item.value.state | default('latest') }"
-  with_dict: "{{gems}}"
-  tags:
-    - gem

@@ -1,23 +1,36 @@
 ---
 casks:
+  aerospace:
+  caffeine:
   firefox:
+  goland:
   google-chrome:
   iina:
   iterm2:
   karabiner-elements:
   libreoffice:
-  macdown:
+  lunar:
   macpass:
   moneymoney:
+  orcaslicer:
+  plex:
+  sanesidebuttons:
+  secretive:
+  slack:
+  spotify:
   steam:
   the-unarchiver:
   transmission:
+  tunnelblick:
+  utm:
   visual-studio-code:
-  wireshark:
+  wireshark-app:
+  zed:
   # Quick Look plugins
   apparency:
   qlcolorcode:
   qlimagesize:
   qlmarkdown:
   qlstephen:
+  qlvideo:
   quicklook-json:

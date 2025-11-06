@@ -8,6 +8,9 @@ formula:
   bash:
   bat:
   binwalk:
+  borgbackup:
+  borgmatic:
+  container:
   coreutils:
   cowsay:
   ddrescue:
@@ -16,36 +19,44 @@ formula:
   findutils:
   fish:
   fzf:
+  gh:
   go:
   grc:
   grep:
   htop:
   httpie:
   iftop:
+  iperf3:
   iproute2mac:
   jq:
+  just:
   kubernetes-cli:
   kubernetes-helm:
   libusb:
   lnav:
+  mas:
   moreutils:
   mtr:
   ncdu:
+  neofetch:
   nmap:
   openssl:
   peco:
+  picocom:
   pwgen:
+  python-requests:
   python:
   rename:
-  shellcheck:
   smartmontools:
   ssh-copy-id:
   telnet:
   tmux:
   tree:
   unp:
+  uv:
   vim:
   watch:
   wget:
   youtube-dl:
   zsh:
+  zstd:

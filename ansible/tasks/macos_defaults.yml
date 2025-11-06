@@ -13,7 +13,11 @@
     - { key: "EncryptionRequire", type: "bool", value: "true" }
     # Setting up block list
     - { key: "BlocklistAutoUpdate", type: "bool", value: "true" }
-    - { key: "BlocklistURL", type: "string", value: "http://john.bitsurge.net/public/biglist.p2p.gz" }
+    - {
+        key: "BlocklistURL",
+        type: "string",
+        value: "http://john.bitsurge.net/public/biglist.p2p.gz",
+      }
     # Auto-resizing the window to fit transfers
     - { key: "AutoSize", type: "bool", value: "true" }
   notify:
@@ -23,7 +27,11 @@
   osx_defaults: domain=com.apple.finder key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     - { key: "NewWindowTarget", type: "string", value: "PfLo" }
-    - { key: "NewWindowTargetPath", type: "string", value: "file://{{ ansible_env.HOME }}/" }
+    - {
+        key: "NewWindowTargetPath",
+        type: "string",
+        value: "file://{{ ansible_env.HOME }}/",
+      }
     # Show icons for hard drives, servers, and removable media on the desktop
     - { key: "ShowExternalHardDrivesOnDesktop", type: "bool", value: "true" }
     - { key: "ShowHardDrivesOnDesktop", type: "bool", value: "true" }
@@ -75,13 +83,25 @@
     # Prevent Safari from opening ‘safe’ files automatically after downloading
     - { key: "AutoOpenSafeDownloads", type: "bool", value: "false" }
     # Allow hitting the Backspace key to go to the previous page in history
-    - { key: "com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled", type: "bool", value: "true" }
+    - {
+        key: "com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled",
+        type: "bool",
+        value: "true",
+      }
     # Enable Safari’s debug menu
     - { key: "IncludeInternalDebugMenu", type: "bool", value: "true" }
     # Enable the Develop menu and the Web Inspector in Safari
     - { key: "IncludeDevelopMenu", type: "bool", value: "true" }
-    - { key: "WebKitDeveloperExtrasEnabledPreferenceKey", type: "bool", value: "true" }
-    - { key: "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled", type: "bool", value: "true" }
+    - {
+        key: "WebKitDeveloperExtrasEnabledPreferenceKey",
+        type: "bool",
+        value: "true",
+      }
+    - {
+        key: "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled",
+        type: "bool",
+        value: "true",
+      }
   notify:
     - Kill Safari
 
@@ -106,7 +126,11 @@
     - { key: "NSTableViewDefaultSizeMode", type: "int", value: "1" }
     # Expand save panel by default
     - { key: "NSNavPanelExpandedStateForSaveMode", type: "bool", value: "true" }
-    - { key: "NSNavPanelExpandedStateForSaveMode2", type: "bool", value: "true" }
+    - {
+        key: "NSNavPanelExpandedStateForSaveMode2",
+        type: "bool",
+        value: "true",
+      }
     # Expand print panel by default
     - { key: "PMPrintingExpandedStateForPrint", type: "bool", value: "true" }
     - { key: "PMPrintingExpandedStateForPrint2", type: "bool", value: "false" }
@@ -116,16 +140,28 @@
     # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
     - { key: "NSTextShowsControlCharacters", type: "bool", value: "true" }
     # Disable smart quotes as they’re annoying when typing code
-    - { key: "NSAutomaticQuoteSubstitutionEnabled", type: "bool", value: "false" }
+    - {
+        key: "NSAutomaticQuoteSubstitutionEnabled",
+        type: "bool",
+        value: "false",
+      }
     # Disable smart dashes as they’re annoying when typing code
-    - { key: "NSAutomaticDashSubstitutionEnabled", type: "bool", value: "false" }
+    - {
+        key: "NSAutomaticDashSubstitutionEnabled",
+        type: "bool",
+        value: "false",
+      }
     # Disable “natural” (Lion-style) scrolling
     - { key: "com.apple.swipescrolldirection", type: "bool", value: "false" }
     # Disable press-and-hold for keys in favor of key repeat
     - { key: "ApplePressAndHoldEnabled", type: "bool", value: "false" }
     # Set a blazingly fast keyboard repeat rate
     - { key: "KeyRepeat", type: "float", value: "{{keyboard_key_repeat_rate}}" }
-    - { key: "InitialKeyRepeat", type: "int", value: "{{keyboard_initial_key_repeat_delay}}" }
+    - {
+        key: "InitialKeyRepeat",
+        type: "int",
+        value: "{{keyboard_initial_key_repeat_delay}}",
+      }
     # Enable subpixel font rendering on non-Apple LCDs
     - { key: "AppleFontSmoothing", type: "int", value: "2" }
     # Finder: show all filename extensions
@@ -133,7 +169,11 @@
     # Add a context menu item for showing the Web Inspector in web views
     - { key: "WebKitDeveloperExtras", type: "bool", value: "true" }
     # Set auto correct as in vars.yml
-    - { key: "NSAutomaticSpellingCorrectionEnabled", type: "bool", value: "{{macos_auto_correct}}" }
+    - {
+        key: "NSAutomaticSpellingCorrectionEnabled",
+        type: "bool",
+        value: "{{macos_auto_correct}}",
+      }
     # Set the spring loading delay for directories
     - { key: "com.apple.springing.delay", type: "float", value: "1.0" }
 
@@ -141,84 +181,269 @@
   osx_defaults: domain={{ item.domain }} key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     # Enable the WebKit Developer Tools in the Mac App Store
-    - { domain: "com.apple.appstore", key: "WebKitDeveloperExtras", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.appstore",
+        key: "WebKitDeveloperExtras",
+        type: "bool",
+        value: "true",
+      }
     # Enable Debug Menu in the Mac App Store
-    - { domain: "com.apple.appstore", key: "ShowDebugMenu", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.appstore",
+        key: "ShowDebugMenu",
+        type: "bool",
+        value: "true",
+      }
     # Use plain text mode for new TextEdit documents
     - { domain: "com.apple.TextEdit", key: "RichText", type: "int", value: "0" }
     #defaults write com.apple.TextEdit PlainTextEncoding -int 4
-    - { domain: "com.apple.TextEdit", key: "PlainTextEncoding", type: "int", value: "4" }
+    - {
+        domain: "com.apple.TextEdit",
+        key: "PlainTextEncoding",
+        type: "int",
+        value: "4",
+      }
     #defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
-    - { domain: "com.apple.TextEdit", key: "PlainTextEncodingForWrite", type: "int", value: "4" }
+    - {
+        domain: "com.apple.TextEdit",
+        key: "PlainTextEncodingForWrite",
+        type: "int",
+        value: "4",
+      }
     # Enable the debug menu in Disk Utility
-    - { domain: "com.apple.DiskUtility", key: "DUDebugMenuEnabled", type: "bool", value: "true" }
-    - { domain: "com.apple.DiskUtility", key: "image", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.DiskUtility",
+        key: "DUDebugMenuEnabled",
+        type: "bool",
+        value: "true",
+      }
+    - {
+        domain: "com.apple.DiskUtility",
+        key: "image",
+        type: "bool",
+        value: "true",
+      }
     # Show the main window when launching Activity Monitor
-    - { domain: "com.apple.ActivityMonitor", key: "OpenMainWindow", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.ActivityMonitor",
+        key: "OpenMainWindow",
+        type: "bool",
+        value: "true",
+      }
     # Visualize CPU usage in the Activity Monitor Dock icon
-    - { domain: "com.apple.ActivityMonitor", key: "IconType", type: "int", value: "5" }
+    - {
+        domain: "com.apple.ActivityMonitor",
+        key: "IconType",
+        type: "int",
+        value: "5",
+      }
     # Show all processes in Activity Monitor
-    - { domain: "com.apple.ActivityMonitor", key: "ShowCategory", type: "int", value: "0" }
+    - {
+        domain: "com.apple.ActivityMonitor",
+        key: "ShowCategory",
+        type: "int",
+        value: "0",
+      }
     # Sort Activity Monitor results by CPU usage
-    - { domain: "com.apple.ActivityMonitor", key: "SortColumn", type: "string", value: "CPUUsage" }
-    - { domain: "com.apple.ActivityMonitor", key: "SortDirection", type: "int", value: "0" }
+    - {
+        domain: "com.apple.ActivityMonitor",
+        key: "SortColumn",
+        type: "string",
+        value: "CPUUsage",
+      }
+    - {
+        domain: "com.apple.ActivityMonitor",
+        key: "SortDirection",
+        type: "int",
+        value: "0",
+      }
     # Prevent Time Machine from prompting to use new hard drives as backup volume
-    - { domain: "com.apple.TimeMachine", key: "DoNotOfferNewDisksForBackup", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.TimeMachine",
+        key: "DoNotOfferNewDisksForBackup",
+        type: "bool",
+        value: "true",
+      }
     # Automatically quit printer app once the print jobs complete
-    - { domain: "com.apple.print.PrintingPrefs", key: "Quit When Finished", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.print.PrintingPrefs",
+        key: "Quit When Finished",
+        type: "bool",
+        value: "true",
+      }
     # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
-    - { domain: "com.apple.mail", key: "AddressesIncludeNameOnPasteboard", type: "bool", value: "false" }
+    - {
+        domain: "com.apple.mail",
+        key: "AddressesIncludeNameOnPasteboard",
+        type: "bool",
+        value: "false",
+      }
     # Enable AirDrop over Ethernet and on unsupported Macs running Lion
-    - { domain: "com.apple.NetworkBrowser", key: "BrowseAllInterfaces", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.NetworkBrowser",
+        key: "BrowseAllInterfaces",
+        type: "bool",
+        value: "true",
+      }
     # Automatically open a new Finder window when a volume is mounted
-    - { domain: "com.apple.frameworks.diskimages", key: "auto-open-ro-root", type: "bool", value: "true" }
-    - { domain: "com.apple.frameworks.diskimages", key: "auto-open-rw-root", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.frameworks.diskimages",
+        key: "auto-open-ro-root",
+        type: "bool",
+        value: "true",
+      }
+    - {
+        domain: "com.apple.frameworks.diskimages",
+        key: "auto-open-rw-root",
+        type: "bool",
+        value: "true",
+      }
     # Avoid creating .DS_Store files on network volumes
-    - { domain: "com.apple.desktopservices", key: "DSDontWriteNetworkStores", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.desktopservices",
+        key: "DSDontWriteNetworkStores",
+        type: "bool",
+        value: "true",
+      }
     # Avoid creating .DS_Store files on usb drives
-    - { domain: "com.apple.desktopservices", key: "DSDontWriteUSBStores", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.desktopservices",
+        key: "DSDontWriteUSBStores",
+        type: "bool",
+        value: "true",
+      }
     # Save screenshots to the desktop
-    - { domain: "com.apple.screencapture", key: "location", type: "string", value: "{{ ansible_env.HOME }}/Desktop" }
+    - {
+        domain: "com.apple.screencapture",
+        key: "location",
+        type: "string",
+        value: "{{ ansible_env.HOME }}/Desktop",
+      }
     # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-    - { domain: "com.apple.screencapture", key: "type", type: "string", value: "png" }
+    - {
+        domain: "com.apple.screencapture",
+        key: "type",
+        type: "string",
+        value: "png",
+      }
     # Disable shadow in screenshots
-    - { domain: "com.apple.screencapture", key: "disable-shadow", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.screencapture",
+        key: "disable-shadow",
+        type: "bool",
+        value: "true",
+      }
     # Increase sound quality for Bluetooth headphones/headsets
-    - { domain: "com.apple.BluetoothAudioAgent", key: "Apple Bitpool Min (editable)", type: "int", value: "40" }
+    - {
+        domain: "com.apple.BluetoothAudioAgent",
+        key: "Apple Bitpool Min (editable)",
+        type: "int",
+        value: "40",
+      }
     # Trackpad: enable tap to click for this user and for the login screen
-    - { domain: "com.apple.driver.AppleBluetoothMultitouch.trackpad", key: "Clicking", type: "int", value: "1" }
+    - {
+        domain: "com.apple.driver.AppleBluetoothMultitouch.trackpad",
+        key: "Clicking",
+        type: "int",
+        value: "1",
+      }
     # Check for software updates daily, not just once per week
-    - { domain: "com.apple.SoftwareUpdate", key: "ScheduleFrequency", type: "int", value: "1" }
+    - {
+        domain: "com.apple.SoftwareUpdate",
+        key: "ScheduleFrequency",
+        type: "int",
+        value: "1",
+      }
     # Enable the automatic update check
-    - { domain: "com.apple.SoftwareUpdate", key: "AutomaticCheckEnabled", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.SoftwareUpdate",
+        key: "AutomaticCheckEnabled",
+        type: "bool",
+        value: "true",
+      }
     # Download newly available updates in background
-    - { domain: "com.apple.SoftwareUpdate", key: "AutomaticDownload", type: "int", value: "1" }
+    - {
+        domain: "com.apple.SoftwareUpdate",
+        key: "AutomaticDownload",
+        type: "int",
+        value: "1",
+      }
     # Install System data files & security updates
-    - { domain: "com.apple.SoftwareUpdate", key: "CriticalUpdateInstall", type: "int", value: "1" }
+    - {
+        domain: "com.apple.SoftwareUpdate",
+        key: "CriticalUpdateInstall",
+        type: "int",
+        value: "1",
+      }
     # Turn on app auto-update
-    - { domain: "com.apple.commerce", key: "AutoUpdate", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.commerce",
+        key: "AutoUpdate",
+        type: "bool",
+        value: "true",
+      }
     # Set Help Viewer windows to non-floating mode
-    - { domain: "com.apple.helpviewer", key: "DevMode", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.helpviewer",
+        key: "DevMode",
+        type: "bool",
+        value: "true",
+      }
     # Prevent Photos from opening automatically when devices are plugged in
-    - { domain: "com.apple.ImageCapture", key: "disableHotPlug", type: "bool", value: "true" }
+    - {
+        domain: "com.apple.ImageCapture",
+        key: "disableHotPlug",
+        type: "bool",
+        value: "true",
+      }
 
 - name: Set some other settings (with sudo)
   osx_defaults: domain={{ item.domain }} key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     # Set LoginwindowText
-    - { domain: "/Library/Preferences/com.apple.loginwindow", key: "LoginwindowText", type: "string", value: "{{ login_window_text }}" }
+    - {
+        domain: "/Library/Preferences/com.apple.loginwindow",
+        key: "LoginwindowText",
+        type: "string",
+        value: "{{ login_window_text }}",
+      }
     # Make sure there is no password hint set.
-    - { domain: "/Library/Preferences/com.apple.loginwindow", key: "RetriesUntilHint", type: "int", value: 0 }
+    - {
+        domain: "/Library/Preferences/com.apple.loginwindow",
+        key: "RetriesUntilHint",
+        type: "int",
+        value: 0,
+      }
     # Disable IR remote control
-    - { domain: "/Library/Preferences/com.apple.driver.AppleIRController", key: "DeviceEnabled", type: "bool", value: "false" }
+    - {
+        domain: "/Library/Preferences/com.apple.driver.AppleIRController",
+        key: "DeviceEnabled",
+        type: "bool",
+        value: "false",
+      }
     # Enable Firewall. 0 = off, 1 = specific services, 2 = essential services
-    - { domain: "/Library/Preferences/com.apple.alf", key: "globalstate", type: "int", value: "2" }
+    - {
+        domain: "/Library/Preferences/com.apple.alf",
+        key: "globalstate",
+        type: "int",
+        value: "2",
+      }
     # Disable the captive portal window
-    - { domain: "/Library/Preferences/SystemConfiguration/com.apple.captive.control", key: "Active", type: "bool", value: "false" }
+    - {
+        domain: "/Library/Preferences/SystemConfiguration/com.apple.captive.control",
+        key: "Active",
+        type: "bool",
+        value: "false",
+      }
     # Enable dark mode
-    - { domain: "/Library/Preferences/.GlobalPreferences.plist ", key: "AppleInterfaceTheme", type: "string", value: "Dark" }
+    - {
+        domain: "/Library/Preferences/.GlobalPreferences.plist ",
+        key: "AppleInterfaceTheme",
+        type: "string",
+        value: "Dark",
+      }
 
-  become: yes
+  become: true
 
 - name: Configure hot-corners
   osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}

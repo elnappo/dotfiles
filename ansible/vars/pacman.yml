@@ -48,8 +48,6 @@ pacman:
   pkgstats:
   pulseaudio-alsa:
   pwgen:
-  python-pip:
-  python-setuptools:
   python:
   redshift:
   rsync:

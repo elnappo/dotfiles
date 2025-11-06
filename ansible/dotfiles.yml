@@ -18,9 +18,9 @@
         dest: /etc/sudoers
         state: present
         line: "{{ ansible_user_id }}	ALL=NOPASSWD: ALL"
-        insertafter:  '^%admin\tALL=\(ALL\) ALL'
+        insertafter: '^%admin\tALL=\(ALL\) ALL'
         validate: "visudo -cf %s"
-      become: yes
+      become: true
       when: sudo_without_password and ansible_os_family == "Darwin"
 
     - name: Enable tty_tickets
@@ -29,7 +29,7 @@
         state: present
         line: "Defaults tty_tickets"
         validate: "visudo -cf %s"
-      become: yes
+      become: true
       when: ansible_os_family == "Darwin"
 
     - name: Install oh-my-zsh
@@ -91,13 +91,6 @@
       tags:
         - packages
 
-    - name: Install oh-my-fish themes and plugins
-      command: fish -c "omf install"
-      args:
-        creates: ~/.local/share/omf/themes/default/
-      tags:
-        - packages
-
     - name: Install iTerm 2 shell integrations
       get_url:
         url: https://iterm2.com/shell_integration/{{item}}
@@ -126,11 +119,6 @@
       when: ansible_os_family == "Archlinux"
       tags:
         - arch
-
-    - include_tasks: tasks/dnscrypt.yml
-      when: use_dnscrypt and ansible_os_family == "Darwin"
-      tags:
-        - dnscrypt
 
   handlers:
     - name: Kill Dock

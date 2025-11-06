@@ -1,0 +1,30 @@
+---
+mas:
+  discovery:
+    id: 1381004916
+  homeassistant:
+    id: 1099568401
+  keynote:
+    id: 409183694
+  mactracker:
+    id: 430255202
+  mela:
+    id: 1568924476
+  numbers:
+    id: 409203825
+  pages:
+    id: 409201541
+  paperparrot:
+    id: 1663665267
+  shapr3d:
+    id: 1091675654
+  wblock:
+    id: 6746388723
+  whatsapp:
+    id: 310633997
+  windowsapp:
+    id: 1295203466
+  wireguard:
+    id: 1451685025
+  xcode:
+    id: 497799835

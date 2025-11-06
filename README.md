@@ -10,7 +10,6 @@ These are my dotfiles, they can be used under macOS and Linux (mainly Arch Linux
 * Try to use consistent color theme and fonts between all components
 * set some macOS defaults (`dotfiles/ansible/tasks/macos_defaults.yml`)
 * set some Arch Linux specific options (`dotfiles/ansible/tasks/arch.yml`)
-* dnscrypt for encrypted and locally cached DNS queries (macOS only)
 * try to keep `~/` clean
 * configuration is mainly handled by Ansible (playbook: `~/.dotfiles/ansible/dotfiles.yml`)
 
@@ -55,8 +54,7 @@ $ ./setup.sh
 │   ├── vars
 │   │   ├── casks.yml
 │   │   ├── formula.yml
-│   │   ├── gems.yml
-│   │   ├── pip.yml
+│   │   ├── mas.yml
 │   │   └── taps.yml
 │   └── vars.yml
 └── init
@@ -67,7 +65,6 @@ $ ./setup.sh
 
   * `login_shell: /opt/homebrew/bin/fish`
   * `sudo_without_password: true`
-  * `use_dnscrypt: true` install and configure [DNSCrypt](https://dnscrypt.org/)
   * `login_window_text: Enter any 11-digit prime number to continue.` set a custom message to appear at the bottom of your login window (macOS)
 
 * Clone and install dotfiles repository:

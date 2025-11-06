@@ -25,11 +25,11 @@ jobs:
         run: ansible-playbook --syntax-check --list-tasks ansible/dotfiles.yml
 
       - name: Run Playbook
-        run: ansible-playbook ansible/dotfiles.yml --skip-tags "packages,dnscrypt"
+        run: ansible-playbook ansible/dotfiles.yml --skip-tags "packages"
 
       - name: Check if Playbook is idempotent
         run: |
-          ansible-playbook ansible/dotfiles.yml --skip-tags "packages,dnscrypt" | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
+          ansible-playbook ansible/dotfiles.yml --skip-tags "packages" | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
 
       - name: Debugging Checks
         if: ${{ !cancelled() }}

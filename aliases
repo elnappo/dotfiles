@@ -7,7 +7,7 @@ alias grep='grep --color=auto'
 alias tree="tree -C"
 
 # Update Homebrew formulas and casks
-alias update='brew update && brew upgrade; brew cleanup; git -C ~/.dotfiles pull'
+alias update='brew update && brew upgrade; brew cleanup; mas upgrade; git -C ~/.dotfiles pull'
 
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
@@ -35,7 +35,7 @@ alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Re
 alias badge="tput bel"
 
 # Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias afk="pmset displaysleepnow"
 
 # Copy my public key to the pasteboard
 alias pubkey="more ~/.ssh/id_ed25519.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'"

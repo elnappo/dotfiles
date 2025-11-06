@@ -1,32 +1,32 @@
 ---
 # Add shells installed via homebrew on macOS to /etc/shells
 - block:
-  - name: check if homebrew bash is installed
-    stat: path=/opt/homebrew/bin/bash
-    register: brew_bash
+    - name: check if homebrew bash is installed
+      stat: path=/opt/homebrew/bin/bash
+      register: brew_bash
 
-  - name: add homwbrew bash to /etc/shells
-    lineinfile: dest=/etc/shells line="/opt/homebrew/bin/bash" state=present
-    when: brew_bash.stat.exists
+    - name: add homwbrew bash to /etc/shells
+      lineinfile: dest=/etc/shells line="/opt/homebrew/bin/bash" state=present
+      when: brew_bash.stat.exists
 
-  - name: check if homebrew zsh is installed
-    stat: path=/opt/homebrew/bin/zsh
-    register: brew_zsh
+    - name: check if homebrew zsh is installed
+      stat: path=/opt/homebrew/bin/zsh
+      register: brew_zsh
 
-  - name: add homwbrew zsh to /etc/shells
-    lineinfile: dest=/etc/shells line="/opt/homebrew/bin/zsh" state=present
-    when: brew_zsh.stat.exists
+    - name: add homwbrew zsh to /etc/shells
+      lineinfile: dest=/etc/shells line="/opt/homebrew/bin/zsh" state=present
+      when: brew_zsh.stat.exists
 
-  - name: check if homebrew fish is installed
-    stat: path=/opt/homebrew/bin/fish
-    register: brew_fish
+    - name: check if homebrew fish is installed
+      stat: path=/opt/homebrew/bin/fish
+      register: brew_fish
 
-  - name: add homwbrew fish to /etc/shells
-    lineinfile: dest=/etc/shells line="/opt/homebrew/bin/fish" state=present
-    when: brew_fish.stat.exists
+    - name: add homwbrew fish to /etc/shells
+      lineinfile: dest=/etc/shells line="/opt/homebrew/bin/fish" state=present
+      when: brew_fish.stat.exists
 
   when: ansible_os_family == "Darwin"
-  become: yes
+  become: true
 
 - name: check if preferred login_shell is installed
   stat: path={{ login_shell }}
@@ -35,4 +35,4 @@
 - name: Set default shell
   user: name={{ ansible_user_id }} shell={{ login_shell }}
   when: login_shell_installed.stat.exists
-  become: yes
+  become: true
