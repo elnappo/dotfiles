@@ -1,0 +1,43 @@
+---
+- name: Allow sudo without password
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    line: "{{ ansible_facts['user_id'] }}	ALL=NOPASSWD: ALL"
+    insertafter: '^%admin\tALL=\(ALL\) ALL'
+    validate: "visudo -cf %s"
+  when: sudo_without_password
+  become: true
+
+- name: Enable tty_tickets
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    line: "Defaults tty_tickets"
+    validate: "visudo -cf %s"
+  become: true
+
+- name: Install iTerm 2 shell integrations
+  get_url:
+    url: https://iterm2.com/shell_integration/{{item}}
+    dest: ~/.local/share/{{item}}/iterm2_shell_integration.{{item}}
+  loop:
+    - "fish"
+    - "zsh"
+    - "bash"
+
+# There is no nice way to make it idempotence
+- name: Arrange icons in a grid
+  ansible.builtin.command:
+    argv:
+      - /usr/libexec/PlistBuddy
+      - -c
+      - "Set {{ item }}:IconViewSettings:arrangeBy grid"
+      - "~/Library/Preferences/com.apple.finder.plist"
+  loop:
+    - ":DesktopViewSettings"
+    - ":FK_StandardViewSettings"
+    - ":StandardViewSettings"
+  loop_control:
+    label: "{{ item }}"
+  changed_when: false
