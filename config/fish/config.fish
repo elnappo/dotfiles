@@ -24,10 +24,8 @@ end
 if status --is-interactive
     set -g fish_user_abbreviations
     abbr --add k kubectl
-    abbr --add c code
     abbr --add g git
     abbr --add v vim
-    abbr --add d docker
 end
 
 switch (__fish_os_id_like)
@@ -52,3 +50,6 @@ switch (__fish_os_id_like)
 end
 
 starship init fish | source
+
+# Paths
+fish_add_path --append $HOME/.local/bin

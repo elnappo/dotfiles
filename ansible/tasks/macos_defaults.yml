@@ -1,6 +1,6 @@
 ---
 - name: Set Transmission settings
-  osx_defaults: domain=org.m0k.transmission key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  community.general.osx_defaults: domain=org.m0k.transmission key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     # Don’t prompt for confirmation before downloading
     - { key: "DownloadAsk", type: "bool", value: "false" }
@@ -10,28 +10,21 @@
     - { key: "WarningDonate", type: "bool", value: "false" }
     # Hide the legal disclaimer
     - { key: "WarningLegal", type: "bool", value: "false" }
+    # Require encryption
     - { key: "EncryptionRequire", type: "bool", value: "true" }
     # Setting up block list
     - { key: "BlocklistAutoUpdate", type: "bool", value: "true" }
-    - {
-        key: "BlocklistURL",
-        type: "string",
-        value: "http://john.bitsurge.net/public/biglist.p2p.gz",
-      }
+    - { key: "BlocklistURL", type: "string", value: "http://list.iblocklist.com/?list=bt_level1&fileformat=p2p&archiveformat=gz" }
     # Auto-resizing the window to fit transfers
     - { key: "AutoSize", type: "bool", value: "true" }
   notify:
     - Kill Transmission
 
 - name: Set Finder settings
-  osx_defaults: domain=com.apple.finder key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  community.general.osx_defaults: domain=com.apple.finder key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     - { key: "NewWindowTarget", type: "string", value: "PfLo" }
-    - {
-        key: "NewWindowTargetPath",
-        type: "string",
-        value: "file://{{ ansible_env.HOME }}/",
-      }
+    - { key: "NewWindowTargetPath", type: "string", value: "file://{{ ansible_facts['env']['HOME'] }}/" }
     # Show icons for hard drives, servers, and removable media on the desktop
     - { key: "ShowExternalHardDrivesOnDesktop", type: "bool", value: "true" }
     - { key: "ShowHardDrivesOnDesktop", type: "bool", value: "true" }
@@ -56,11 +49,13 @@
     - { key: "FXPreferredViewStyle", type: "string", value: "Nlsv" }
     # Disable the warning before emptying the Trash
     - { key: "WarnOnEmptyTrash", type: "bool", value: "false" }
+    # Expand the following File Info panes: “General” and “Open with”
+    # - { key: "FXInfoPanesExpanded", type: "dict", value: { General: true, OpenWith: true} }
   notify:
     - Kill Finder
 
 - name: Set Dock settings
-  osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  community.general.osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     # Enable highlight hover effect for the grid view of a stack (Dock)
     - { key: "mouse-over-hilite-stack", type: "bool", value: "true" }
@@ -75,62 +70,20 @@
   notify:
     - Kill Dock
 
-- name: Set Safari settings
-  osx_defaults: domain=com.apple.Safari key={{ item.key }} type={{ item.type }} value={{ item.value }}
-  with_items:
-    # Show the full URL in the address bar (note: this still hides the scheme)
-    - { key: "ShowFullURLInSmartSearchField", type: "bool", value: "true" }
-    # Prevent Safari from opening ‘safe’ files automatically after downloading
-    - { key: "AutoOpenSafeDownloads", type: "bool", value: "false" }
-    # Allow hitting the Backspace key to go to the previous page in history
-    - {
-        key: "com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled",
-        type: "bool",
-        value: "true",
-      }
-    # Enable Safari’s debug menu
-    - { key: "IncludeInternalDebugMenu", type: "bool", value: "true" }
-    # Enable the Develop menu and the Web Inspector in Safari
-    - { key: "IncludeDevelopMenu", type: "bool", value: "true" }
-    - {
-        key: "WebKitDeveloperExtrasEnabledPreferenceKey",
-        type: "bool",
-        value: "true",
-      }
-    - {
-        key: "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled",
-        type: "bool",
-        value: "true",
-      }
-  notify:
-    - Kill Safari
-
 - name: Set Terminal settings
-  osx_defaults: domain=com.apple.Terminal key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  community.general.osx_defaults: domain=com.apple.Terminal key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     # Enable Secure Keyboard Entry in Terminal.app
     - { key: "SecureKeyboardEntry", type: "bool", value: "true" }
 
-# - name: Set iTerm 2 settings
-#   osx_defaults: domain=com.googlecode.iterm2.plist key={{ item.key }} type={{ item.type }} value={{ item.value }}
-#   with_items:
-#     # Specify the preferences directory
-#     - { key: "PrefsCustomFolder", type: "string", value: "~/.dotfiles/config/iterm2" }
-#     # Tell iTerm2 to use the custom preferences in the directory
-#     - { key: "LoadPrefsFromCustomFolder", type: "bool", value: "true" }
-
 - name: Set global settings
-  osx_defaults: domain=NSGlobalDomain key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  community.general.osx_defaults: domain=NSGlobalDomain key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     # Set sidebar icon size to small
     - { key: "NSTableViewDefaultSizeMode", type: "int", value: "1" }
     # Expand save panel by default
     - { key: "NSNavPanelExpandedStateForSaveMode", type: "bool", value: "true" }
-    - {
-        key: "NSNavPanelExpandedStateForSaveMode2",
-        type: "bool",
-        value: "true",
-      }
+    - { key: "NSNavPanelExpandedStateForSaveMode2", type: "bool", value: "true" }
     # Expand print panel by default
     - { key: "PMPrintingExpandedStateForPrint", type: "bool", value: "true" }
     - { key: "PMPrintingExpandedStateForPrint2", type: "bool", value: "false" }
@@ -140,28 +93,16 @@
     # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
     - { key: "NSTextShowsControlCharacters", type: "bool", value: "true" }
     # Disable smart quotes as they’re annoying when typing code
-    - {
-        key: "NSAutomaticQuoteSubstitutionEnabled",
-        type: "bool",
-        value: "false",
-      }
+    - { key: "NSAutomaticQuoteSubstitutionEnabled", type: "bool", value: "false" }
     # Disable smart dashes as they’re annoying when typing code
-    - {
-        key: "NSAutomaticDashSubstitutionEnabled",
-        type: "bool",
-        value: "false",
-      }
+    - { key: "NSAutomaticDashSubstitutionEnabled", type: "bool", value: "false" }
     # Disable “natural” (Lion-style) scrolling
     - { key: "com.apple.swipescrolldirection", type: "bool", value: "false" }
     # Disable press-and-hold for keys in favor of key repeat
     - { key: "ApplePressAndHoldEnabled", type: "bool", value: "false" }
     # Set a blazingly fast keyboard repeat rate
     - { key: "KeyRepeat", type: "float", value: "{{keyboard_key_repeat_rate}}" }
-    - {
-        key: "InitialKeyRepeat",
-        type: "int",
-        value: "{{keyboard_initial_key_repeat_delay}}",
-      }
+    - { key: "InitialKeyRepeat", type: "int", value: "{{keyboard_initial_key_repeat_delay}}" }
     # Enable subpixel font rendering on non-Apple LCDs
     - { key: "AppleFontSmoothing", type: "int", value: "2" }
     # Finder: show all filename extensions
@@ -169,31 +110,13 @@
     # Add a context menu item for showing the Web Inspector in web views
     - { key: "WebKitDeveloperExtras", type: "bool", value: "true" }
     # Set auto correct as in vars.yml
-    - {
-        key: "NSAutomaticSpellingCorrectionEnabled",
-        type: "bool",
-        value: "{{macos_auto_correct}}",
-      }
+    - { key: "NSAutomaticSpellingCorrectionEnabled", type: "bool", value: "{{macos_auto_correct}}" }
     # Set the spring loading delay for directories
     - { key: "com.apple.springing.delay", type: "float", value: "1.0" }
 
 - name: Set some other settings
-  osx_defaults: domain={{ item.domain }} key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  community.general.osx_defaults: domain={{ item.domain }} key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
-    # Enable the WebKit Developer Tools in the Mac App Store
-    - {
-        domain: "com.apple.appstore",
-        key: "WebKitDeveloperExtras",
-        type: "bool",
-        value: "true",
-      }
-    # Enable Debug Menu in the Mac App Store
-    - {
-        domain: "com.apple.appstore",
-        key: "ShowDebugMenu",
-        type: "bool",
-        value: "true",
-      }
     # Use plain text mode for new TextEdit documents
     - { domain: "com.apple.TextEdit", key: "RichText", type: "int", value: "0" }
     #defaults write com.apple.TextEdit PlainTextEncoding -int 4
@@ -209,13 +132,6 @@
         key: "PlainTextEncodingForWrite",
         type: "int",
         value: "4",
-      }
-    # Enable the debug menu in Disk Utility
-    - {
-        domain: "com.apple.DiskUtility",
-        key: "DUDebugMenuEnabled",
-        type: "bool",
-        value: "true",
       }
     - {
         domain: "com.apple.DiskUtility",
@@ -278,13 +194,6 @@
         type: "bool",
         value: "false",
       }
-    # Enable AirDrop over Ethernet and on unsupported Macs running Lion
-    - {
-        domain: "com.apple.NetworkBrowser",
-        key: "BrowseAllInterfaces",
-        type: "bool",
-        value: "true",
-      }
     # Automatically open a new Finder window when a volume is mounted
     - {
         domain: "com.apple.frameworks.diskimages",
@@ -317,7 +226,7 @@
         domain: "com.apple.screencapture",
         key: "location",
         type: "string",
-        value: "{{ ansible_env.HOME }}/Desktop",
+        value: "{{ ansible_facts['env']['HOME'] }}/Desktop",
       }
     # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
     - {
@@ -332,13 +241,6 @@
         key: "disable-shadow",
         type: "bool",
         value: "true",
-      }
-    # Increase sound quality for Bluetooth headphones/headsets
-    - {
-        domain: "com.apple.BluetoothAudioAgent",
-        key: "Apple Bitpool Min (editable)",
-        type: "int",
-        value: "40",
       }
     # Trackpad: enable tap to click for this user and for the login screen
     - {
@@ -382,13 +284,6 @@
         type: "bool",
         value: "true",
       }
-    # Set Help Viewer windows to non-floating mode
-    - {
-        domain: "com.apple.helpviewer",
-        key: "DevMode",
-        type: "bool",
-        value: "true",
-      }
     # Prevent Photos from opening automatically when devices are plugged in
     - {
         domain: "com.apple.ImageCapture",
@@ -398,7 +293,7 @@
       }
 
 - name: Set some other settings (with sudo)
-  osx_defaults: domain={{ item.domain }} key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  community.general.osx_defaults: domain={{ item.domain }} key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     # Set LoginwindowText
     - {
@@ -414,26 +309,12 @@
         type: "int",
         value: 0,
       }
-    # Disable IR remote control
+    #  Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
     - {
-        domain: "/Library/Preferences/com.apple.driver.AppleIRController",
-        key: "DeviceEnabled",
-        type: "bool",
-        value: "false",
-      }
-    # Enable Firewall. 0 = off, 1 = specific services, 2 = essential services
-    - {
-        domain: "/Library/Preferences/com.apple.alf",
-        key: "globalstate",
-        type: "int",
-        value: "2",
-      }
-    # Disable the captive portal window
-    - {
-        domain: "/Library/Preferences/SystemConfiguration/com.apple.captive.control",
-        key: "Active",
-        type: "bool",
-        value: "false",
+        domain: "/Library/Preferences/com.apple.loginwindow",
+        key: "AdminHostInfo",
+        type: "string",
+        value: "HostName",
       }
     # Enable dark mode
     - {
@@ -446,7 +327,7 @@
   become: true
 
 - name: Configure hot-corners
-  osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  community.general.osx_defaults: domain=com.apple.dock key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     # bottom left - sleep screen
     - { key: "wvous-bl-corner", type: "int", value: "10" }

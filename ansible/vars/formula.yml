@@ -10,19 +10,24 @@ formula:
   binwalk:
   borgbackup:
   borgmatic:
+  brotli:
   container:
   coreutils:
   cowsay:
   ddrescue:
-  exa:
+  eza:
   fd:
   findutils:
   fish:
   fzf:
   gh:
   go:
+  golangci-lint:
+  gopass:
+  govulncheck:
   grc:
   grep:
+  helm:
   htop:
   httpie:
   iftop:
@@ -31,7 +36,6 @@ formula:
   jq:
   just:
   kubernetes-cli:
-  kubernetes-helm:
   libusb:
   lnav:
   mas:
@@ -44,19 +48,21 @@ formula:
   peco:
   picocom:
   pwgen:
-  python-requests:
   python:
   rename:
+  rsync:
   smartmontools:
   ssh-copy-id:
+  starship:
   telnet:
   tmux:
+  tor:
   tree:
   unp:
   uv:
   vim:
   watch:
   wget:
-  youtube-dl:
+  yt-dlp:
   zsh:
   zstd:

@@ -108,9 +108,6 @@ function play -d "Run an ansible playbook (alias)"
 function smod -w stat -d "Show decimal permissions"
     stat -c "%a %n"; end
 
-function ubuntu -w docker -d "Create a short lived Ubuntu container"
-    docker run --rm -ti ubuntu /bin/bash; end
-
 # Load OS specific functions
 switch (uname -s)
     case Linux
@@ -129,9 +126,6 @@ switch (uname -s)
 
         function wifipow -d "Perform a wireless broadcast scan"
             /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s; end
-
-        function pubkey -d "Copy my public key to the pasteboard"
-            more ~/.ssh/id_ed25519.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'; end
 
         function lscleanup -d "Clean up LaunchServices to remove duplicates in the Open With menu"
             /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder; end

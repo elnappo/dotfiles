@@ -35,19 +35,25 @@
     - apt
 
 - block:
-    - name: Update/Upgrade Homebrew
+    - name: Upgrade Homebrew formula
       community.general.homebrew:
         update_homebrew: true
         upgrade_all: true
       tags:
         - brew_taps
         - brew_formula
+
+    - name: Upgrade all Homebrew casks
+      community.general.homebrew_cask:
+        upgrade_all: true
+      tags:
         - brew_cask
 
     - name: Manage taps
       community.general.homebrew_tap:
         name: "{{ item.key }}"
         state: "{{ item.value.state | default('present') }}"
+        trust: true
       with_dict: "{{taps}}"
       tags:
         - brew_taps
@@ -78,7 +84,7 @@
 
     - name: Manage Mac App Store apps
       community.general.mas:
-        id: "{{ item.id }}"
+        id: "{{ item.value.id }}"
         state: "{{ item.value.state | default('present') }}"
       with_dict: "{{mas}}"
       tags:
@@ -90,7 +96,7 @@
       tags:
         - mas
 
-  when: ansible_os_family == "Darwin"
+  when: ansible_facts['os_family'] == "Darwin"
 
 - block:
     - name: Update/Upgrade pacman
@@ -105,7 +111,7 @@
       with_dict: "{{pacman}}"
 
   become: true
-  when: ansible_os_family == "Archlinux"
+  when: ansible_facts['os_family'] == "Archlinux"
   tags: pacman
 
 - block:
@@ -121,5 +127,5 @@
       with_dict: "{{apt}}"
 
   become: true
-  when: ansible_os_family == "Debian"
+  when: ansible_facts['os_family'] == "Debian"
   tags: apt

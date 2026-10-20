@@ -23,12 +23,6 @@ case "$(uname -s)" in
             echo "[i] Install Ansible"
             brew install ansible
         fi
-
-        # set macos defaults
-        echo "[i] Set some specific macOS settings"
-        set +e
-        ./macos.bash
-        set -e
         ;;
 
     Linux)

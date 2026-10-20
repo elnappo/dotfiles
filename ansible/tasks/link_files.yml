@@ -36,6 +36,8 @@
         src: "~/.dotfiles/config/vscode/settings.json",
         dest: "~/Library/Application Support/Code/User/settings.json",
       }
+    - { src: "~/.dotfiles/config/starship.toml", dest: "~/.config/starship.toml" }
+    - { src: "~/.dotfiles/config/aerospace/aerospace.toml", dest: "~/.config/aerospace/aerospace.toml" }
     - { src: "~/.dotfiles/curlrc", dest: "~/.curlrc" }
     - { src: "~/.dotfiles/gtkrc-2.0", dest: "~/.gtkrc-2.0" }
     - { src: "~/.dotfiles/tmux.conf", dest: "~/.tmux.conf" }

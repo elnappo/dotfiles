@@ -64,7 +64,7 @@ $ ./setup.sh
 * Some interesting variables for the Ansible playbook are set in `dotfiles/ansible/vars.yml`
 
   * `login_shell: /opt/homebrew/bin/fish`
-  * `sudo_without_password: true`
+  * `sudo_without_password: false`
   * `login_window_text: Enter any 11-digit prime number to continue.` set a custom message to appear at the bottom of your login window (macOS)
 
 * Clone and install dotfiles repository:

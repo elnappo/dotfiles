@@ -5,6 +5,6 @@
     state: latest
 
 - name: Install tmux plugins
-  command: ~/.local/share/tpm/bin/install_plugins
+  command: "{{ ansible_facts['env']['HOME'] }}/.local/share/tpm/bin/install_plugins"
   args:
-    creates: ~/.local/share/tmux-plugins
+    creates: "{{ ansible_facts['env']['HOME'] }}/.local/share/tmux-plugins"

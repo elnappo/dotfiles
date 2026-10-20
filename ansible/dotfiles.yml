@@ -13,25 +13,6 @@
         repo: https://github.com/elnappo/dotfiles.git
         dest: ~/.dotfiles
 
-    - name: Allow sudo without password
-      lineinfile:
-        dest: /etc/sudoers
-        state: present
-        line: "{{ ansible_user_id }}	ALL=NOPASSWD: ALL"
-        insertafter: '^%admin\tALL=\(ALL\) ALL'
-        validate: "visudo -cf %s"
-      become: true
-      when: sudo_without_password and ansible_os_family == "Darwin"
-
-    - name: Enable tty_tickets
-      lineinfile:
-        dest: /etc/sudoers
-        state: present
-        line: "Defaults tty_tickets"
-        validate: "visudo -cf %s"
-      become: true
-      when: ansible_os_family == "Darwin"
-
     - name: Install oh-my-zsh
       git:
         repo: https://github.com/robbyrussell/oh-my-zsh.git
@@ -61,6 +42,7 @@
         - "~/.cache/vim/swap/"
         - "~/.cache/vim/undo/"
         - "~/.cache/wget/"
+        - "~/.config/aerospace/"
         - "~/.config/fish/"
         - "~/.config/gtk-3.0"
         - "~/.config/i3/"
@@ -84,16 +66,6 @@
       tags:
         - packages
 
-    - name: Install iTerm 2 shell integrations
-      get_url:
-        url: https://iterm2.com/shell_integration/{{item}}
-        dest: ~/.local/share/{{item}}/iterm2_shell_integration.{{item}}
-      loop:
-        - "fish"
-        - "zsh"
-        - "bash"
-      when: ansible_os_family == "Darwin"
-
     # Needs to be after packages
     - include_tasks: tasks/tmux_plugins.yml
       tags:
@@ -103,13 +75,18 @@
       tags:
         - shells
 
+    - include_tasks: tasks/macos.yml
+      when: ansible_facts['os_family'] == "Darwin"
+      tags:
+        - macos
+
     - include_tasks: tasks/macos_defaults.yml
-      when: ansible_os_family == "Darwin"
+      when: ansible_facts['os_family'] == "Darwin"
       tags:
         - macos_defaults
 
     - include_tasks: tasks/arch.yml
-      when: ansible_os_family == "Archlinux"
+      when: ansible_facts['os_family'] == "Archlinux"
       tags:
         - arch
 

@@ -25,7 +25,7 @@
       lineinfile: dest=/etc/shells line="/opt/homebrew/bin/fish" state=present
       when: brew_fish.stat.exists
 
-  when: ansible_os_family == "Darwin"
+  when: ansible_facts['os_family'] == "Darwin"
   become: true
 
 - name: check if preferred login_shell is installed
@@ -33,6 +33,6 @@
   register: login_shell_installed
 
 - name: Set default shell
-  user: name={{ ansible_user_id }} shell={{ login_shell }}
+  user: name={{ ansible_facts['user_id'] }} shell={{ login_shell }}
   when: login_shell_installed.stat.exists
   become: true
