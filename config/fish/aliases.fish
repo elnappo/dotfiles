@@ -124,9 +124,6 @@ switch (uname -s)
         function updatedb -d "Update a mlocate database"
             sudo /usr/libexec/locate.updatedb; end
 
-        function wifipow -d "Perform a wireless broadcast scan"
-            /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s; end
-
         function lscleanup -d "Clean up LaunchServices to remove duplicates in the Open With menu"
             /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder; end
 

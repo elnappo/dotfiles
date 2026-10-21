@@ -14,7 +14,7 @@
     - { key: "EncryptionRequire", type: "bool", value: "true" }
     # Setting up block list
     - { key: "BlocklistAutoUpdate", type: "bool", value: "true" }
-    - { key: "BlocklistURL", type: "string", value: "http://list.iblocklist.com/?list=bt_level1&fileformat=p2p&archiveformat=gz" }
+    - { key: "BlocklistURL", type: "string", value: "https://github.com/Naunter/BT_BlockLists/raw/master/bt_blocklists.gz" }
     # Auto-resizing the window to fit transfers
     - { key: "AutoSize", type: "bool", value: "true" }
   notify:
@@ -34,16 +34,12 @@
     - { key: "ShowStatusBar", type: "bool", value: "true" }
     # Show path bar
     - { key: "ShowPathbar", type: "bool", value: "true" }
-    # Allow text selection in Quick Look
-    - { key: "QLEnableTextSelection", type: "bool", value: "true" }
     # Display full POSIX path as Finder window title
     - { key: "_FXShowPosixPathInTitle", type: "bool", value: "true" }
     # When performing a search, search the current folder by default
     - { key: "FXDefaultSearchScope", type: "string", value: "SCcf" }
     # Disable the warning when changing a file extension
     - { key: "FXEnableExtensionChangeWarning", type: "bool", value: "false" }
-    # Automatically open a new Finder window when a volume is mounted
-    - { key: "OpenWindowForNewRemovableDisk", type: "bool", value: "true" }
     # Use list view in all Finder windows by default
     # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
     - { key: "FXPreferredViewStyle", type: "string", value: "Nlsv" }
@@ -65,8 +61,6 @@
     - { key: "show-process-indicators", type: "bool", value: "true" }
     # Speed up Mission Control animations
     - { key: "expose-animation-duration", type: "float", value: "0.1" }
-    # Don’t show Dashboard as a Space
-    - { key: "dashboard-in-overlay", type: "bool", value: "false" }
   notify:
     - Kill Dock
 
@@ -103,12 +97,8 @@
     # Set a blazingly fast keyboard repeat rate
     - { key: "KeyRepeat", type: "float", value: "{{keyboard_key_repeat_rate}}" }
     - { key: "InitialKeyRepeat", type: "int", value: "{{keyboard_initial_key_repeat_delay}}" }
-    # Enable subpixel font rendering on non-Apple LCDs
-    - { key: "AppleFontSmoothing", type: "int", value: "2" }
     # Finder: show all filename extensions
     - { key: "AppleShowAllExtensions", type: "bool", value: "true" }
-    # Add a context menu item for showing the Web Inspector in web views
-    - { key: "WebKitDeveloperExtras", type: "bool", value: "true" }
     # Set auto correct as in vars.yml
     - { key: "NSAutomaticSpellingCorrectionEnabled", type: "bool", value: "{{macos_auto_correct}}" }
     # Set the spring loading delay for directories
@@ -133,12 +123,6 @@
         type: "int",
         value: "4",
       }
-    - {
-        domain: "com.apple.DiskUtility",
-        key: "image",
-        type: "bool",
-        value: "true",
-      }
     # Show the main window when launching Activity Monitor
     - {
         domain: "com.apple.ActivityMonitor",
@@ -158,7 +142,7 @@
         domain: "com.apple.ActivityMonitor",
         key: "ShowCategory",
         type: "int",
-        value: "0",
+        value: "100",
       }
     # Sort Activity Monitor results by CPU usage
     - {
@@ -184,26 +168,6 @@
     - {
         domain: "com.apple.print.PrintingPrefs",
         key: "Quit When Finished",
-        type: "bool",
-        value: "true",
-      }
-    # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
-    - {
-        domain: "com.apple.mail",
-        key: "AddressesIncludeNameOnPasteboard",
-        type: "bool",
-        value: "false",
-      }
-    # Automatically open a new Finder window when a volume is mounted
-    - {
-        domain: "com.apple.frameworks.diskimages",
-        key: "auto-open-ro-root",
-        type: "bool",
-        value: "true",
-      }
-    - {
-        domain: "com.apple.frameworks.diskimages",
-        key: "auto-open-rw-root",
         type: "bool",
         value: "true",
       }
@@ -244,53 +208,25 @@
       }
     # Trackpad: enable tap to click for this user and for the login screen
     - {
+        domain: "com.apple.AppleMultitouchTrackpad",
+        key: "Clicking",
+        type: "int",
+        value: "1",
+      }
+    - {
         domain: "com.apple.driver.AppleBluetoothMultitouch.trackpad",
         key: "Clicking",
         type: "int",
         value: "1",
       }
-    # Check for software updates daily, not just once per week
-    - {
-        domain: "com.apple.SoftwareUpdate",
-        key: "ScheduleFrequency",
-        type: "int",
-        value: "1",
-      }
-    # Enable the automatic update check
-    - {
-        domain: "com.apple.SoftwareUpdate",
-        key: "AutomaticCheckEnabled",
-        type: "bool",
-        value: "true",
-      }
-    # Download newly available updates in background
-    - {
-        domain: "com.apple.SoftwareUpdate",
-        key: "AutomaticDownload",
-        type: "int",
-        value: "1",
-      }
-    # Install System data files & security updates
-    - {
-        domain: "com.apple.SoftwareUpdate",
-        key: "CriticalUpdateInstall",
-        type: "int",
-        value: "1",
-      }
-    # Turn on app auto-update
-    - {
-        domain: "com.apple.commerce",
-        key: "AutoUpdate",
-        type: "bool",
-        value: "true",
-      }
-    # Prevent Photos from opening automatically when devices are plugged in
-    - {
-        domain: "com.apple.ImageCapture",
-        key: "disableHotPlug",
-        type: "bool",
-        value: "true",
-      }
+
+- name: Prevent Photos from opening automatically when devices are plugged in
+  community.general.osx_defaults:
+    domain: com.apple.ImageCapture
+    key: disableHotPlug
+    type: bool
+    value: true
+    host: currentHost
 
 - name: Set some other settings (with sudo)
   community.general.osx_defaults: domain={{ item.domain }} key={{ item.key }} type={{ item.type }} value={{ item.value }}
@@ -302,14 +238,7 @@
         type: "string",
         value: "{{ login_window_text }}",
       }
-    # Make sure there is no password hint set.
-    - {
-        domain: "/Library/Preferences/com.apple.loginwindow",
-        key: "RetriesUntilHint",
-        type: "int",
-        value: 0,
-      }
-    #  Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
+    # Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
     - {
         domain: "/Library/Preferences/com.apple.loginwindow",
         key: "AdminHostInfo",
@@ -318,12 +247,39 @@
       }
     # Enable dark mode
     - {
-        domain: "/Library/Preferences/.GlobalPreferences.plist ",
+        domain: "/Library/Preferences/.GlobalPreferences.plist",
         key: "AppleInterfaceTheme",
         type: "string",
         value: "Dark",
       }
-
+    # Enable the automatic update check
+    - {
+        domain: "/Library/Preferences/com.apple.SoftwareUpdate",
+        key: "AutomaticCheckEnabled",
+        type: "bool",
+        value: "true",
+      }
+    # Download newly available updates in background
+    - {
+        domain: "/Library/Preferences/com.apple.SoftwareUpdate",
+        key: "AutomaticDownload",
+        type: "int",
+        value: "1",
+      }
+    # Install System data files & security updates
+    - {
+        domain: "/Library/Preferences/com.apple.SoftwareUpdate",
+        key: "CriticalUpdateInstall",
+        type: "int",
+        value: "1",
+      }
+    # Turn on app auto-update
+    - {
+        domain: "/Library/Preferences/com.apple.commerce",
+        key: "AutoUpdate",
+        type: "bool",
+        value: "true",
+      }
   become: true
 
 - name: Configure hot-corners
