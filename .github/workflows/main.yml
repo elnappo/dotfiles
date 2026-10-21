@@ -29,7 +29,23 @@ jobs:
 
       - name: Check if Playbook is idempotent
         run: |
-          ansible-playbook ansible/dotfiles.yml --skip-tags "packages" | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
+          set -o pipefail
+          log="$(mktemp)"
+          status=0
+          ansible-playbook ansible/dotfiles.yml --skip-tags "packages" 2>&1 | tee "$log" || status=$?
+
+          if [ "$status" -eq 0 ] && grep -q 'changed=0.*failed=0' "$log"; then
+            echo 'Idempotence test: pass'
+            exit 0
+          fi
+
+          echo 'Idempotence test: fail'
+          if [ "$status" -ne 0 ]; then
+            echo "ansible-playbook exited with status $status"
+          fi
+          echo '--- Full ansible-playbook output ---'
+          cat "$log"
+          exit 1
 
       - name: Debugging Checks
         if: ${{ !cancelled() }}
